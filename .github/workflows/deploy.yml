@@ -1,0 +1,54 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout 代碼
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      # 2. Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22"
+
+      # 3. 安裝依賴
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. 設置 DEPLOY_ENV 環境變數
+      - name: Set DEPLOY_ENV
+        run: echo "DEPLOY_ENV=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      # 5. Build
+      - name: Build project
+        run: npm run build
+
+      # 6a. Deploy develop 分支到另一個 repo（preview）
+      - name: Deploy preview (develop branch)
+        if: github.ref == 'refs/heads/develop'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          external_repository: YPINPIN/dream-traveler-preview
+
+      # 6b. Deploy main 分支到自己 repo
+      - name: Deploy production (main branch)
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages

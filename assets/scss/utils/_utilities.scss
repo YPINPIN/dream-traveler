@@ -1,0 +1,31 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "rounded":
+      map-merge(
+        map-get($utilities, "rounded"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "rounded"), "values"),
+              (
+                xs: $border-radius-xs,
+              )
+            ),
+        )
+      ),
+  )
+);
+
+@each $fs-key, $fs-value in $font-sizes {
+  $lh-key: map-get($fs-to-lh, $fs-key);
+  $lh-value: map-get($line-heights, $lh-key);
+
+  // 標準 class（不含響應式）
+  .fs-#{$fs-key} {
+    font-size: $fs-value !important;
+    line-height: $lh-value !important;
+  }
+}
+
+@import "bootstrap/scss/utilities/api";
