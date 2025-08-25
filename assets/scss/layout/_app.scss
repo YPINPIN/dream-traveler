@@ -2,52 +2,27 @@
   // 整個頁面
   max-width: 100vw;
   min-height: 100vh;
-  padding: 20px 0;
+
   overflow: hidden;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  // 手機邊框
-  &-border {
-    // 410*832
-    width: 410px;
-    height: 832px;
-    position: relative;
-    padding: 10px 17.5px;
-
-    // 手機邊框圖蓋在上方
-    &::after {
-      content: "";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 110;
-      background-image: url("/assets/images/iPhone_13_mini_Thin.svg");
-      background-repeat: no-repeat;
-      pointer-events: none;
-    }
+  // 376px 以上
+  @media screen and (min-width: 376px) {
+    padding: 20px 0;
   }
 
-  // 手機畫面
-  &-frame {
-    // 375*812
-    width: 375px;
-    height: 812px;
+  // 手機邊框
+  &-border {
     position: relative;
-    border-radius: 35px;
-    overflow: hidden;
-    overflow-y: scroll;
-    scrollbar-width: none;
-    // 空出頂部 status bar 的高度
-    padding-top: 50px;
 
-    &::after {
+    // status bar
+    &::before {
       content: "";
-      width: 100%;
+      width: 375px;
+      max-width: 100vw;
       height: 22px;
       margin-top: 21px;
       margin-bottom: 7px;
@@ -57,7 +32,54 @@
       z-index: 100;
       background-image: url("/assets/images/Frame.svg");
       background-repeat: no-repeat;
+      background-position: center;
       pointer-events: none;
+
+      @media screen and (min-width: 376px) {
+        top: 10px;
+        left: 17.5px;
+      }
+    }
+
+    // 376px 以上
+    @media screen and (min-width: 376px) {
+      // 410*832
+      width: 410px;
+      height: 832px;
+      padding: 10px 17.5px;
+
+      // 手機邊框圖蓋在上方
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 110;
+        background-image: url("/assets/images/iPhone_13_mini_Thin.svg");
+        background-repeat: no-repeat;
+        pointer-events: none;
+      }
+    }
+  }
+
+  // 手機畫面
+  &-frame {
+    // 375 以下全螢幕
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    // 376px 以上
+    @media screen and (min-width: 376px) {
+      // 375*812
+      width: 375px;
+      height: 812px;
+      border-radius: 35px;
     }
   }
 }

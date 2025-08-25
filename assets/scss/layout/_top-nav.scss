@@ -1,4 +1,9 @@
 .top-nav {
+  // 預留status bar 的空間
+  padding-top: 50px;
+  position: sticky;
+  top: 0;
+
   &-title {
     padding-top: 10px;
     padding-bottom: 10px;
