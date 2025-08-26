@@ -82,4 +82,24 @@
       border-radius: 35px;
     }
   }
+
+  // home indicator
+  &-home-indicator {
+    width: 144px;
+    height: 5px;
+    background-color: $neutral-50;
+    border-radius: 100px;
+    margin-top: 21px;
+    margin-bottom: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    pointer-events: none;
+
+    @media screen and (min-width: 376px) {
+      bottom: 10px;
+    }
+  }
 }
