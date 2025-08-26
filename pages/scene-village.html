@@ -8,32 +8,30 @@
 <body>
   <div class="app">
     <div class="app-border">
-      <div class="app-frame">
-        <header class="position-relative mb-6">
-            <p class="fs-5 text-center fw-bold lh-28" style="padding: 10px 0;">淺夢之村</p>
-            <a class="position-absolute start-0 top-50 translate-middle-y p-3" href="collection.html">
-              <img src="/assets/images/05-icon/before.svg" alt="before">
-            </a>
-        </header>
+      <div class="app-frame overflow-y-auto">
+        <div class="position-sticky top-0 z-2 bg-neutral-1100 sceneHeading position-relative">
+          <%- include('layout/top-nav', { title: '淺夢之村' , beforeLink: "collection.html" ,
+              nextLink: null}) -%>
+          <p class="text-center mb-4 bg-neutral-1100">收集進度：12/75</p>
+          <ul class="nav nav-tabs w-100" id="myTab" role="tablist">
+              <li class="nav-item col" role="presentation">
+                  <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 active border-0 border-bottom border-2 border-neutral-600" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">星光小路</butto>
+              </li>
+              <li class="nav-item col" role="presentation">
+                  <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 border-0 border-bottom border-2 border-neutral-600" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">搖籃草屋</button>
+              </li>
+              <li class="nav-item col" role="presentation">
+                  <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 border-0 border-bottom border-2 border-neutral-600" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">夢語燈塔</button>
+              </li>
+          </ul>
+          <button type="button" class="filter position-absolute end-0 bg-primary-300 rounded-circle z-2 border-0 p-0" style="height: 36px;width: 36px;">
+              <img src="/assets/images/05-icon/filter.svg" alt="filter">
+          </button>
+        </div>
         <main class="scene">
-            <p class="text-center mb-4">收集進度：12/75</p>
-            <ul class="nav nav-tabs w-100 " id="myTab" role="tablist">
-                <li class="nav-item col" role="presentation">
-                    <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 active border-0 border-bottom border-2 border-neutral-600" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">星光小路</butto>
-                </li>
-                <li class="nav-item col" role="presentation">
-                    <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 border-0 border-bottom border-2 border-neutral-600" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">搖籃草屋</button>
-                </li>
-                <li class="nav-item col" role="presentation">
-                    <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 border-0 border-bottom border-2 border-neutral-600" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">夢語燈塔</button>
-                </li>
-            </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active bg-neutral-900"  id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="container py-4 position-relative">
-                        <button type="button" class="filter position-absolute top-0 end-0 bg-primary-300 rounded-circle z-2 border-0 p-0" style="height: 36px;width: 36px;">
-                            <img src="/assets/images/05-icon/filter.svg" alt="filter">
-                        </button>
                         <div class="row gx-6 gy-6">
                             <!-- 第一列 -->
                             <div class="col-4">
@@ -47,7 +45,7 @@
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-dialog modal-dialog-centered custom-modal">
                                         <div class="modal-content  border-2 border-primary-50 mx-4 ">
                                             <div class="modal-header bg-neutral-100 py-3">
                                                 <h5 class="modal-title w-100 text-neutral-1000 fw-bold fs-5 text-center" id="staticBackdropLabel">晚安指北針</h5>
