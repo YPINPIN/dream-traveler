@@ -1,0 +1,18 @@
+.filter{
+    transform: translate(-24px,16px,);
+    box-shadow: 
+        0px 3px 6px 0px rgba(10, 11, 10, 0.16),
+        0px 3px 6px 0px rgba(10, 11, 10, 0.23);
+}
+
+.badge-bg{
+    background: linear-gradient(to right, #EBF9F9, #478984);
+}
+
+.scene .nav{
+    --bs-nav-link-hover-color: unset;
+}
+
+.scene .nav-tabs{
+    --bs-nav-tabs-link-active-border-color:$primary-300;
+}
