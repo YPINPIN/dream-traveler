@@ -8,92 +8,91 @@
   <body>
     <div class="app">
       <div class="app-border">
-        <div class="app-frame">
-          <header>
-            <p class="fs-5 text-center fw-bold" style="padding: 10px 0">圖鑑</p>
-          </header>
+        <div class="app-frame overflow-y-auto">
+          <div class="sticky-top top-0 z-2">
+            <%- include('layout/top-nav', { title: '圖鑑' , beforeLink: null ,
+            nextLink: null}) -%>
+            <div class="container">
+              <div class="barContainer pt-6 pb-5 bg-neutral-1100">
+                <div class="barText d-flex justify-content-between mb-3">
+                  <p class="fw-bold">累積里程數</p>
+                  <p class="me-1 ms-auto">6500 / 10000</p>
+                  <p>解鎖 <span class="fw-bold">記憶森林</span></p>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    role="progressbar"
+                    style="width: 25%"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="main">
-            <section>
-              <div class="container py-6">
-                <div
-                  class="barContainer pb-5 position-sticky top-0 z-2 bg-primary-900"
-                >
-                  <div class="barText d-flex justify-content-between mb-3">
-                    <p class="fw-bold">累積里程數</p>
-                    <p class="me-1 ms-auto">6500 / 10000</p>
-                    <p>解鎖 <span class="fw-bold">記憶森林</span></p>
-                  </div>
-                  <div class="progress">
-                    <div
-                      class="progress-bar"
-                      role="progressbar"
-                      style="width: 25%"
-                      aria-valuenow="25"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    ></div>
-                  </div>
-                </div>
-                <div class="card p-4 bg mb-4">
-                  <a href="scene-village.html">
-                    <img
-                      src="/assets/images/04-background/main-scene/catalog/catalog-main-scene-淺夢之村-unlock.png"
-                      class="card-img-top mb-2"
-                      alt="catalog-main-scene-淺夢之村-unlock"
-                    />
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between">
-                        <h5 class="card-title fw-bold">淺夢之村</h5>
-                        <p class="card-text">收集進度： <span>12/75</span></p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                <div class="card p-4 bg mb-4">
+            <div class="container pb-6 position-relative">
+              <div class="card p-4 bg mb-4">
+                <a href="scene-village.html">
                   <img
-                    src="/assets/images/04-background/main-scene/catalog/catalog-main-scene-深眠幽谷-unlock.png"
+                    src="/assets/images/04-background/main-scene/catalog/catalog-main-scene-淺夢之村-unlock.png"
                     class="card-img-top mb-2"
-                    alt="catalog-main-scene-深眠幽谷-unlock"
+                    alt="catalog-main-scene-淺夢之村-unlock"
                   />
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
-                      <h5 class="card-title fw-bold">深眠幽谷</h5>
-                      <p class="card-text">收集進度：<span>0 / 82</span></p>
+                      <h5 class="card-title fw-bold">淺夢之村</h5>
+                      <p class="card-text">收集進度： <span>12/75</span></p>
                     </div>
                   </div>
-                </div>
-                <div class="card p-4 bg mb-4">
-                  <img
-                    src="/assets/images/04-background/main-scene/catalog/catalog-main-scene-記憶之森-lock.png"
-                    class="card-img-top mb-2"
-                    alt="catalog-main-scene-記憶之森-lock"
-                  />
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <h5 class="card-title fw-bold">記憶森林</h5>
-                      <p class="card-text">
-                        解鎖所需里程： <span>1600 / 10000</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card p-4 bg mb-4">
-                  <img
-                    src="/assets/images/04-background/main-scene/catalog/catalog-main-scene-浮島邊境-lock.png"
-                    class="card-img-top mb-2"
-                    alt="catalog-main-scene-浮島邊境-lock"
-                  />
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                      <h5 class="card-title fw-bold">浮島邊境</h5>
-                      <p class="card-text">
-                        解鎖所需里程： <span>1600/15000</span>
-                      </p>
-                    </div>
+                </a>
+              </div>
+              <div class="card p-4 bg mb-4">
+                <img
+                  src="/assets/images/04-background/main-scene/catalog/catalog-main-scene-深眠幽谷-unlock.png"
+                  class="card-img-top mb-2"
+                  alt="catalog-main-scene-深眠幽谷-unlock"
+                />
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title fw-bold">深眠幽谷</h5>
+                    <p class="card-text">收集進度：<span>0 / 82</span></p>
                   </div>
                 </div>
               </div>
-            </section>
+              <div class="card p-4 bg mb-4">
+                <img
+                  src="/assets/images/04-background/main-scene/catalog/catalog-main-scene-記憶之森-lock.png"
+                  class="card-img-top mb-2"
+                  alt="catalog-main-scene-記憶之森-lock"
+                />
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title fw-bold">記憶森林</h5>
+                    <p class="card-text">
+                      解鎖所需里程： <span>1600 / 10000</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card p-4 bg mb-4">
+                <img
+                  src="/assets/images/04-background/main-scene/catalog/catalog-main-scene-浮島邊境-lock.png"
+                  class="card-img-top mb-2"
+                  alt="catalog-main-scene-浮島邊境-lock"
+                />
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title fw-bold">浮島邊境</h5>
+                    <p class="card-text">
+                      解鎖所需里程： <span>1600/15000</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="navbar"></div>
         </div>
