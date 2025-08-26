@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>夢の旅人 | 日誌</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="app-border">
+        <div class="app-frame bg-neutral-1100">
+          <main>
+            <!-- top-nav -->
+            <%- include('layout/top-nav', { title: '日誌' , beforeLink: null ,
+            nextLink: null}) -%>
+            <!-- content -->
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="py-6">
+                    <!-- 最近紀錄 -->
+                    <section class="p-4 bg-neutral-900 rounded-xs mb-4">
+                      <h2 class="fs-5 fw-bold mb-3">最近紀錄</h2>
+                      <!-- lately tab list -->
+                      <ul
+                        class="p-0 mb-3 d-flex flex-wrap justify-content-between record-lately-list"
+                        id="latelyRecordTab"
+                        role="tablist"
+                      >
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-one-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-one"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-one"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">21</p>
+                            <p class="fs-9">一</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-two-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-two"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-two"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">22</p>
+                            <p class="fs-9">二</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-three-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-three"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-three"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">23</p>
+                            <p class="fs-9">三</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-four-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-four"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-four"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">24</p>
+                            <p class="fs-9">四</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-five-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-five"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-five"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">25</p>
+                            <p class="fs-9">五</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-six-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-six"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-six"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">26</p>
+                            <p class="fs-9">六</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab active"
+                            id="lately-seven-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-seven"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-seven"
+                            aria-selected="true"
+                          >
+                            <p class="fs-8 fw-bold">27</p>
+                            <p class="fs-9">日</p>
+                          </button>
+                        </li>
+                      </ul>
+                      <!-- lately content -->
+                      <div class="tab-content" id="latelyRecordTabContent">
+                        <div
+                          class="tab-pane"
+                          id="lately-one"
+                          role="tabpanel"
+                          aria-labelledby="lately-one-tab"
+                        >
+                          <%- include('layout/record/lately-content', {data:
+                          {travelTime: '7.4', departureAt: '11:00', arrivalAt:
+                          '06:24'}}) -%>
+                        </div>
+                        <div
+                          class="tab-pane"
+                          id="lately-two"
+                          role="tabpanel"
+                          aria-labelledby="lately-two-tab"
+                        >
+                          <%- include('layout/record/lately-content', {data:
+                          {travelTime: '8.0', departureAt: '11:20', arrivalAt:
+                          '07:20'}}) -%>
+                        </div>
+                        <div
+                          class="tab-pane"
+                          id="lately-three"
+                          role="tabpanel"
+                          aria-labelledby="lately-three-tab"
+                        >
+                          <%- include('layout/record/lately-content', {data:
+                          {travelTime: '7.0', departureAt: '10:00', arrivalAt:
+                          '05:00'}}) -%>
+                        </div>
+                        <div
+                          class="tab-pane"
+                          id="lately-four"
+                          role="tabpanel"
+                          aria-labelledby="lately-four-tab"
+                        >
+                          <%- include('layout/record/lately-content', {data:
+                          {travelTime: '6.0', departureAt: '10:20', arrivalAt:
+                          '04:20'}}) -%>
+                        </div>
+                        <div
+                          class="tab-pane"
+                          id="lately-five"
+                          role="tabpanel"
+                          aria-labelledby="lately-five-tab"
+                        >
+                          <%- include('layout/record/lately-content', {data:
+                          {travelTime: '7.0', departureAt: '11:20', arrivalAt:
+                          '06:20'}}) -%>
+                        </div>
+                        <div
+                          class="tab-pane"
+                          id="lately-six"
+                          role="tabpanel"
+                          aria-labelledby="lately-six-tab"
+                        >
+                          <%- include('layout/record/lately-content', {data:
+                          {travelTime: '8.5', departureAt: '10:20', arrivalAt:
+                          '06:50'}}) -%>
+                        </div>
+                        <div
+                          class="tab-pane show active"
+                          id="lately-seven"
+                          role="tabpanel"
+                          aria-labelledby="lately-seven-tab"
+                        >
+                          <%- include('layout/record/lately-content', {data:
+                          {travelTime: '7.5', departureAt: '11:20', arrivalAt:
+                          '06:50'}}) -%>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

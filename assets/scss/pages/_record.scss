@@ -1,0 +1,19 @@
+.record-lately {
+  &-list {
+    gap: 5px;
+
+    &-item {
+      flex: 1;
+    }
+  }
+  &-tab.btn {
+    padding: 5px;
+    background-color: $neutral-800;
+    &:hover,
+    &:active,
+    &.active {
+      background-color: $primary-700;
+      border-color: $primary-300;
+    }
+  }
+}
