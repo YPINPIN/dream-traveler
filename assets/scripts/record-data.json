@@ -1,0 +1,376 @@
+{
+  "week": [
+    {
+      "averageTravelTime": 7.34,
+      "differenceFromLastWeek": 0.59,
+      "totalTravelTime": 51.4,
+      "data": [
+        {
+          "date": "2025-07-21",
+          "departureAt": "23:00",
+          "arrivalAt": "06:24",
+          "travelTime": 7.4
+        },
+        {
+          "date": "2025-07-22",
+          "departureAt": "23:20",
+          "arrivalAt": "07:20",
+          "travelTime": 8.0
+        },
+        {
+          "date": "2025-07-23",
+          "departureAt": "22:00",
+          "arrivalAt": "05:00",
+          "travelTime": 7.0
+        },
+        {
+          "date": "2025-07-24",
+          "departureAt": "22:20",
+          "arrivalAt": "04:20",
+          "travelTime": 6.0
+        },
+        {
+          "date": "2025-07-25",
+          "departureAt": "23:20",
+          "arrivalAt": "06:20",
+          "travelTime": 7.0
+        },
+        {
+          "date": "2025-07-26",
+          "departureAt": "22:20",
+          "arrivalAt": "06:50",
+          "travelTime": 8.5
+        },
+        {
+          "date": "2025-07-27",
+          "departureAt": "23:20",
+          "arrivalAt": "06:50",
+          "travelTime": 7.5
+        }
+      ]
+    },
+    {
+      "averageTravelTime": 6.75,
+      "differenceFromLastWeek": -0.21,
+      "totalTravelTime": 47.25,
+      "data": [
+        {
+          "date": "2025-07-14",
+          "departureAt": "22:30",
+          "arrivalAt": "05:00",
+          "travelTime": 6.5
+        },
+        {
+          "date": "2025-07-15",
+          "departureAt": "23:20",
+          "arrivalAt": "07:10",
+          "travelTime": 7.8
+        },
+        {
+          "date": "2025-07-16",
+          "departureAt": "22:50",
+          "arrivalAt": "04:30",
+          "travelTime": 5.7
+        },
+        {
+          "date": "2025-07-17",
+          "departureAt": "23:10",
+          "arrivalAt": "07:00",
+          "travelTime": 7.8
+        },
+        {
+          "date": "2025-07-18",
+          "departureAt": "22:40",
+          "arrivalAt": "05:50",
+          "travelTime": 7.2
+        },
+        {
+          "date": "2025-07-19",
+          "departureAt": "23:00",
+          "arrivalAt": "06:20",
+          "travelTime": 7.3
+        },
+        {
+          "date": "2025-07-20",
+          "departureAt": "22:10",
+          "arrivalAt": "05:00",
+          "travelTime": 4.9
+        }
+      ]
+    }
+  ],
+  "month": [
+    {
+      "averageTravelTime": 5.3,
+      "differenceFromLastWeek": 1.6,
+      "totalTravelTime": 169.28,
+      "data": [
+        {
+          "date": "2025-07-14",
+          "departureAt": "22:30",
+          "arrivalAt": "05:00",
+          "travelTime": 6.5
+        },
+        {
+          "date": "2025-07-15",
+          "departureAt": "23:20",
+          "arrivalAt": "07:10",
+          "travelTime": 7.8
+        },
+        {
+          "date": "2025-07-16",
+          "departureAt": "22:50",
+          "arrivalAt": "04:30",
+          "travelTime": 5.7
+        },
+        {
+          "date": "2025-07-17",
+          "departureAt": "23:10",
+          "arrivalAt": "07:00",
+          "travelTime": 7.8
+        },
+        {
+          "date": "2025-07-18",
+          "departureAt": "22:40",
+          "arrivalAt": "05:50",
+          "travelTime": 7.2
+        },
+        {
+          "date": "2025-07-19",
+          "departureAt": "23:00",
+          "arrivalAt": "06:20",
+          "travelTime": 7.3
+        },
+        {
+          "date": "2025-07-20",
+          "departureAt": "22:10",
+          "arrivalAt": "05:00",
+          "travelTime": 4.9
+        },
+        {
+          "date": "2025-07-21",
+          "departureAt": "23:00",
+          "arrivalAt": "06:24",
+          "travelTime": 7.4
+        },
+        {
+          "date": "2025-07-22",
+          "departureAt": "23:20",
+          "arrivalAt": "07:20",
+          "travelTime": 8.0
+        },
+        {
+          "date": "2025-07-23",
+          "departureAt": "22:00",
+          "arrivalAt": "05:00",
+          "travelTime": 7.0
+        },
+        {
+          "date": "2025-07-24",
+          "departureAt": "22:20",
+          "arrivalAt": "04:20",
+          "travelTime": 6.0
+        },
+        {
+          "date": "2025-07-25",
+          "departureAt": "23:20",
+          "arrivalAt": "06:20",
+          "travelTime": 7.0
+        },
+        {
+          "date": "2025-07-26",
+          "departureAt": "22:20",
+          "arrivalAt": "06:50",
+          "travelTime": 8.5
+        },
+        {
+          "date": "2025-07-27",
+          "departureAt": "23:20",
+          "arrivalAt": "06:50",
+          "travelTime": 7.5
+        }
+      ]
+    },
+    {
+      "averageTravelTime": 3.7,
+      "differenceFromLastWeek": -0.15,
+      "totalTravelTime": 135.8,
+      "data": [
+        {
+          "date": "2025-06-14",
+          "departureAt": "22:30",
+          "arrivalAt": "05:00",
+          "travelTime": 6.5
+        },
+        {
+          "date": "2025-06-15",
+          "departureAt": "23:20",
+          "arrivalAt": "07:10",
+          "travelTime": 7.8
+        },
+        {
+          "date": "2025-06-16",
+          "departureAt": "22:50",
+          "arrivalAt": "04:30",
+          "travelTime": 5.7
+        },
+        {
+          "date": "2025-06-17",
+          "departureAt": "23:10",
+          "arrivalAt": "07:00",
+          "travelTime": 7.8
+        },
+        {
+          "date": "2025-06-18",
+          "departureAt": "22:40",
+          "arrivalAt": "05:50",
+          "travelTime": 7.2
+        },
+        {
+          "date": "2025-06-19",
+          "departureAt": "23:00",
+          "arrivalAt": "06:20",
+          "travelTime": 7.3
+        },
+        {
+          "date": "2025-06-20",
+          "departureAt": "22:10",
+          "arrivalAt": "05:00",
+          "travelTime": 4.9
+        }
+      ]
+    }
+  ],
+  "year": [
+    {
+      "averageTravelTime": 6.7,
+      "differenceFromLastWeek": 0.3,
+      "totalTravelTime": 2243.63,
+      "year": "2025",
+      "data": [
+        {
+          "month": 1,
+          "departureAt": "23:00",
+          "arrivalAt": "06:24",
+          "travelTime": 7.4
+        },
+        {
+          "month": 2,
+          "departureAt": "23:20",
+          "arrivalAt": "07:20",
+          "travelTime": 8.0
+        },
+        {
+          "month": 3,
+          "departureAt": "22:00",
+          "arrivalAt": "05:00",
+          "travelTime": 7.0
+        },
+        {
+          "month": 4,
+          "departureAt": "22:20",
+          "arrivalAt": "04:20",
+          "travelTime": 6.0
+        },
+        {
+          "month": 5,
+          "departureAt": "23:20",
+          "arrivalAt": "06:20",
+          "travelTime": 7.0
+        },
+        {
+          "month": 6,
+          "departureAt": "22:20",
+          "arrivalAt": "06:50",
+          "travelTime": 8.5
+        },
+        {
+          "month": 7,
+          "departureAt": "23:20",
+          "arrivalAt": "06:50",
+          "travelTime": 7.5
+        }
+      ]
+    },
+    {
+      "averageTravelTime": 6.4,
+      "differenceFromLastWeek": -0.11,
+      "totalTravelTime": 2147.25,
+      "year": "2024",
+      "data": [
+        {
+          "month": 1,
+          "departureAt": "22:30",
+          "arrivalAt": "05:00",
+          "travelTime": 6.5
+        },
+        {
+          "month": 2,
+          "departureAt": "23:20",
+          "arrivalAt": "07:10",
+          "travelTime": 7.8
+        },
+        {
+          "month": 3,
+          "departureAt": "22:50",
+          "arrivalAt": "04:30",
+          "travelTime": 5.7
+        },
+        {
+          "month": 4,
+          "departureAt": "23:10",
+          "arrivalAt": "07:00",
+          "travelTime": 7.8
+        },
+        {
+          "month": 5,
+          "departureAt": "22:40",
+          "arrivalAt": "05:50",
+          "travelTime": 7.2
+        },
+        {
+          "month": 6,
+          "departureAt": "23:00",
+          "arrivalAt": "06:20",
+          "travelTime": 7.3
+        },
+        {
+          "month": 7,
+          "departureAt": "22:10",
+          "arrivalAt": "05:00",
+          "travelTime": 4.9
+        },
+        {
+          "month": 8,
+          "departureAt": "22:30",
+          "arrivalAt": "05:00",
+          "travelTime": 6.5
+        },
+        {
+          "month": 9,
+          "departureAt": "23:20",
+          "arrivalAt": "07:10",
+          "travelTime": 7.8
+        },
+        {
+          "month": 10,
+          "departureAt": "22:50",
+          "arrivalAt": "04:30",
+          "travelTime": 5.7
+        },
+        {
+          "month": 11,
+          "departureAt": "23:10",
+          "arrivalAt": "07:00",
+          "travelTime": 7.8
+        },
+        {
+          "month": 12,
+          "departureAt": "22:40",
+          "arrivalAt": "05:50",
+          "travelTime": 7.2
+        }
+      ]
+    }
+  ]
+}

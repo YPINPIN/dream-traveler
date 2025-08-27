@@ -82,3 +82,62 @@
   margin-right: -12px;
   margin-bottom: -12px;
 }
+
+.time-btn-group {
+  height: 40px;
+  .btn {
+    --bs-btn-border-radius: 8px;
+  }
+}
+
+// 自訂按鈕 hover
+.record-custom-hover.btn {
+  transition: none;
+  &:hover,
+  &:active,
+  &.active {
+    background-color: $primary-600;
+    border-color: $primary-600;
+  }
+}
+
+.carousel-item {
+  &--week {
+    width: 115px;
+  }
+  &--month {
+    width: 32px;
+  }
+  &--year {
+    width: 48px;
+  }
+}
+
+.record-custom-prev-btn,
+.record-custom-next-btn {
+  padding: 10px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+// 旅行時長
+.record-travel-time {
+  .record-tooltip-btn {
+    margin-right: 2px;
+  }
+}
+
+// chart
+.chart-height {
+  height: 192px;
+  &-small {
+    height: 144px;
+  }
+}
