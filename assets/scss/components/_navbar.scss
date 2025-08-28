@@ -13,6 +13,14 @@
   }
 }
 
+.nav-link-title {
+  font-weight: bold;
+  color: $neutral-400;
+  &.active {
+    color: $neutral-100;
+  }
+}
+
 .bg-traveler {
   position: absolute;
   bottom: -40px;
