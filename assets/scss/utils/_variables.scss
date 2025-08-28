@@ -362,6 +362,14 @@ $warning-200: #8d7707;
 $danger-50: #ffeeea;
 $danger-100: #db5639;
 $danger-200: #881f07;
+// ======================
+// info
+// ======================
+$info-50: #ECF4FF;
+$info-70: #CEDEF3;
+$info-90: #C8E0FF;
+$info-100: #3275D2;
+$info-200: #073D88;
 // fusv-enable
 
 // scss-docs-start theme-color-variables
@@ -434,6 +442,12 @@ $theme-colors: (
   "danger-50": $danger-50,
   "danger-100": $danger-100,
   "danger-200": $danger-200,
+
+  "info-50": $info-50,
+  "info-70": $info-70,
+  "info-90": $info-90,
+  "info-100": $info-100,
+  "info-200": $info-200,
 ) !default;
 // scss-docs-end theme-colors-map
 
