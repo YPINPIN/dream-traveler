@@ -450,8 +450,8 @@ function setDepartureData(index) {
       };
     }
 
-    console.log("minTime", data.minTime.format());
-    console.log("maxTime", data.maxTime.format());
+    // console.log("minTime", data.minTime.format());
+    // console.log("maxTime", data.maxTime.format());
     // 計算相差小時數
     const hoursDiff = data.maxTime.diff(data.minTime, "hour");
     // 基本 stepSize
@@ -742,8 +742,8 @@ function setArrivalData(index) {
       };
     }
 
-    console.log("minTime", data.minTime.format());
-    console.log("maxTime", data.maxTime.format());
+    // console.log("minTime", data.minTime.format());
+    // console.log("maxTime", data.maxTime.format());
     // 計算相差小時數
     const hoursDiff = data.maxTime.diff(data.minTime, "hour");
     // 基本 stepSize
@@ -769,8 +769,8 @@ function switchChartArrivalMode(newArrivalData, mode) {
   // 銷毀舊圖表
   if (chart_arrival) chart_arrival.destroy();
 
-  console.log("minTime", newArrivalData.minTime.format());
-  console.log("maxTime", newArrivalData.maxTime.format());
+  // console.log("minTime", newArrivalData.minTime.format());
+  // console.log("maxTime", newArrivalData.maxTime.format());
 
   // 設定 x 軸與 barThickness
   let xConfig = {};
