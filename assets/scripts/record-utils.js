@@ -544,7 +544,7 @@ function getArrivalSummary(type = "week") {
       break;
   }
 
-  console.log(arrivalSummary);
+  // console.log(arrivalSummary);
   return arrivalSummary;
 }
 
