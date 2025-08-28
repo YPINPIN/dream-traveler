@@ -19,6 +19,7 @@ import {
 import {
   getTravelSummary,
   getDepartureSummary,
+  getArrivalSummary,
 } from "/assets/scripts/record-utils.js";
 
 // 資料紀錄
@@ -26,6 +27,7 @@ let lastTab;
 let currentTab;
 let travelSummary;
 let departureSummary;
+let arrivalSummary;
 let currentDataIndex;
 
 // ------------------------------
@@ -35,6 +37,9 @@ let chart_travel;
 // 啟程時間圖表 chart-departure-time
 const ctx_departure = document.getElementById("chart-departure-time");
 let chart_departure;
+// 抵達時間圖表 chart-arrival-time
+const ctx_arrival = document.getElementById("chart-arrival-time");
+let chart_arrival;
 
 // tab switch
 const tabBtns = document.querySelectorAll(`.time-btn-group .btn`);
@@ -61,6 +66,14 @@ const diffDepartureEl = departureEl.querySelector("#diff-departure");
 const diffUpDepartureEl = departureEl.querySelector("#diff-departure-up");
 const diffDownDepartureEl = departureEl.querySelector("#diff-departure-down");
 const mostDepartureEl = departureEl.querySelector("#most-departure");
+// 抵達時間 el
+const arrivalEl = document.querySelector("#data-arrival");
+const goalArrivalEl = arrivalEl.querySelector("#goal-arrival");
+const lastArrivalEl = arrivalEl.querySelector("#last-arrival-text");
+const diffArrivalEl = arrivalEl.querySelector("#diff-arrival");
+const diffUpArrivalEl = arrivalEl.querySelector("#diff-arrival-up");
+const diffDownArrivalEl = arrivalEl.querySelector("#diff-arrival-down");
+const mostArrivalEl = arrivalEl.querySelector("#most-arrival");
 
 // 綁定 tab 點擊事件
 tabBtns.forEach((tab) => {
@@ -80,11 +93,13 @@ function setTabData(tab) {
   currentTab = tab;
   travelSummary = getTravelSummary(tab);
   departureSummary = getDepartureSummary(tab);
+  arrivalSummary = getArrivalSummary(tab);
   currentDataIndex = 0;
 
   setSlider();
   setTravelData(currentDataIndex);
   setDepartureData(currentDataIndex);
+  setArrivalData(currentDataIndex);
 
   lastTab = currentTab; // 更新 lastTab
 }
@@ -418,6 +433,7 @@ function setDepartureData(index) {
             y: item.departure !== 0 ? item.departure.toDate() : null,
           }));
     dataset.backgroundColor = Array(data.data.length).fill("#C5CCCB");
+    dataset.pointBackgroundColor = Array(data.data.length).fill("#C5CCCB");
     // 設置 x 軸
     if (currentTab === "month") {
       const allDates = data.data.map((item) => dayjs(item.date));
@@ -598,6 +614,15 @@ function switchChartDepartureMode(newDepartureData, mode) {
           backgroundColor: Array(newDepartureData.data.length).fill("#C5CCCB"),
           hoverBackgroundColor: "#7BC9C2",
           // minBarLength: 1,
+          // point 預設不顯示點
+          pointRadius: 4,
+          pointBorderWidth: 0,
+          pointBackgroundColor: Array(newDepartureData.data.length).fill(
+            "#C5CCCB"
+          ),
+          // hover 時才顯示點 (不放大)
+          pointHitRadius: 6, // hover 判定區域，可比點大一點
+          pointHoverBackgroundColor: "#7BC9C2",
         },
       ],
     },
@@ -620,6 +645,7 @@ function switchChartDepartureMode(newDepartureData, mode) {
           ticks: {
             stepSize: stepSize,
             color: "rgba(197, 204, 203, 0.6)",
+            padding: 0,
             font: {
               family: "Inter",
               size: 12,
@@ -639,6 +665,297 @@ function switchChartDepartureMode(newDepartureData, mode) {
 
         dataset.backgroundColor = Array(dataset.data.length).fill("#C5CCCB");
         dataset.backgroundColor[index] = "#7BC9C2";
+        dataset.pointBackgroundColor = Array(dataset.data.length).fill(
+          "#C5CCCB"
+        );
+        dataset.pointBackgroundColor[index] = "#7BC9C2";
+
+        chart.update();
+      },
+    },
+    plugins: [forceMaxTickPlugin, verticalLinePlugin],
+  });
+}
+
+// -------------------
+// 設置抵達時間
+function setArrivalData(index) {
+  const data = arrivalSummary[index];
+  if (!data) return;
+
+  // 設置啟程時間資料
+  if (goalArrivalEl) {
+    goalArrivalEl.textContent = data.goalArrival + " 天";
+  }
+  if (lastArrivalEl) {
+    lastArrivalEl.textContent =
+      currentTab === "week" ? "上週" : currentTab === "month" ? "上月" : "去年";
+  }
+  if (diffArrivalEl) {
+    diffArrivalEl.textContent = Math.abs(data.diffFromLastArrival) + " 天";
+    if (data.diffFromLastArrival > 0) {
+      diffArrivalEl.classList.remove("text-danger-90");
+      diffUpArrivalEl && diffUpArrivalEl.classList.remove("d-none");
+      diffDownArrivalEl && diffDownArrivalEl.classList.add("d-none");
+    } else {
+      diffArrivalEl.classList.add("text-danger-90");
+      diffUpArrivalEl && diffUpArrivalEl.classList.add("d-none");
+      diffDownArrivalEl && diffDownArrivalEl.classList.remove("d-none");
+    }
+  }
+  if (mostArrivalEl) {
+    mostArrivalEl.textContent = data.mostArrival;
+  }
+
+  // 判斷是否同一 tab
+  const isSameTab = chart_arrival && currentTab === lastTab;
+  if (!chart_arrival || !isSameTab) {
+    // 不同 tab 或第一次建立，建立新圖表
+    switchChartArrivalMode(data, currentTab);
+  } else {
+    // 同一 tab ，直接更新 dataset，不 destroy
+    const dataset = chart_arrival.data.datasets[0];
+    dataset.data =
+      currentTab === "year"
+        ? data.data.map((item) =>
+            item.arrival !== 0 ? item.arrival.toDate() : null
+          )
+        : data.data.map((item) => ({
+            x: item.date,
+            y: item.arrival !== 0 ? item.arrival.toDate() : null,
+          }));
+    dataset.backgroundColor = Array(data.data.length).fill("#C5CCCB");
+    dataset.pointBackgroundColor = Array(data.data.length).fill("#C5CCCB");
+    // 設置 x 軸
+    if (currentTab === "month") {
+      const allDates = data.data.map((item) => dayjs(item.date));
+      const lastDay = allDates[allDates.length - 1];
+      const tickDates = allDates.filter(
+        (d) => d.date() === 1 || (d.date() % 5 === 0 && d.date() !== 30)
+      );
+      tickDates.push(lastDay);
+      chart_arrival.options.scales.x.min = allDates[0].toDate();
+      chart_arrival.options.scales.x.max = lastDay.toDate();
+      chart_arrival.options.scales.x.ticks.callback = function (value) {
+        const d = dayjs(value);
+        return tickDates.find((td) => td.isSame(d, "day")) ? d.format("D") : "";
+      };
+    }
+
+    console.log("minTime", data.minTime.format());
+    console.log("maxTime", data.maxTime.format());
+    // 計算相差小時數
+    const hoursDiff = data.maxTime.diff(data.minTime, "hour");
+    // 基本 stepSize
+    let stepSize = 1; // 每個刻度代表 1 小時
+    // 如果時間差超過指定值，增加 stepSize
+    const threshold = 4; // 例如 4 小時以上
+    if (hoursDiff > threshold) {
+      stepSize = 2; // 每個刻度變成 2 小時
+    }
+    chart_arrival.options.scales.y.ticks.stepSize = stepSize;
+
+    // 設置 y 軸最大最小值
+    chart_arrival.options.scales.y.min = data.minTime.toDate();
+    chart_arrival.options.scales.y.max = data.maxTime.toDate();
+    // 清除 tooltip
+    chart_arrival.tooltip.setActiveElements([]);
+    chart_arrival.update();
+  }
+}
+
+// 設置啟程時間圖表 mode
+function switchChartArrivalMode(newArrivalData, mode) {
+  // 銷毀舊圖表
+  if (chart_arrival) chart_arrival.destroy();
+
+  console.log("minTime", newArrivalData.minTime.format());
+  console.log("maxTime", newArrivalData.maxTime.format());
+
+  // 設定 x 軸與 barThickness
+  let xConfig = {};
+  // let barThickness = 5;
+  if (mode === "week") {
+    xConfig = {
+      type: "time",
+      time: { unit: "day", displayFormats: { day: "M/D" } },
+      grid: { display: false },
+      border: { color: "#C5CCCB", width: 1 },
+      ticks: {
+        autoSkip: false,
+        source: "data",
+        maxRotation: 0,
+        minRotation: 0,
+        color: "rgba(197, 204, 203, 0.6)",
+        padding: 0,
+        font: (context) => ({
+          size: 12,
+          family: "Inter",
+          style: "normal",
+          weight:
+            chart_arrival && chart_arrival.selectedBarIndex === context.index
+              ? "bold"
+              : "normal",
+          lineHeight: 1.33,
+        }),
+      },
+    };
+  } else if (mode === "month") {
+    const allDates = newArrivalData.data.map((item) => dayjs(item.date));
+    const lastDay = allDates[allDates.length - 1];
+    const tickDates = allDates.filter(
+      (d) => d.date() === 1 || (d.date() % 5 === 0 && d.date() !== 30)
+    );
+    tickDates.push(lastDay);
+
+    xConfig = {
+      type: "time",
+      time: { unit: "day", displayFormats: { day: "D" } },
+      min: allDates[0].toDate(),
+      max: lastDay.toDate(),
+      grid: { display: false },
+      border: { color: "#C5CCCB", width: 1 },
+      ticks: {
+        autoSkip: false,
+        source: "data",
+        maxRotation: 0,
+        minRotation: 0,
+        color: "rgba(197, 204, 203, 0.6)",
+        padding: 0,
+        font: (context) => ({
+          size: 12,
+          family: "Inter",
+          style: "normal",
+          weight:
+            chart_arrival && chart_arrival.selectedBarIndex === context.index
+              ? "bold"
+              : "normal",
+          lineHeight: 1.33,
+        }),
+        callback: function (value) {
+          const d = dayjs(value);
+          return tickDates.find((td) => td.isSame(d, "day"))
+            ? d.format("D")
+            : "";
+        },
+      },
+    };
+  } else if (mode === "year") {
+    xConfig = {
+      type: "category",
+      grid: { display: false },
+      border: { color: "#C5CCCB", width: 1 },
+      ticks: {
+        autoSkip: false,
+        maxRotation: 0,
+        minRotation: 0,
+        color: "rgba(197, 204, 203, 0.6)",
+        padding: 0,
+        font: (context) => ({
+          size: 12,
+          family: "Inter",
+          style: "normal",
+          weight:
+            chart_arrival && chart_arrival.selectedBarIndex === context.index
+              ? "bold"
+              : "normal",
+          lineHeight: 1.33,
+        }),
+      },
+    };
+  }
+
+  // 計算相差小時數
+  const hoursDiff = newArrivalData.maxTime.diff(newArrivalData.minTime, "hour");
+  // 基本 stepSize
+  let stepSize = 1; // 每個刻度代表 1 小時
+  // 如果時間差超過指定值，增加 stepSize
+  const threshold = 4; // 例如 4 小時以上
+  if (hoursDiff > threshold) {
+    stepSize = 2; // 每個刻度變成 2 小時
+  }
+
+  chart_arrival = new Chart(ctx_arrival, {
+    type: "bar",
+    data: {
+      labels:
+        mode === "year"
+          ? newArrivalData.data.map((item) => item.date)
+          : undefined,
+      datasets: [
+        {
+          data:
+            mode === "year"
+              ? newArrivalData.data.map((item) =>
+                  item.arrival !== 0 ? item.arrival.toDate() : null
+                )
+              : newArrivalData.data.map((item) => ({
+                  x: item.date,
+                  y: item.arrival !== 0 ? item.arrival.toDate() : null,
+                })),
+          // 設定為折線
+          type: "line",
+          borderColor: "#C5CCCB",
+          borderWidth: 2,
+          backgroundColor: Array(newArrivalData.data.length).fill("#C5CCCB"),
+          hoverBackgroundColor: "#7BC9C2",
+          // minBarLength: 1,
+          // point 預設不顯示點
+          pointRadius: 4,
+          pointBorderWidth: 0,
+          pointBackgroundColor: Array(newArrivalData.data.length).fill(
+            "#C5CCCB"
+          ),
+          // hover 時才顯示點 (不放大)
+          pointHitRadius: 6, // hover 判定區域，可比點大一點
+          pointHoverBackgroundColor: "#7BC9C2",
+        },
+      ],
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: mode === "year" ? tooltip_config_4 : tooltip_config_3,
+      },
+      layout: { padding: { left: 0, right: 0, top: 24, bottom: 0 } },
+      scales: {
+        x: xConfig,
+        y: {
+          type: "time",
+          time: { unit: "hour", displayFormats: { hour: "hh:mm" } },
+          min: newArrivalData.minTime.toDate(),
+          max: newArrivalData.maxTime.toDate(),
+          grid: { drawTicks: false, color: "rgba(197, 204, 203, 0.6)" },
+          border: { display: false, dash: [2, 2], width: 1 },
+          ticks: {
+            stepSize: stepSize,
+            color: "rgba(197, 204, 203, 0.6)",
+            padding: 0,
+            font: {
+              family: "Inter",
+              size: 12,
+              style: "normal",
+              weight: "normal",
+              lineHeight: 1.33,
+            },
+          },
+        },
+      },
+      onClick: function (event, elements, chart) {
+        const clickedElement = elements[0];
+        if (!clickedElement) return;
+        const dataset = chart.data.datasets[clickedElement.datasetIndex];
+        const index = clickedElement.index;
+        chart.selectedBarIndex = index;
+
+        dataset.backgroundColor = Array(dataset.data.length).fill("#C5CCCB");
+        dataset.backgroundColor[index] = "#7BC9C2";
+        dataset.pointBackgroundColor = Array(dataset.data.length).fill(
+          "#C5CCCB"
+        );
+        dataset.pointBackgroundColor[index] = "#7BC9C2";
+
         chart.update();
       },
     },
@@ -663,6 +980,7 @@ myCarousel.addEventListener("slide.bs.carousel", function (event) {
 
   setTravelData(currentDataIndex);
   setDepartureData(currentDataIndex);
+  setArrivalData(currentDataIndex);
 });
 
 // 調整 inner 寬度

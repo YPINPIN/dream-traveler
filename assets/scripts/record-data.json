@@ -6,6 +6,8 @@
       "totalTravelTime": 51.4,
       "goalDeparture": 2,
       "diffFromLastDeparture": 1,
+      "goalArrival": 4,
+      "diffFromLastArrival": 1,
       "data": [
         {
           "date": "2025-07-21",
@@ -57,6 +59,8 @@
       "totalTravelTime": 47.25,
       "goalDeparture": 1,
       "diffFromLastDeparture": -2,
+      "goalArrival": 3,
+      "diffFromLastArrival": -1,
       "data": [
         {
           "date": "2025-07-14",
@@ -110,6 +114,8 @@
       "totalTravelTime": 169.28,
       "goalDeparture": 14,
       "diffFromLastDeparture": 4,
+      "goalArrival": 9,
+      "diffFromLastArrival": -2,
       "data": [
         {
           "date": "2025-07-14",
@@ -203,6 +209,8 @@
       "totalTravelTime": 135.8,
       "goalDeparture": 10,
       "diffFromLastDeparture": -3,
+      "goalArrival": 11,
+      "diffFromLastArrival": 1,
       "data": [
         {
           "date": "2025-06-14",
@@ -256,6 +264,8 @@
       "totalTravelTime": 2243.63,
       "goalDeparture": 73,
       "diffFromLastDeparture": 9,
+      "goalArrival": 84,
+      "diffFromLastArrival": -11,
       "year": "2025",
       "data": [
         {
@@ -308,6 +318,8 @@
       "totalTravelTime": 2147.25,
       "goalDeparture": 64,
       "diffFromLastDeparture": -10,
+      "goalArrival": 95,
+      "diffFromLastArrival": 15,
       "year": "2024",
       "data": [
         {

@@ -137,11 +137,11 @@ function getTravelSummary(type = "week") {
 }
 
 // 取得最多紀錄的小時區間
-function getMostHourTime(data) {
+function getMostHourTime(data, type) {
   // 統計區間數量
   const rangeCount = {};
   data.forEach((d) => {
-    const hour24 = d.departure.hour(); // 0-23
+    const hour24 = d[type].hour(); // 0-23
     // 轉 12 小時制
     const formatHour = (h) => {
       const period = h < 12 ? "AM" : "PM";
@@ -200,7 +200,7 @@ function getWeekDepartureDataByIndex(weekIndex) {
   // maxTime 如果分鐘不是 0，調整時間
   if (maxTime.minute() !== 0) maxTime = maxTime.add(1, "hour").minute(0);
 
-  const maxRange = getMostHourTime(data);
+  const maxRange = getMostHourTime(data, "departure");
 
   return {
     goalDeparture: week.goalDeparture,
@@ -243,7 +243,7 @@ function getMonthDepartureDataByIndex(monthIndex) {
   // maxTime 如果分鐘不是 0，調整時間
   if (maxTime.minute() !== 0) maxTime = maxTime.add(1, "hour").minute(0);
 
-  const maxRange = getMostHourTime(data);
+  const maxRange = getMostHourTime(data, "departure");
 
   // 取得當月第一天與最後一天
   const firstDay = dayjs(data[0].date).startOf("month");
@@ -310,7 +310,7 @@ function getYearDepartureDataByIndex(yearIndex) {
   // maxTime 如果分鐘不是 0，調整時間
   if (maxTime.minute() !== 0) maxTime = maxTime.add(1, "hour").minute(0);
 
-  const maxRange = getMostHourTime(data);
+  const maxRange = getMostHourTime(data, "departure");
 
   // 用 map 建立完整資料，缺少的日期補 0
   const completeData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
@@ -363,4 +363,189 @@ function getDepartureSummary(type = "week") {
   return departureSummary;
 }
 
-export { getTravelSummary, getDepartureSummary };
+// ----------------------------------------------------------------------
+
+// 取得指定週的抵達時間資料 (0 為最新週)
+function getWeekArrivalDataByIndex(weekIndex) {
+  if (!weekJSON) return null;
+
+  const week = weekJSON[weekIndex];
+  if (!week) return null;
+
+  const data = week.data.map((item) => {
+    // 分割時分
+    const [hStr, mStr] = item.arrivalAt.split(":");
+    const h = Number(hStr);
+    const m = Number(mStr);
+
+    // 補上固定日期 + 時間
+    let fixedDateTime = dayjs("1970-01-01").hour(h).minute(m).second(0);
+    // console.log(fixedDateTime.format());
+    return {
+      date: item.date,
+      arrival: fixedDateTime,
+    };
+  });
+
+  // 取得最小值 & 最大值
+  let minTime = dayjs.min(data.map((d) => d.arrival)).minute(0);
+  let maxTime = dayjs.max(data.map((d) => d.arrival));
+  // maxTime 如果分鐘不是 0，調整時間
+  if (maxTime.minute() !== 0) maxTime = maxTime.add(1, "hour").minute(0);
+
+  const maxRange = getMostHourTime(data, "arrival");
+
+  return {
+    goalArrival: week.goalArrival,
+    diffFromLastArrival: week.diffFromLastArrival,
+    mostArrival: maxRange,
+    data,
+    minTime,
+    maxTime,
+  };
+}
+// 取得指定月的抵達時間資料 (0 為最新月)
+function getMonthArrivalDataByIndex(monthIndex) {
+  if (!monthJSON) return null;
+
+  const month = monthJSON[monthIndex];
+  if (!month) return null;
+
+  const data = month.data.map((item) => {
+    // 分割時分
+    const [hStr, mStr] = item.arrivalAt.split(":");
+    const h = Number(hStr);
+    const m = Number(mStr);
+
+    // 補上固定日期 + 時間
+    let fixedDateTime = dayjs("1970-01-01").hour(h).minute(m).second(0);
+    // console.log(fixedDateTime.format());
+    return {
+      date: item.date,
+      arrival: fixedDateTime,
+    };
+  });
+
+  // 取得最小值 & 最大值
+  let minTime = dayjs.min(data.map((d) => d.arrival)).minute(0);
+  let maxTime = dayjs.max(data.map((d) => d.arrival));
+  // maxTime 如果分鐘不是 0，調整時間
+  if (maxTime.minute() !== 0) maxTime = maxTime.add(1, "hour").minute(0);
+
+  const maxRange = getMostHourTime(data, "arrival");
+
+  // 取得當月第一天與最後一天
+  const firstDay = dayjs(data[0].date).startOf("month");
+  const lastDay = dayjs(data[0].date).endOf("month");
+
+  // 建立完整日期陣列
+  const fullDates = [];
+  for (
+    let d = firstDay;
+    d.isBefore(lastDay) || d.isSame(lastDay, "day");
+    d = d.add(1, "day")
+  ) {
+    fullDates.push(d.format("YYYY-MM-DD"));
+  }
+
+  // 用 map 建立完整資料，缺少的日期補 0
+  const completeData = fullDates.map((dateStr) => {
+    const existing = data.find((item) => item.date === dateStr);
+    return {
+      date: dateStr,
+      arrival: existing ? existing.arrival : 0, // 沒有就補 0
+    };
+  });
+
+  return {
+    goalArrival: month.goalArrival,
+    diffFromLastArrival: month.diffFromLastArrival,
+    mostArrival: maxRange,
+    data: completeData,
+    minTime,
+    maxTime,
+  };
+}
+
+// 取得指定年的抵達時間資料 (0 為最新年)
+function getYearArrivalDataByIndex(yearIndex) {
+  if (!yearJSON) return null;
+
+  const year = yearJSON[yearIndex];
+  if (!year) return null;
+
+  const data = year.data.map((item) => {
+    // 分割時分
+    const [hStr, mStr] = item.arrivalAt.split(":");
+    const h = Number(hStr);
+    const m = Number(mStr);
+
+    // 補上固定日期 + 時間
+    let fixedDateTime = dayjs("1970-01-01").hour(h).minute(m).second(0);
+    // console.log(fixedDateTime.format());
+    return {
+      date: item.month,
+      arrival: fixedDateTime,
+    };
+  });
+
+  // 取得最小值 & 最大值
+  let minTime = dayjs.min(data.map((d) => d.arrival)).minute(0);
+  let maxTime = dayjs.max(data.map((d) => d.arrival));
+  // maxTime 如果分鐘不是 0，調整時間
+  if (maxTime.minute() !== 0) maxTime = maxTime.add(1, "hour").minute(0);
+
+  const maxRange = getMostHourTime(data, "arrival");
+
+  // 用 map 建立完整資料，缺少的日期補 0
+  const completeData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
+    (dateStr) => {
+      const existing = data.find((item) => item.date === dateStr);
+      return {
+        date: dateStr,
+        arrival: existing ? existing.arrival : 0, // 沒有就補 0
+      };
+    }
+  );
+
+  return {
+    goalArrival: year.goalArrival,
+    diffFromLastArrival: year.diffFromLastArrival,
+    mostArrival: maxRange,
+    data: completeData,
+    minTime,
+    maxTime,
+  };
+}
+
+// 取得抵達時間總結資料
+function getArrivalSummary(type = "week") {
+  let arrivalSummary;
+  switch (type) {
+    case "week":
+      if (!weekJSON) arrivalSummary = null;
+      arrivalSummary = weekJSON.map((d, index) => {
+        return getWeekArrivalDataByIndex(index);
+      });
+      break;
+    case "month":
+      if (!monthJSON) arrivalSummary = null;
+      arrivalSummary = monthJSON.map((d, index) => {
+        return getMonthArrivalDataByIndex(index);
+      });
+      break;
+    case "year":
+      if (!yearJSON) arrivalSummary = null;
+      arrivalSummary = yearJSON.map((d, index) => {
+        return getYearArrivalDataByIndex(index);
+      });
+      break;
+    default:
+      break;
+  }
+
+  console.log(arrivalSummary);
+  return arrivalSummary;
+}
+
+export { getTravelSummary, getDepartureSummary, getArrivalSummary };
