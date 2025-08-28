@@ -1,0 +1,147 @@
+// 最近紀錄
+.record-lately {
+  &-list {
+    gap: 5px;
+
+    &-item {
+      flex: 1;
+    }
+  }
+  &-tab.btn {
+    padding: 5px;
+    background-color: $neutral-800;
+    &:hover,
+    &:active,
+    &.active {
+      background-color: $primary-700;
+      border-color: $primary-300;
+    }
+  }
+}
+
+// 累積成就
+.record-achievement {
+  max-width: 82px;
+
+  .record-tooltip-btn {
+    margin-left: 2px;
+  }
+}
+
+// 提示
+.record-tooltip {
+  --tooltip-offset: 18px;
+  position: absolute;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: $neutral-400;
+  color: $neutral-1000;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none; /* 避免干擾點擊 */
+  display: none;
+
+  &--left {
+    right: calc(100% + var(--tooltip-offset));
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &--right {
+    left: calc(100% + var(--tooltip-offset));
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  // 觸發按鈕
+  &-btn {
+    position: relative;
+  }
+  &-btn:active & {
+    display: block;
+  }
+}
+
+// icon sizes
+.icon-size-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-size-20 {
+  width: 20px;
+  height: 20px;
+}
+
+// character
+.record-character {
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+  overflow: hidden;
+  margin-top: -8px;
+  margin-right: -12px;
+  margin-bottom: -12px;
+}
+
+.time-btn-group {
+  height: 40px;
+  .btn {
+    --bs-btn-border-radius: 8px;
+  }
+}
+
+// 自訂按鈕 hover
+.record-custom-hover.btn {
+  transition: none;
+  &:hover,
+  &:active,
+  &.active {
+    background-color: $primary-600;
+    border-color: $primary-600;
+  }
+}
+
+.carousel-item {
+  &--week {
+    width: 115px;
+  }
+  &--month {
+    width: 32px;
+  }
+  &--year {
+    width: 48px;
+  }
+}
+
+.record-custom-prev-btn,
+.record-custom-next-btn {
+  padding: 10px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+// 旅行時長
+.record-travel-time {
+  .record-tooltip-btn {
+    margin-right: 2px;
+  }
+}
+
+// chart
+.chart-height {
+  height: 192px;
+  &--small {
+    height: 144px;
+  }
+}
+
+.record-section-chart {
+  margin-bottom: 110px;
+}
