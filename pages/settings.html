@@ -16,41 +16,36 @@
           <%- include('layout/top-nav', { title: '設定' , beforeLink: null , nextLink: null}) -%>
         </header>
         <div class="main">
-          <section style="padding:24px 16px">
-            <ul class="fw-bold" style="padding-left: 0px;">
-              <li class="d-flex align-items-center justify-content-between mb-2"
-                style="height: 60px;padding: 12px 16px;">
+          <section class="py-6 px-4">
+            <ul class="fw-bold ps-0">
+              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px">
                 我的帳號 <img src="/assets/images/05-icon/next.svg" alt="next"></li>
-              <li class="d-flex align-items-center justify-content-between  mb-2"
-                style="height: 60px;padding: 12px 16px;">
+              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px;">
                 旅程時間設定<img src="/assets/images/05-icon/next.svg" alt="next"></li>
-              <li class="d-flex align-items-center justify-content-between  mb-2"
-                style="height: 60px;padding: 12px 16px;">
+              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px">
                 起床鬧鐘
                 <div class="form-check form-switch">
                   <input class="form-check-input" type="checkbox" role="switch" id="wakeup-alert">
                   <label class="form-check-label" for="wakeup-alert"></label>
                 </div>
               </li>
-              <li class="d-flex align-items-center justify-content-between  mb-2"
-                style="height: 60px; opacity: 0.3; padding: 12px 16px;">
+              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4"
+                style="height: 60px; opacity: 0.3;">
                 起床鬧鐘設定 <div>
-                  <span style="margin-right:8px ;">未設定</span><img src="/assets/images/05-icon/next.svg" alt="next"
-                    class="align-top">
+                  <span class="me-2">未設定</span><img src="/assets/images/05-icon/next.svg" alt="next" class="align-top">
                 </div>
               </li>
-              <li class="d-flex align-items-center justify-content-between  mb-2"
-                style="height: 60px;padding: 12px 16px;">
+              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px;">
                 睡前提醒 <div class="form-check form-switch">
                   <input class="form-check-input" type="checkbox" role="switch" id="wakeup-alert">
                   <label class="form-check-label" for="wakeup-alert"></label>
                 </div>
               </li>
               <li>
-                <a href="settings-1.html" class="d-flex align-items-center justify-content-between"
-                  style="height: 60px;padding: 12px 16px;opacity: 0.3;"> 睡前提醒時間設定
+                <a href="settings-1.html" class="d-flex align-items-center justify-content-between py-3 px-4"
+                  style="height: 60px;opacity: 0.3;"> 睡前提醒時間設定
                   <div>
-                    <span style="margin-right:8px ;">未設定</span><img src="/assets/images/05-icon/next.svg" alt="next"
+                    <span class="me-2">未設定</span><img src="/assets/images/05-icon/next.svg" alt="next"
                       class="align-top">
                   </div>
                 </a>
@@ -58,7 +53,11 @@
             </ul>
           </section>
         </div>
+        <!-- navbar -->
+        <%- include('layout/navbar') -%>
       </div>
+      <!-- home-indicator -->
+      <div class="app-home-indicator"></div>
     </div>
   </div>
   <script type="module" src="../main.js"></script>
