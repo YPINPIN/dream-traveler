@@ -18,7 +18,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                  <div class="py-6">
+                  <div class="pt-6">
                     <!-- 最近紀錄 -->
                     <section class="p-4 bg-neutral-900 rounded-xs mb-4">
                       <h2 class="fs-5 fw-bold mb-3">最近紀錄</h2>
@@ -290,9 +290,7 @@
                       </button>
                     </div>
                     <!-- 圖表列表 -->
-                    <section
-                      class="px-4 pt-2 pb-4 bg-neutral-900 rounded-xs record-section-chart"
-                    >
+                    <section class="px-4 pt-2 pb-4 bg-neutral-900 rounded-xs">
                       <!-- 圖表資料時段切換 -->
                       <div
                         class="mb-1 d-flex justify-content-center align-items-center"
@@ -603,6 +601,12 @@
               </div>
             </div>
           </main>
+          <div
+            class="position-sticky bottom-0 d-block bg-neutral-1100 record-navbar-mask"
+          >
+            <!-- navbar -->
+            <%- include('layout/navbar') -%>
+          </div>
         </div>
 
         <!-- home-indicator -->

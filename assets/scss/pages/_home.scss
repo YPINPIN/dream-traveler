@@ -27,14 +27,14 @@
     left: 70px;
     &::after {
       padding: 6px;
-      content: url("../images/05-icon/backward.svg");
+      content: url("/assets/images/05-icon/backward.svg");
     }
   }
   &-button-next {
     right: 70px;
     &::after {
       padding: 6px;
-      content: url("../images/05-icon/toward.svg");
+      content: url("/assets/images/05-icon/toward.svg");
     }
   }
   &-text {
@@ -49,25 +49,25 @@
 
 .bg {
   &-village {
-    background-image: url("../images/04-background/main-scene/home-unlock/home-main-scene-not-unlock-淺夢之村@2x.png");
+    background-image: url("/assets/images/04-background/main-scene/home-unlock/home-main-scene-not-unlock-淺夢之村@2x.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   &-valley {
-    background-image: url("../images/04-background/main-scene/home-lock/home-main-scene-lock-深眠幽谷@2x.png");
+    background-image: url("/assets/images/04-background/main-scene/home-lock/home-main-scene-lock-深眠幽谷@2x.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   &-forest {
-    background-image: url("../images/04-background/main-scene/home-lock/home-main-scene-lock-記憶森林@2x.png");
+    background-image: url("/assets/images/04-background/main-scene/home-lock/home-main-scene-lock-記憶森林@2x.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
   }
   &-island {
-    background-image: url("../images/04-background/main-scene/home-lock/home-main-scene-lock-浮島邊境@2x.png");
+    background-image: url("/assets/images/04-background/main-scene/home-lock/home-main-scene-lock-浮島邊境@2x.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
