@@ -5,12 +5,14 @@
 @import "./base/base";
 @import "./utils/utilities";
 
+// components
+@import "./components/navbar";
+
 // layout
 @import "./layout/app";
 @import "./layout/top-nav";
 
-// component
-@import "./component/switches";
 // pages
 @import "./pages/collection";
 @import "./pages/scene-village";
+@import "./pages/home";
