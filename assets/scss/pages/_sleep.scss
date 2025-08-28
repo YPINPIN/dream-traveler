@@ -6,3 +6,17 @@
     background-repeat: no-repeat;
   }
 }
+.progress {
+  overflow: visible;
+}
+.progress-bar-character {
+  position: absolute;
+  z-index: 99;
+  width: 48px;
+  top: -22px;
+  left: 24px;
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
