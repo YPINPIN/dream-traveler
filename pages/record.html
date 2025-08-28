@@ -429,6 +429,90 @@
                           <canvas id="chart-travel-time"></canvas>
                         </div>
                       </div>
+
+                      <!-- 啟程時間 -->
+                      <div
+                        class="border-bottom border-neutral-600 mb-6 record-departure-time"
+                      >
+                        <h2 class="fs-5 fw-bold mb-2">啟程時間</h2>
+                        <div id="data-departure">
+                          <div class="d-flex align-items-center mb-1">
+                            <span class="fs-8 me-2">目標達成</span>
+                            <span class="fs-8 fw-bold" id="goal-departure"
+                              >2 天</span
+                            >
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <span class="fs-8 me-2"
+                              >和<span id="last-departure-text">上週</span
+                              >相比</span
+                            >
+                            <span
+                              class="text-primary-300 fs-8 fw-bold"
+                              id="diff-departure"
+                              >1 天
+                            </span>
+                            <div class="d-flex">
+                              <svg
+                                class="icon-size-20 text-primary-300 d-none"
+                                id="diff-departure-up"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.0001 19C13.0001 19.5523 12.5524 20 12.0001 20C11.4478 20 11.0001 19.5523 11.0001 19L11.0001 5C11.0001 4.44772 11.4478 4 12.0001 4C12.5524 4 13.0001 4.44772 13.0001 5L13.0001 19Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M19.7071 11.293C20.0976 11.6835 20.0976 12.3165 19.7071 12.707C19.3166 13.0976 18.6836 13.0976 18.293 12.707L11.293 5.70703C10.9025 5.31651 10.9025 4.68349 11.293 4.29297C11.6836 3.90244 12.3166 3.90244 12.7071 4.29297L19.7071 11.293Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M12.7071 5.70703C13.0976 5.31651 13.0976 4.68349 12.7071 4.29297C12.3166 3.90244 11.6836 3.90244 11.293 4.29297L4.29304 11.293C3.90252 11.6835 3.90252 12.3165 4.29304 12.707C4.68357 13.0976 5.31658 13.0976 5.70711 12.707L12.7071 5.70703Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                              <svg
+                                class="icon-size-20 text-danger-90 d-none"
+                                id="diff-departure-down"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.0001 5C13.0001 4.44771 12.5524 4 12.0001 4C11.4478 4 11.0001 4.44771 11.0001 5L11.0001 19C11.0001 19.5523 11.4478 20 12.0001 20C12.5524 20 13.0001 19.5523 13.0001 19L13.0001 5Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M19.7071 12.707C20.0976 12.3165 20.0976 11.6835 19.7071 11.293C19.3166 10.9024 18.6836 10.9024 18.293 11.293L11.293 18.293C10.9025 18.6835 10.9025 19.3165 11.293 19.707C11.6836 20.0976 12.3166 20.0976 12.7071 19.707L19.7071 12.707Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M12.7071 18.293C13.0976 18.6835 13.0976 19.3165 12.7071 19.707C12.3166 20.0976 11.6836 20.0976 11.293 19.707L4.29304 12.707C3.90252 12.3165 3.90252 11.6835 4.29304 11.293C4.68357 10.9024 5.31658 10.9024 5.70711 11.293L12.7071 18.293Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="d-flex align-items-center mb-3">
+                            <span class="fs-8 me-2">最常在</span>
+                            <span class="fs-8 fw-bold" id="most-departure"
+                              >12:00 AM - 01:00 AM</span
+                            >
+                            <span class="fs-8 ms-2">啟程</span>
+                          </div>
+                        </div>
+
+                        <!-- chart-departure-time -->
+                        <div class="mb-6 chart-height--small">
+                          <canvas id="chart-departure-time"></canvas>
+                        </div>
+                      </div>
                     </section>
                   </div>
                 </div>

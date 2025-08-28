@@ -70,3 +70,17 @@ export const verticalLinePlugin = {
     }
   },
 };
+
+// 強制顯示 y.max
+export const forceMaxTickPlugin = {
+  id: "forceMaxTick",
+  afterBuildTicks(chart) {
+    const yAxis = chart.scales.y;
+    const ticks = yAxis.ticks.map((t) => t.value);
+    const maxTimeMs = chart.options.scales.y.max.getTime(); // 從 y.max 取得
+
+    if (!ticks.includes(maxTimeMs)) {
+      yAxis.ticks.push({ value: maxTimeMs }); // 不用自己格式化
+    }
+  },
+};
