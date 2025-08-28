@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>夢の旅人 | 日誌</title>
+    <script type="module" crossorigin src="/dream-traveler/assets/record-x-2gNzra.js"></script>
+    <link rel="modulepreload" crossorigin href="/dream-traveler/assets/main-CWOI-I7s.js">
+    <link rel="stylesheet" crossorigin href="/dream-traveler/assets/main-B5nt0qZo.css">
+  </head>
+  <body>
+    <div class="app">
+      <div class="app-border">
+        <div class="app-frame bg-neutral-1100">
+          <main>
+            <!-- top-nav -->
+            <header
+  class="bg-neutral-1100 d-flex justify-content-center align-items-center top-nav"
+>
+  <!-- before link -->
+  
+  <div class="p-6 top-nav-block"></div>
+  
+
+  <!-- top-nav title -->
+  <h1 class="fs-5 fw-bold mx-auto top-nav-title">日誌</h1>
+
+  <!-- next link -->
+  
+  <div class="p-6 top-nav-block"></div>
+  
+</header>
+            <!-- content -->
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="py-6">
+                    <!-- 最近紀錄 -->
+                    <section class="p-4 bg-neutral-900 rounded-xs mb-4">
+                      <h2 class="fs-5 fw-bold mb-3">最近紀錄</h2>
+                      <!-- lately tab list -->
+                      <ul
+                        class="p-0 mb-3 d-flex flex-wrap justify-content-between record-lately-list"
+                        id="latelyRecordTab"
+                        role="tablist"
+                      >
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-one-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-one"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-one"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">21</p>
+                            <p class="fs-9">一</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-two-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-two"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-two"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">22</p>
+                            <p class="fs-9">二</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-three-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-three"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-three"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">23</p>
+                            <p class="fs-9">三</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-four-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-four"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-four"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">24</p>
+                            <p class="fs-9">四</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-five-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-five"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-five"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">25</p>
+                            <p class="fs-9">五</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab"
+                            id="lately-six-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-six"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-six"
+                            aria-selected="false"
+                          >
+                            <p class="fs-8 fw-bold">26</p>
+                            <p class="fs-9">六</p>
+                          </button>
+                        </li>
+                        <li class="record-lately-list-item" role="presentation">
+                          <button
+                            class="btn w-100 rounded-xs record-lately-tab active"
+                            id="lately-seven-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#lately-seven"
+                            type="button"
+                            role="tab"
+                            aria-controls="lately-seven"
+                            aria-selected="true"
+                          >
+                            <p class="fs-8 fw-bold">27</p>
+                            <p class="fs-9">日</p>
+                          </button>
+                        </li>
+                      </ul>
+                      <!-- lately content -->
+                      <div class="tab-content" id="latelyRecordTabContent">
+                        <div
+                          class="tab-pane"
+                          id="lately-one"
+                          role="tabpanel"
+                          aria-labelledby="lately-one-tab"
+                        >
+                          <div class="py-1 d-flex align-items-center text-center">
+  <div
+    class="w-50 d-flex justify-content-center align-items-baseline flex-wrap"
+  >
+    <p class="fs-9">旅行</p>
+    
+    <p class="fs-2 fw-bold mx-1 lately-time">7.4</p>
+    
+    <p class="fs-9">小時</p>
+  </div>
+  <div class="lately-divider"></div>
+  <div class="w-50">
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">啟程</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">11:00</p>
+      
+      <p class="fs-9">PM</p>
+    </div>
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">抵達</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">06:24</p>
+      
+      <p class="fs-9">AM</p>
+    </div>
+  </div>
+</div>
+                        </div>
+                        <div
+                          class="tab-pane"
+                          id="lately-two"
+                          role="tabpanel"
+                          aria-labelledby="lately-two-tab"
+                        >
+                          <div class="py-1 d-flex align-items-center text-center">
+  <div
+    class="w-50 d-flex justify-content-center align-items-baseline flex-wrap"
+  >
+    <p class="fs-9">旅行</p>
+    
+    <p class="fs-2 fw-bold mx-1 lately-time">8.0</p>
+    
+    <p class="fs-9">小時</p>
+  </div>
+  <div class="lately-divider"></div>
+  <div class="w-50">
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">啟程</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">11:20</p>
+      
+      <p class="fs-9">PM</p>
+    </div>
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">抵達</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">07:20</p>
+      
+      <p class="fs-9">AM</p>
+    </div>
+  </div>
+</div>
+                        </div>
+                        <div
+                          class="tab-pane"
+                          id="lately-three"
+                          role="tabpanel"
+                          aria-labelledby="lately-three-tab"
+                        >
+                          <div class="py-1 d-flex align-items-center text-center">
+  <div
+    class="w-50 d-flex justify-content-center align-items-baseline flex-wrap"
+  >
+    <p class="fs-9">旅行</p>
+    
+    <p class="fs-2 fw-bold mx-1 lately-time">7.0</p>
+    
+    <p class="fs-9">小時</p>
+  </div>
+  <div class="lately-divider"></div>
+  <div class="w-50">
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">啟程</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">10:00</p>
+      
+      <p class="fs-9">PM</p>
+    </div>
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">抵達</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">05:00</p>
+      
+      <p class="fs-9">AM</p>
+    </div>
+  </div>
+</div>
+                        </div>
+                        <div
+                          class="tab-pane"
+                          id="lately-four"
+                          role="tabpanel"
+                          aria-labelledby="lately-four-tab"
+                        >
+                          <div class="py-1 d-flex align-items-center text-center">
+  <div
+    class="w-50 d-flex justify-content-center align-items-baseline flex-wrap"
+  >
+    <p class="fs-9">旅行</p>
+    
+    <p class="fs-2 fw-bold mx-1 lately-time">6.0</p>
+    
+    <p class="fs-9">小時</p>
+  </div>
+  <div class="lately-divider"></div>
+  <div class="w-50">
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">啟程</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">10:20</p>
+      
+      <p class="fs-9">PM</p>
+    </div>
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">抵達</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">04:20</p>
+      
+      <p class="fs-9">AM</p>
+    </div>
+  </div>
+</div>
+                        </div>
+                        <div
+                          class="tab-pane"
+                          id="lately-five"
+                          role="tabpanel"
+                          aria-labelledby="lately-five-tab"
+                        >
+                          <div class="py-1 d-flex align-items-center text-center">
+  <div
+    class="w-50 d-flex justify-content-center align-items-baseline flex-wrap"
+  >
+    <p class="fs-9">旅行</p>
+    
+    <p class="fs-2 fw-bold mx-1 lately-time">7.0</p>
+    
+    <p class="fs-9">小時</p>
+  </div>
+  <div class="lately-divider"></div>
+  <div class="w-50">
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">啟程</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">11:20</p>
+      
+      <p class="fs-9">PM</p>
+    </div>
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">抵達</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">06:20</p>
+      
+      <p class="fs-9">AM</p>
+    </div>
+  </div>
+</div>
+                        </div>
+                        <div
+                          class="tab-pane"
+                          id="lately-six"
+                          role="tabpanel"
+                          aria-labelledby="lately-six-tab"
+                        >
+                          <div class="py-1 d-flex align-items-center text-center">
+  <div
+    class="w-50 d-flex justify-content-center align-items-baseline flex-wrap"
+  >
+    <p class="fs-9">旅行</p>
+    
+    <p class="fs-2 fw-bold mx-1 lately-time">8.5</p>
+    
+    <p class="fs-9">小時</p>
+  </div>
+  <div class="lately-divider"></div>
+  <div class="w-50">
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">啟程</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">10:20</p>
+      
+      <p class="fs-9">PM</p>
+    </div>
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">抵達</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">06:50</p>
+      
+      <p class="fs-9">AM</p>
+    </div>
+  </div>
+</div>
+                        </div>
+                        <div
+                          class="tab-pane show active"
+                          id="lately-seven"
+                          role="tabpanel"
+                          aria-labelledby="lately-seven-tab"
+                        >
+                          <div class="py-1 d-flex align-items-center text-center">
+  <div
+    class="w-50 d-flex justify-content-center align-items-baseline flex-wrap"
+  >
+    <p class="fs-9">旅行</p>
+    
+    <p class="fs-2 fw-bold mx-1 lately-time">7.5</p>
+    
+    <p class="fs-9">小時</p>
+  </div>
+  <div class="lately-divider"></div>
+  <div class="w-50">
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">啟程</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">11:20</p>
+      
+      <p class="fs-9">PM</p>
+    </div>
+    <div class="d-flex justify-content-center align-items-baseline flex-wrap">
+      <p class="fs-9">抵達</p>
+      
+      <p class="fs-7 fw-bold mx-1 lately-time-small">06:50</p>
+      
+      <p class="fs-9">AM</p>
+    </div>
+  </div>
+</div>
+                        </div>
+                      </div>
+                    </section>
+                    <!-- 累積成就 -->
+                    <section class="p-4 bg-neutral-900 rounded-xs mb-4">
+                      <h2 class="fs-5 fw-bold mb-3">累積成就</h2>
+                      <div class="d-flex justify-content-between">
+                        <div class="text-center flex-grow-1 record-achievement">
+                          <p class="fs-4 fw-bold">58</p>
+                          <p class="fs-9">準時啟程</p>
+                        </div>
+                        <div class="text-center flex-grow-1 record-achievement">
+                          <p class="fs-4 fw-bold">36</p>
+                          <p class="fs-9">準時抵達</p>
+                        </div>
+                        <div class="text-center flex-grow-1 record-achievement">
+                          <p class="fs-4 fw-bold">24</p>
+                          <div
+                            class="d-flex justify-content-center align-items-center"
+                          >
+                            <p class="fs-9">完美旅程</p>
+                            <button
+                              type="button"
+                              class="btn p-0 border-0 d-flex record-tooltip-btn"
+                            >
+                              <img
+                                class="icon-size-16"
+                                src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12%202C17.5228%202%2022%206.47715%2022%2012C22%2017.5228%2017.5228%2022%2012%2022C6.47715%2022%202%2017.5228%202%2012C2%206.47715%206.47715%202%2012%202ZM11.8018%2015.9756C11.3458%2015.9756%2010.9679%2016.1259%2010.668%2016.4258C10.368%2016.7258%2010.2178%2017.1101%2010.2178%2017.5781C10.2178%2018.034%2010.368%2018.412%2010.668%2018.7119C10.9679%2019.0118%2011.3458%2019.1621%2011.8018%2019.1621C12.2577%2019.1621%2012.6356%2019.0118%2012.9355%2018.7119C13.2355%2018.412%2013.3857%2018.034%2013.3857%2017.5781C13.3857%2017.1101%2013.2355%2016.7258%2012.9355%2016.4258C12.6356%2016.1259%2012.2577%2015.9756%2011.8018%2015.9756ZM12.0898%205.32031C11.1418%205.32031%2010.2715%205.52364%209.47949%205.93164C8.6997%206.32756%208.02218%206.85584%207.44629%207.51562L8.92188%208.88379C9.36572%208.41596%209.81565%208.06225%2010.2715%207.82227C10.7275%207.58227%2011.2322%207.46191%2011.7842%207.46191C12.264%207.46195%2012.6719%207.52819%2013.0078%207.66016C13.3556%207.7921%2013.6198%207.98353%2013.7998%208.23535C13.9798%208.48735%2014.0693%208.7943%2014.0693%209.1543C14.0692%209.44211%2013.9797%209.70642%2013.7998%209.94629C13.6199%2010.1862%2013.3855%2010.4196%2013.0977%2010.6475C12.8218%2010.8754%2012.5221%2011.1097%2012.1982%2011.3496C11.8863%2011.5896%2011.5979%2011.8537%2011.334%2012.1416C11.082%2012.4296%2010.8842%2012.7543%2010.7402%2013.1143C10.6083%2013.4742%2010.5718%2013.8941%2010.6318%2014.374H12.9541C12.9181%2013.954%2012.9778%2013.5874%2013.1338%2013.2754C13.2898%2012.9635%2013.5063%2012.6816%2013.7822%2012.4297C14.0581%2012.1778%2014.3578%2011.9378%2014.6816%2011.71C15.0056%2011.47%2015.3116%2011.2237%2015.5996%2010.9717C15.8995%2010.7077%2016.1393%2010.4138%2016.3193%2010.0898C16.5113%209.75387%2016.6074%209.36388%2016.6074%208.91992C16.6074%208.11592%2016.4097%207.44987%2016.0137%206.92188C15.6297%206.38196%2015.096%205.97982%2014.4121%205.71582C13.7401%205.45182%2012.9658%205.32032%2012.0898%205.32031Z'%20fill='%23C5CCCB'/%3e%3c/svg%3e"
+                                alt="tooltip icon"
+                              />
+
+                              <div
+                                class="fs-9 record-tooltip record-tooltip--left"
+                              >
+                                準時抵達+準時啟程
+                              </div>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <!-- 旅行指南 -->
+                    <section class="p-4 bg-neutral-900 rounded-xs mb-4">
+                      <h2 class="fs-5 fw-bold mb-3">旅行指南</h2>
+                      <div class="py-3 px-4 bg-neutral-800 rounded-xs d-flex">
+                        <p class="fs-8 me-3">
+                          這週啟程的時間比較不固定，是不是遇上心情風暴了呢？試著在旅行前冥想一下吧！
+                        </p>
+                        <div class="record-character">
+                          <img
+                            src="/dream-traveler/assets/log-guide-character-CHjKNHGf.svg"
+                            alt="log-guide-character"
+                          />
+                        </div>
+                      </div>
+                    </section>
+                    <!-- 圖表切換按鈕群組 -->
+                    <div
+                      class="btn-group w-100 mb-3 time-btn-group"
+                      role="group"
+                      aria-label="time-btn-group"
+                    >
+                      <button
+                        type="button"
+                        class="btn btn-neutral-900 fs-8 fw-bold record-custom-hover active"
+                        data-content="week"
+                      >
+                        週
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-neutral-900 fs-8 fw-bold record-custom-hover"
+                        data-content="month"
+                      >
+                        月
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-neutral-900 fs-8 fw-bold record-custom-hover"
+                        data-content="year"
+                      >
+                        年
+                      </button>
+                    </div>
+                    <!-- 圖表列表 -->
+                    <section
+                      class="px-4 pt-2 pb-4 bg-neutral-900 rounded-xs record-section-chart"
+                    >
+                      <!-- 圖表資料時段切換 -->
+                      <div
+                        class="mb-1 d-flex justify-content-center align-items-center"
+                      >
+                        <!-- 切換控制按鈕 prev -->
+                        <button
+                          class="btn border-0 record-custom-prev-btn"
+                          type="button"
+                          data-bs-target="#record-carousel"
+                          data-bs-slide="prev"
+                        >
+                          <img
+                            src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M7.5%2011.1339C6.83333%2011.5188%206.83333%2012.481%207.5%2012.8659L16.5%2018.0621C17.1667%2018.447%2018%2017.9658%2018%2017.196V6.80374C18%206.03394%2017.1667%205.55281%2016.5%205.93771L7.5%2011.1339Z'%20fill='%23F6F7F7'/%3e%3c/svg%3e"
+                            alt="Previous"
+                          />
+                        </button>
+                        <!-- 時段顯示 (動態生成) -->
+                        <div
+                          id="record-carousel"
+                          class="carousel slide"
+                          data-bs-touch="false"
+                          data-bs-interval="false"
+                          data-bs-wrap="false"
+                        >
+                          <div class="carousel-inner"></div>
+                        </div>
+                        <!-- 切換控制按鈕 next -->
+                        <button
+                          class="btn border-0 record-custom-next-btn disabled"
+                          type="button"
+                          data-bs-target="#record-carousel"
+                          data-bs-slide="next"
+                        >
+                          <img
+                            src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17.5%2011.1339C18.1667%2011.5188%2018.1667%2012.481%2017.5%2012.8659L8.5%2018.0621C7.83333%2018.447%207%2017.9658%207%2017.196V6.80374C7%206.03394%207.83333%205.55281%208.5%205.93771L17.5%2011.1339Z'%20fill='%23F6F7F7'/%3e%3c/svg%3e"
+                            alt="Next"
+                          />
+                        </button>
+                      </div>
+
+                      <!-- 旅行時長 -->
+                      <div
+                        class="border-bottom border-neutral-600 mb-6 record-travel-time"
+                      >
+                        <h2 class="fs-5 fw-bold mb-2">旅行時長</h2>
+                        <div id="data-travel">
+                          <div class="d-flex align-items-center mb-1">
+                            <span class="fs-6 fw-bold me-1" id="avg-travel"
+                              >6.75</span
+                            >
+                            <span class="fs-8 me-1">小時／天</span>
+                            <button
+                              type="button"
+                              class="btn p-0 border-0 d-flex record-tooltip-btn"
+                            >
+                              <img
+                                class="icon-size-16"
+                                src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M12%202C17.5228%202%2022%206.47715%2022%2012C22%2017.5228%2017.5228%2022%2012%2022C6.47715%2022%202%2017.5228%202%2012C2%206.47715%206.47715%202%2012%202ZM11.8018%2015.9756C11.3458%2015.9756%2010.9679%2016.1259%2010.668%2016.4258C10.368%2016.7258%2010.2178%2017.1101%2010.2178%2017.5781C10.2178%2018.034%2010.368%2018.412%2010.668%2018.7119C10.9679%2019.0118%2011.3458%2019.1621%2011.8018%2019.1621C12.2577%2019.1621%2012.6356%2019.0118%2012.9355%2018.7119C13.2355%2018.412%2013.3857%2018.034%2013.3857%2017.5781C13.3857%2017.1101%2013.2355%2016.7258%2012.9355%2016.4258C12.6356%2016.1259%2012.2577%2015.9756%2011.8018%2015.9756ZM12.0898%205.32031C11.1418%205.32031%2010.2715%205.52364%209.47949%205.93164C8.6997%206.32756%208.02218%206.85584%207.44629%207.51562L8.92188%208.88379C9.36572%208.41596%209.81565%208.06225%2010.2715%207.82227C10.7275%207.58227%2011.2322%207.46191%2011.7842%207.46191C12.264%207.46195%2012.6719%207.52819%2013.0078%207.66016C13.3556%207.7921%2013.6198%207.98353%2013.7998%208.23535C13.9798%208.48735%2014.0693%208.7943%2014.0693%209.1543C14.0692%209.44211%2013.9797%209.70642%2013.7998%209.94629C13.6199%2010.1862%2013.3855%2010.4196%2013.0977%2010.6475C12.8218%2010.8754%2012.5221%2011.1097%2012.1982%2011.3496C11.8863%2011.5896%2011.5979%2011.8537%2011.334%2012.1416C11.082%2012.4296%2010.8842%2012.7543%2010.7402%2013.1143C10.6083%2013.4742%2010.5718%2013.8941%2010.6318%2014.374H12.9541C12.9181%2013.954%2012.9778%2013.5874%2013.1338%2013.2754C13.2898%2012.9635%2013.5063%2012.6816%2013.7822%2012.4297C14.0581%2012.1778%2014.3578%2011.9378%2014.6816%2011.71C15.0056%2011.47%2015.3116%2011.2237%2015.5996%2010.9717C15.8995%2010.7077%2016.1393%2010.4138%2016.3193%2010.0898C16.5113%209.75387%2016.6074%209.36388%2016.6074%208.91992C16.6074%208.11592%2016.4097%207.44987%2016.0137%206.92188C15.6297%206.38196%2015.096%205.97982%2014.4121%205.71582C13.7401%205.45182%2012.9658%205.32032%2012.0898%205.32031Z'%20fill='%23C5CCCB'/%3e%3c/svg%3e"
+                                alt="tooltip icon"
+                              />
+
+                              <div
+                                class="fs-9 record-tooltip record-tooltip--right"
+                              >
+                                小於3小時的睡眠紀錄不列入計算
+                              </div>
+                            </button>
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <span class="fs-8 me-2"
+                              >和<span id="last-travel-text">上週</span
+                              >相比</span
+                            >
+                            <span
+                              class="text-primary-300 fs-8 fw-bold"
+                              id="diff-travel"
+                              >0.45 小時</span
+                            >
+                            <div class="d-flex">
+                              <svg
+                                class="icon-size-20 text-primary-300 d-none"
+                                id="diff-travel-up"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.0001 19C13.0001 19.5523 12.5524 20 12.0001 20C11.4478 20 11.0001 19.5523 11.0001 19L11.0001 5C11.0001 4.44772 11.4478 4 12.0001 4C12.5524 4 13.0001 4.44772 13.0001 5L13.0001 19Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M19.7071 11.293C20.0976 11.6835 20.0976 12.3165 19.7071 12.707C19.3166 13.0976 18.6836 13.0976 18.293 12.707L11.293 5.70703C10.9025 5.31651 10.9025 4.68349 11.293 4.29297C11.6836 3.90244 12.3166 3.90244 12.7071 4.29297L19.7071 11.293Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M12.7071 5.70703C13.0976 5.31651 13.0976 4.68349 12.7071 4.29297C12.3166 3.90244 11.6836 3.90244 11.293 4.29297L4.29304 11.293C3.90252 11.6835 3.90252 12.3165 4.29304 12.707C4.68357 13.0976 5.31658 13.0976 5.70711 12.707L12.7071 5.70703Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                              <svg
+                                class="icon-size-20 text-danger-90 d-none"
+                                id="diff-travel-down"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.0001 5C13.0001 4.44771 12.5524 4 12.0001 4C11.4478 4 11.0001 4.44771 11.0001 5L11.0001 19C11.0001 19.5523 11.4478 20 12.0001 20C12.5524 20 13.0001 19.5523 13.0001 19L13.0001 5Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M19.7071 12.707C20.0976 12.3165 20.0976 11.6835 19.7071 11.293C19.3166 10.9024 18.6836 10.9024 18.293 11.293L11.293 18.293C10.9025 18.6835 10.9025 19.3165 11.293 19.707C11.6836 20.0976 12.3166 20.0976 12.7071 19.707L19.7071 12.707Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M12.7071 18.293C13.0976 18.6835 13.0976 19.3165 12.7071 19.707C12.3166 20.0976 11.6836 20.0976 11.293 19.707L4.29304 12.707C3.90252 12.3165 3.90252 11.6835 4.29304 11.293C4.68357 10.9024 5.31658 10.9024 5.70711 11.293L12.7071 18.293Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="d-flex align-items-center mb-3">
+                            <span class="fs-8 me-2">總時長</span>
+                            <span class="fs-8 fw-bold" id="total-travel"
+                              >41.3 小時</span
+                            >
+                          </div>
+                        </div>
+
+                        <!-- chart-travel-time -->
+                        <div class="mb-6 chart-height">
+                          <canvas id="chart-travel-time"></canvas>
+                        </div>
+                      </div>
+
+                      <!-- 啟程時間 -->
+                      <div
+                        class="border-bottom border-neutral-600 mb-6 record-departure-time"
+                      >
+                        <h2 class="fs-5 fw-bold mb-2">啟程時間</h2>
+                        <div id="data-departure">
+                          <div class="d-flex align-items-center mb-1">
+                            <span class="fs-8 me-2">目標達成</span>
+                            <span class="fs-8 fw-bold" id="goal-departure"
+                              >2 天</span
+                            >
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <span class="fs-8 me-2"
+                              >和<span id="last-departure-text">上週</span
+                              >相比</span
+                            >
+                            <span
+                              class="text-primary-300 fs-8 fw-bold"
+                              id="diff-departure"
+                              >1 天
+                            </span>
+                            <div class="d-flex">
+                              <svg
+                                class="icon-size-20 text-primary-300 d-none"
+                                id="diff-departure-up"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.0001 19C13.0001 19.5523 12.5524 20 12.0001 20C11.4478 20 11.0001 19.5523 11.0001 19L11.0001 5C11.0001 4.44772 11.4478 4 12.0001 4C12.5524 4 13.0001 4.44772 13.0001 5L13.0001 19Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M19.7071 11.293C20.0976 11.6835 20.0976 12.3165 19.7071 12.707C19.3166 13.0976 18.6836 13.0976 18.293 12.707L11.293 5.70703C10.9025 5.31651 10.9025 4.68349 11.293 4.29297C11.6836 3.90244 12.3166 3.90244 12.7071 4.29297L19.7071 11.293Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M12.7071 5.70703C13.0976 5.31651 13.0976 4.68349 12.7071 4.29297C12.3166 3.90244 11.6836 3.90244 11.293 4.29297L4.29304 11.293C3.90252 11.6835 3.90252 12.3165 4.29304 12.707C4.68357 13.0976 5.31658 13.0976 5.70711 12.707L12.7071 5.70703Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                              <svg
+                                class="icon-size-20 text-danger-90 d-none"
+                                id="diff-departure-down"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.0001 5C13.0001 4.44771 12.5524 4 12.0001 4C11.4478 4 11.0001 4.44771 11.0001 5L11.0001 19C11.0001 19.5523 11.4478 20 12.0001 20C12.5524 20 13.0001 19.5523 13.0001 19L13.0001 5Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M19.7071 12.707C20.0976 12.3165 20.0976 11.6835 19.7071 11.293C19.3166 10.9024 18.6836 10.9024 18.293 11.293L11.293 18.293C10.9025 18.6835 10.9025 19.3165 11.293 19.707C11.6836 20.0976 12.3166 20.0976 12.7071 19.707L19.7071 12.707Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M12.7071 18.293C13.0976 18.6835 13.0976 19.3165 12.7071 19.707C12.3166 20.0976 11.6836 20.0976 11.293 19.707L4.29304 12.707C3.90252 12.3165 3.90252 11.6835 4.29304 11.293C4.68357 10.9024 5.31658 10.9024 5.70711 11.293L12.7071 18.293Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="d-flex align-items-center mb-3">
+                            <span class="fs-8 me-2">最常在</span>
+                            <span class="fs-8 fw-bold" id="most-departure"
+                              >12:00 AM - 01:00 AM</span
+                            >
+                            <span class="fs-8 ms-2">啟程</span>
+                          </div>
+                        </div>
+
+                        <!-- chart-departure-time -->
+                        <div class="mb-6 chart-height--small">
+                          <canvas id="chart-departure-time"></canvas>
+                        </div>
+                      </div>
+
+                      <!-- 抵達時間 -->
+                      <div class="record-arrival-time">
+                        <h2 class="fs-5 fw-bold mb-2">抵達時間</h2>
+                        <div id="data-arrival">
+                          <div class="d-flex align-items-center mb-1">
+                            <span class="fs-8 me-2">目標達成</span>
+                            <span class="fs-8 fw-bold" id="goal-arrival"
+                              >2 天</span
+                            >
+                          </div>
+                          <div class="d-flex align-items-center mb-1">
+                            <span class="fs-8 me-2"
+                              >和<span id="last-arrival-text">上週</span
+                              >相比</span
+                            >
+                            <span
+                              class="text-primary-300 fs-8 fw-bold"
+                              id="diff-arrival"
+                              >1 天
+                            </span>
+                            <div class="d-flex">
+                              <svg
+                                class="icon-size-20 text-primary-300 d-none"
+                                id="diff-arrival-up"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.0001 19C13.0001 19.5523 12.5524 20 12.0001 20C11.4478 20 11.0001 19.5523 11.0001 19L11.0001 5C11.0001 4.44772 11.4478 4 12.0001 4C12.5524 4 13.0001 4.44772 13.0001 5L13.0001 19Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M19.7071 11.293C20.0976 11.6835 20.0976 12.3165 19.7071 12.707C19.3166 13.0976 18.6836 13.0976 18.293 12.707L11.293 5.70703C10.9025 5.31651 10.9025 4.68349 11.293 4.29297C11.6836 3.90244 12.3166 3.90244 12.7071 4.29297L19.7071 11.293Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M12.7071 5.70703C13.0976 5.31651 13.0976 4.68349 12.7071 4.29297C12.3166 3.90244 11.6836 3.90244 11.293 4.29297L4.29304 11.293C3.90252 11.6835 3.90252 12.3165 4.29304 12.707C4.68357 13.0976 5.31658 13.0976 5.70711 12.707L12.7071 5.70703Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                              <svg
+                                class="icon-size-20 text-danger-90 d-none"
+                                id="diff-arrival-down"
+                                width="24"
+                                height="24"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M13.0001 5C13.0001 4.44771 12.5524 4 12.0001 4C11.4478 4 11.0001 4.44771 11.0001 5L11.0001 19C11.0001 19.5523 11.4478 20 12.0001 20C12.5524 20 13.0001 19.5523 13.0001 19L13.0001 5Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M19.7071 12.707C20.0976 12.3165 20.0976 11.6835 19.7071 11.293C19.3166 10.9024 18.6836 10.9024 18.293 11.293L11.293 18.293C10.9025 18.6835 10.9025 19.3165 11.293 19.707C11.6836 20.0976 12.3166 20.0976 12.7071 19.707L19.7071 12.707Z"
+                                  fill="currentColor"
+                                />
+                                <path
+                                  d="M12.7071 18.293C13.0976 18.6835 13.0976 19.3165 12.7071 19.707C12.3166 20.0976 11.6836 20.0976 11.293 19.707L4.29304 12.707C3.90252 12.3165 3.90252 11.6835 4.29304 11.293C4.68357 10.9024 5.31658 10.9024 5.70711 11.293L12.7071 18.293Z"
+                                  fill="currentColor"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="d-flex align-items-center mb-3">
+                            <span class="fs-8 me-2">最常在</span>
+                            <span class="fs-8 fw-bold" id="most-arrival"
+                              >12:00 AM - 01:00 AM</span
+                            >
+                            <span class="fs-8 ms-2">抵達</span>
+                          </div>
+                        </div>
+
+                        <!-- chart-arrival-time -->
+                        <div class="chart-height--small">
+                          <canvas id="chart-arrival-time"></canvas>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+
+        <!-- home-indicator -->
+        <div class="app-home-indicator"></div>
+      </div>
+    </div>
+
+  </body>
+</html>
