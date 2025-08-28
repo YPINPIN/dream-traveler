@@ -35,6 +35,7 @@ const nextBtn = document.querySelector(".record-custom-next-btn");
 // 旅行時長
 const travelEl = document.querySelector("#data-travel");
 const avgEl = travelEl.querySelector("#avg-travel");
+const lastTravelEl = travelEl.querySelector("#last-travel-text");
 const diffEl = travelEl.querySelector("#diff-travel");
 const diffUpEl = travelEl.querySelector("#diff-travel-up");
 const diffDownEl = travelEl.querySelector("#diff-travel-down");
@@ -109,6 +110,10 @@ function setTravelData(index) {
   // 設置旅行時長資料
   if (avgEl) {
     avgEl.textContent = data.averageTravelTime;
+  }
+  if (lastTravelEl) {
+    lastTravelEl.textContent =
+      currentTab === "week" ? "上週" : currentTab === "month" ? "上月" : "去年";
   }
   if (diffEl) {
     diffEl.textContent = Math.abs(data.differenceFromLastWeek) + " 小時";
