@@ -4,3 +4,20 @@
 
 @import "./base/base";
 @import "./utils/utilities";
+
+// components
+@import "./components/navbar";
+@import "./components/switches";
+
+// layout
+@import "./layout/app";
+@import "./layout/top-nav";
+@import "./layout/lately-content";
+
+// pages
+@import "./pages/collection";
+@import "./pages/scene-village";
+@import "./pages/home";
+@import "./pages/settings";
+@import "./pages/record";
+@import "./pages/sleep";

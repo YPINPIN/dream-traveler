@@ -1,0 +1,27 @@
+.nav-tab {
+  position: absolute;
+  width: 343px;
+  bottom: 34px;
+  left: 16px;
+  z-index: 2;
+}
+
+.nav-item {
+  flex: 1;
+  .nav-link img {
+    width: 32px;
+  }
+}
+
+.nav-link-title {
+  font-weight: bold;
+  color: $neutral-400;
+  &.active {
+    color: $neutral-100;
+  }
+}
+
+.bg-traveler {
+  position: absolute;
+  bottom: -40px;
+}

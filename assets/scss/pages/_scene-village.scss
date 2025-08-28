@@ -1,0 +1,31 @@
+.filter {
+  transform: translate(-24px, 16px);
+  box-shadow: 0px 3px 6px 0px rgba(10, 11, 10, 0.16),
+    0px 3px 6px 0px rgba(10, 11, 10, 0.23);
+}
+
+.badge-bg {
+  background: linear-gradient(to right, #ebf9f9, #478984);
+}
+
+.sceneHeading .nav {
+  --bs-nav-link-hover-color: unset;
+}
+
+.nav-tabs .nav-link.active {
+  border-bottom-color: $primary-300 !important; /* 換成你要的顏色 */
+  border-width: 2px;
+}
+
+.sceneHeading .filter {
+  top: 176px;
+}
+
+.scene .nav-tabs {
+  --bs-nav-tabs-link-active-border-color: $primary-300;
+}
+
+.custom-modal {
+  width: 375px;
+  margin: 0 auto;
+}

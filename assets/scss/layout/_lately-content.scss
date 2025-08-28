@@ -1,0 +1,14 @@
+.lately-divider {
+  height: 36px;
+  border-left: 1px solid $neutral-600;
+  margin: 0 12px;
+}
+
+.lately-time {
+  letter-spacing: 2px;
+  min-width: 51px;
+  &-small {
+    letter-spacing: 0.5px;
+    min-width: 50px;
+  }
+}

@@ -1,0 +1,92 @@
+.home {
+  &-content {
+    position: absolute;
+    top: 70px;
+    z-index: 2;
+  }
+  &-traveler {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+.swiper {
+  --swiper-navigation-top-offset: 82%;
+  width: 100%;
+  height: 100%;
+
+  &-button-prev,
+  &-button-next {
+    padding: 6px;
+    z-index: 3;
+  }
+
+  &-button-prev {
+    left: 70px;
+    &::after {
+      padding: 6px;
+      content: url("../images/05-icon/backward.svg");
+    }
+  }
+  &-button-next {
+    right: 70px;
+    &::after {
+      padding: 6px;
+      content: url("../images/05-icon/toward.svg");
+    }
+  }
+  &-text {
+    position: absolute;
+    left: 50%;
+    bottom: 122px;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+  }
+}
+
+.bg {
+  &-village {
+    background-image: url("../images/04-background/main-scene/home-unlock/home-main-scene-not-unlock-淺夢之村@2x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &-valley {
+    background-image: url("../images/04-background/main-scene/home-lock/home-main-scene-lock-深眠幽谷@2x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &-forest {
+    background-image: url("../images/04-background/main-scene/home-lock/home-main-scene-lock-記憶森林@2x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &-island {
+    background-image: url("../images/04-background/main-scene/home-lock/home-main-scene-lock-浮島邊境@2x.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.btn-departure {
+  padding: 3rem 1.75rem;
+  background-color: $neutral-100;
+  color: $neutral-1000;
+  border: 15px solid rgba($neutral-400, 0.6);
+  box-shadow: 0 0 0 15px rgba($neutral-400, 0.2);
+  &:hover {
+    outline: 2px solid $info-100;
+    outline-offset: 21px;
+  }
+  &:active {
+    background-color: $primary-300;
+    border: 15px solid rgba($primary-400, 0.6);
+    box-shadow: 0 0 0 15px rgba($primary-400, 0.2);
+  }
+}

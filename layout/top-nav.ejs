@@ -1,0 +1,24 @@
+<header
+  class="bg-neutral-1100 d-flex justify-content-center align-items-center top-nav"
+>
+  <!-- before link -->
+  <% if(beforeLink) { %>
+  <a href="<%= beforeLink %>" class="d-flex p-3"
+    ><img src="/assets/images/05-icon/before.svg" alt="before-link-icon"
+  /></a>
+  <% } else { %>
+  <div class="p-6 top-nav-block"></div>
+  <% } %>
+
+  <!-- top-nav title -->
+  <h1 class="fs-5 fw-bold mx-auto top-nav-title"><%= title %></h1>
+
+  <!-- next link -->
+  <% if(nextLink) { %>
+  <a href="<%= nextLink %>" class="d-flex p-3 disabled top-nav-link"
+    ><img src="/assets/images/05-icon/next.svg" alt="next-link-icon"
+  /></a>
+  <% } else { %>
+  <div class="p-6 top-nav-block"></div>
+  <% } %>
+</header>
