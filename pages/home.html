@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>home</title>
   </head>
   <body>
     <div class="app">
       <div class="app-border">
         <!-- 可以根據頁面設定，基礎的背景色，沒有設定則為透明 -->
-        <div class="app-frame bg-neutral-1100">
+        <div class="app-frame bg-neutral-1100 overflow-y-auto">
           <!-- Swiper -->
           <div class="swiper bgSwiper">
             <div class="swiper-wrapper">
@@ -24,7 +24,11 @@
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
-            <img class="home-traveler" src="/assets/images/04-background/home.svg" alt="旅人圖示">
+            <img
+              class="home-traveler"
+              src="/assets/images/04-background/home.svg"
+              alt="旅人圖示"
+            />
           </div>
           <!-- main 這裡面放對應的頁面內容 -->
           <main>
@@ -32,16 +36,25 @@
               <!-- 歡迎使用者 -->
               <h1 class="fw-bold fs-4 mb-4">Simon，歡迎回來</h1>
               <!-- 旅程時間 -->
-              <div class="d-flex gap-4 justify-content-center align-items-center mb-4">
+              <div
+                class="d-flex gap-4 justify-content-center align-items-center mb-4"
+              >
                 <p class="d-flex flex-column">
-                  <span class="fs-9">啟程時間</span><span class="fs-2">12:00</span><span class="fs-9">AM</span>
+                  <span class="fs-9">啟程時間</span
+                  ><span class="fs-2">12:00</span><span class="fs-9">AM</span>
                 </p>
-                <img src="/assets/images/05-icon/right-arrow.svg" alt="向右箭頭圖示">
+                <img
+                  src="/assets/images/05-icon/right-arrow.svg"
+                  alt="向右箭頭圖示"
+                />
                 <p class="d-flex flex-column">
-                  <span class="fs-9">抵達時間</span><span class="fs-2">08:00</span><span class="fs-9">AM</span>
+                  <span class="fs-9">抵達時間</span
+                  ><span class="fs-2">08:00</span><span class="fs-9">AM</span>
                 </p>
               </div>
-              <a href="path.html" class="btn-departure rounded-circle fw-bold">現在啟程</a>
+              <a href="path.html" class="btn-departure rounded-circle fw-bold"
+                >現在啟程</a
+              >
             </section>
           </main>
           <!-- navbar -->

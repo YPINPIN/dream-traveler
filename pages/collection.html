@@ -19,7 +19,7 @@
                   <p class="me-1 ms-auto">6500 / 10000</p>
                   <p>解鎖 <span class="fw-bold">記憶森林</span></p>
                 </div>
-                <div class="progress">
+                <div class="progress position-relative">
                   <div
                     class="progress-bar"
                     role="progressbar"
@@ -27,7 +27,14 @@
                     aria-valuenow="25"
                     aria-valuemin="0"
                     aria-valuemax="100"
-                  ></div>
+                  >
+                    <!-- 前端圖示 -->
+                    <img
+                      src="/assets/images/02-character/progress-bar-character.svg"
+                      alt="icon"
+                      class="progress-icon"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -77,7 +84,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card p-4 bg mb-4">
+              <div class="card p-4 bg">
                 <img
                   src="/assets/images/04-background/main-scene/catalog/catalog-main-scene-浮島邊境-lock.png"
                   class="card-img-top mb-2"
@@ -94,8 +101,15 @@
               </div>
             </div>
           </div>
-          <div class="navbar"></div>
+          <div class="position-sticky bottom-0">
+            <div class="navbar-height">
+              <!-- navbar -->
+              <%- include('layout/navbar') -%>
+            </div>
+          </div>
         </div>
+        <!-- home-indicator -->
+        <div class="app-home-indicator"></div>
       </div>
     </div>
 
