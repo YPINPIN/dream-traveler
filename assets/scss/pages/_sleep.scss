@@ -20,3 +20,17 @@
   -o-transform: scaleX(-1);
   transform: scaleX(-1);
 }
+.new-item {
+  width: 160px;
+}
+.drag-btn {
+  width: 40px;
+  height: 40px;
+  top: 4px;
+  left: 4px;
+}
+.drag-btn img {
+  width: 24px;
+  height: 24px;
+  vertical-align: top;
+}

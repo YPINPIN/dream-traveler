@@ -1,0 +1,44 @@
+.path {
+  &-container {
+    padding: 24px 16px 130px;
+    .offcanvas {
+      position: absolute;
+      top: 50px;
+      height: calc(100% - 84px);
+      .top-nav {
+        padding-top: 0;
+      }
+    }
+  }
+  &-card {
+    border-width: 0;
+    &:hover {
+      cursor: pointer;
+      border: 2px solid $primary-300;
+    }
+  }
+}
+
+.btn-path {
+  padding: 0.75rem 1.5rem;
+  background-color: rgba($neutral-100, 0.1);
+  border: 2px solid $primary-300;
+  color: $primary-300;
+  font-weight: bold;
+  opacity: 0.3;
+  text-align: center;
+  &-wrapper {
+    width: auto;
+    padding: 24px 16px 58px;
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    bottom: 0;
+    background-color: $neutral-1100;
+    z-index: 2;
+  }
+}
+
+.travel-time {
+  padding: 18px 16px;
+}

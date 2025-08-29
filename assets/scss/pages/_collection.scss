@@ -1,3 +1,23 @@
 .progress-bar {
   background: linear-gradient(90deg, #ebf9f9, #478984);
+  border-top-left-radius: 50rem;
+  border-bottom-left-radius: 50rem;
+}
+
+.navbar-height {
+  height: 110px;
+}
+
+.navbar-gap {
+  margin-top: 9.67px;
+}
+
+.progress-icon {
+  position: absolute;
+  top: 50%;
+  left: calc(25% - 24px); /* 25% = 與進度條同步，24px = 圖片一半 */
+  transform: translateY(-50%);
+  width: 48px; /* 可依需要調整 */
+  height: auto;
+  pointer-events: none; /* 避免擋住滑鼠事件 */
 }
