@@ -1,0 +1,6 @@
+.btn {
+  &.btn-primary-300:active {
+    background-color: $primary-400;
+    color: $neutral-1000;
+  }
+}
