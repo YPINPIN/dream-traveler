@@ -9,6 +9,7 @@ $utilities: map-merge(
             map-merge(
               map-get(map-get($utilities, "rounded"), "values"),
               (
+                2xs: $border-radius-2xs,
                 xs: $border-radius-xs,
               )
             ),
