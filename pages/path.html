@@ -13,33 +13,45 @@
           <%- include("layout/top-nav.ejs", { title: "選擇路徑", beforeLink:
           "./home.html", nextLink: null }) %>
           <main class="path-container">
-            <div class="mb-6">
-              <div class="card path-card p-4 mb-4">
-                <img class="mb-2 rounded-2xs" src="/assets/images/04-background/sub-scene/select-page/scene-01/sub-scene-select-page-01-星光小路@2x.png" class="card-img-top" alt="星光小路圖示">
-                <div class="card-body d-flex justify-content-between align-items-center">
-                  <h2 class="fs-6 fw-bold">星光小路</h2>
-                  <p class="fs-8">收集進度：12 / 30</p>
-                </div>
+            <div class="card path-card p-4 mb-4">
+              <img class="mb-2 rounded-2xs" src="/assets/images/04-background/sub-scene/select-page/scene-01/sub-scene-select-page-01-星光小路@2x.png" class="card-img-top" alt="星光小路圖示">
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <h2 class="fs-6 fw-bold">星光小路</h2>
+                <p class="fs-8">收集進度：12 / 30</p>
               </div>
-              <div class="card path-card p-4 mb-4">
-                <img class="mb-2 rounded-2xs" src="/assets/images/04-background/sub-scene/select-page/scene-01/sub-scene-select-page-01-夢語燈塔@2x.png" class="card-img-top" alt="夢語燈塔圖示">
-                <div class="card-body d-flex justify-content-between align-items-center">
-                  <h2 class="fs-6 fw-bold">夢語燈塔</h2>
-                  <p class="fs-8">收集進度：0 / 20</p>
-                </div>
+            </div>
+            <div class="card path-card p-4 mb-4">
+              <img class="mb-2 rounded-2xs" src="/assets/images/04-background/sub-scene/select-page/scene-01/sub-scene-select-page-01-夢語燈塔@2x.png" class="card-img-top" alt="夢語燈塔圖示">
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <h2 class="fs-6 fw-bold">夢語燈塔</h2>
+                <p class="fs-8">收集進度：0 / 20</p>
               </div>
-              <div class="card path-card p-4 mb-4">
-                <img class="mb-2 rounded-2xs" src="/assets/images/04-background/sub-scene/select-page/scene-01/sub-scene-select-page-01-搖籃草屋@2x.png" class="card-img-top" alt="搖籃草屋圖示">
-                <div class="card-body d-flex justify-content-between align-items-center">
-                  <h2 class="fs-6 fw-bold">搖籃草屋</h2>
-                  <p class="fs-8">收集進度：0 / 25</p>
-                </div>
+            </div>
+            <div class="card path-card p-4">
+              <img class="mb-2 rounded-2xs" src="/assets/images/04-background/sub-scene/select-page/scene-01/sub-scene-select-page-01-搖籃草屋@2x.png" class="card-img-top" alt="搖籃草屋圖示">
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <h2 class="fs-6 fw-bold">搖籃草屋</h2>
+                <p class="fs-8">收集進度：0 / 25</p>
+              </div>
+            </div>
+            <div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+              <%- include("layout/top-nav.ejs", { title: "設定旅行時間", beforeLink: "./path.html", nextLink: null }) %>
+              <div class="offcanvas-body d-flex flex-column">
+                <a href="#" class="d-flex align-items-center travel-time mb-2">
+                  <h2 class="fs-7 fw-bold flex-grow-1 d-flex me-2"><span>啟程時間</span><span class="ms-auto text-neutral-400">12:00 AM</span></h2>
+                  <img src="/assets/images/05-icon/pen.svg" alt="鉛筆圖示">
+                </a>
+                <a href="#" class="d-flex align-items-center travel-time">
+                  <h2 class="fs-7 fw-bold flex-grow-1 d-flex me-2"><span>抵達時間</span><span class="ms-auto text-neutral-400">08:00 AM</span></h2>
+                  <img src="/assets/images/05-icon/pen.svg" alt="鉛筆圖示">
+                </a>
+                <a href="./sleep.html" class="btn btn-primary-300 rounded-pill mt-auto py-3 fw-bold">完成</a>
               </div>
             </div>
           </main>
         </div>
         <div class="btn-path-wrapper">
-          <a href="#" class="btn-path rounded-pill w-100">下一步</a>
+          <a href="#" class="btn-path rounded-pill w-100" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">下一步</a>
         </div>
         <!-- home-indicator -->
         <div class="app-home-indicator"></div>

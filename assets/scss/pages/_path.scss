@@ -1,6 +1,14 @@
 .path {
   &-container {
-    padding: 24px 16px 96px;
+    padding: 24px 16px 130px;
+    .offcanvas {
+      position: absolute;
+      top: 50px;
+      height: calc(100% - 84px);
+      .top-nav {
+        padding-top: 0;
+      }
+    }
   }
   &-card {
     border-width: 0;
@@ -29,4 +37,8 @@
     background-color: $neutral-1100;
     z-index: 2;
   }
+}
+
+.travel-time {
+  padding: 18px 16px;
 }
