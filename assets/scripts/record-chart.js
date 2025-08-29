@@ -14,6 +14,7 @@ import {
   tooltip_config_2,
   tooltip_config_3,
   tooltip_config_4,
+  tooltip_config_5,
 } from "/assets/scripts/chart-tooltip.js";
 // 資料 utils
 import {
@@ -916,7 +917,7 @@ function switchChartArrivalMode(newArrivalData, mode) {
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: mode === "year" ? tooltip_config_4 : tooltip_config_3,
+        tooltip: mode === "year" ? tooltip_config_5 : tooltip_config_3,
       },
       layout: { padding: { left: 0, right: 0, top: 24, bottom: 0 } },
       scales: {
