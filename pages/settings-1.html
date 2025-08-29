@@ -1,44 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>index</title>
-</head>
-
-<body>
-  <div class="app">
-    <div class="app-border">
-      <div class="app-frame">
-        <header>
-          <%- include('layout/top-nav', { title: '睡前提醒時間設定' , beforeLink: "settings.html" , nextLink: null}) -%>
-        </header>
-        <div class="main">
-          <section class="py-6 px-4">
-            <ul class="fw-bold ps-0">
-              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px;">
-                5分鐘前</li>
-              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px;">
-                15分鐘前</li>
-              <li class="d-flex align-items-center justify-content-between  mb-2 py-3 px-4 settings active"
-                style="height: 60px;">
-                30分鐘前
-                <img src="/assets/images/05-icon/check.svg" alt="check">
-              </li>
-              <li class="d-flex align-items-center justify-content-between py-3 px-4" style="height: 60px;">
-                1小時前
-              </li>
-            </ul>
-          </section>
+  <body>
+    <div class="app">
+      <div class="app-border">
+        <div class="app-frame overflow-y-auto">
+          <header>
+            <%- include('layout/top-nav', { title: '睡前提醒時間設定' ,
+            beforeLink: "settings.html" , nextLink: null}) -%>
+          </header>
+          <div class="main">
+            <section class="py-6 px-4">
+              <ul class="fw-bold ps-0">
+                <li
+                  class="d-flex align-items-center justify-content-between mb-2 py-3 px-4"
+                  style="height: 60px"
+                >
+                  5分鐘前
+                </li>
+                <li
+                  class="d-flex align-items-center justify-content-between mb-2 py-3 px-4"
+                  style="height: 60px"
+                >
+                  15分鐘前
+                </li>
+                <li
+                  class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 settings active"
+                  style="height: 60px"
+                >
+                  30分鐘前
+                  <img src="/assets/images/05-icon/check.svg" alt="check" />
+                </li>
+                <li
+                  class="d-flex align-items-center justify-content-between py-3 px-4"
+                  style="height: 60px"
+                >
+                  1小時前
+                </li>
+              </ul>
+            </section>
+          </div>
         </div>
+        <!-- home-indicator -->
+        <div class="app-home-indicator"></div>
       </div>
-      <!-- home-indicator -->
-      <div class="app-home-indicator"></div>
     </div>
-  </div>
-  <script type="module" src="../main.js"></script>
-</body>
-
+    <script type="module" src="../main.js"></script>
+  </body>
 </html>
