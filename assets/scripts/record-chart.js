@@ -7,6 +7,7 @@ import {
   averageLinePlugin,
   verticalLinePlugin,
   forceMaxTickPlugin,
+  autoSelectPlugin,
 } from "/assets/scripts/chart-plugin.js";
 // tooltip config
 import {
@@ -210,6 +211,11 @@ function setTravelData(index) {
 
     // 清除 tooltip
     chart_travel.tooltip.setActiveElements([]);
+
+    // 重置 autoSelectPlugin 參數
+    chart_travel._autoSelectDone = false;
+    chart_travel._animationRunning = true;
+
     chart_travel.update();
   }
 }
@@ -340,6 +346,7 @@ function switchChartTravelMode(newTravelData, mode) {
       ],
     },
     options: {
+      animation: { duration: 800 },
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
@@ -379,10 +386,11 @@ function switchChartTravelMode(newTravelData, mode) {
 
         dataset.backgroundColor = Array(dataset.data.length).fill("#C5CCCB");
         dataset.backgroundColor[index] = "#7BC9C2";
+
         chart.update();
       },
     },
-    plugins: [averageLinePlugin],
+    plugins: [averageLinePlugin, autoSelectPlugin],
   });
 }
 
@@ -469,6 +477,11 @@ function setDepartureData(index) {
     chart_departure.options.scales.y.max = data.maxTime.toDate();
     // 清除 tooltip
     chart_departure.tooltip.setActiveElements([]);
+
+    // 重置 autoSelectPlugin 參數
+    chart_departure._autoSelectDone = false;
+    chart_departure._animationRunning = true;
+
     chart_departure.update();
   }
 }
@@ -628,6 +641,7 @@ function switchChartDepartureMode(newDepartureData, mode) {
       ],
     },
     options: {
+      animation: { duration: 800 },
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
@@ -674,7 +688,7 @@ function switchChartDepartureMode(newDepartureData, mode) {
         chart.update();
       },
     },
-    plugins: [forceMaxTickPlugin, verticalLinePlugin],
+    plugins: [forceMaxTickPlugin, verticalLinePlugin, autoSelectPlugin],
   });
 }
 
@@ -761,6 +775,11 @@ function setArrivalData(index) {
     chart_arrival.options.scales.y.max = data.maxTime.toDate();
     // 清除 tooltip
     chart_arrival.tooltip.setActiveElements([]);
+
+    // 重置 autoSelectPlugin 參數
+    chart_arrival._autoSelectDone = false;
+    chart_arrival._animationRunning = true;
+
     chart_arrival.update();
   }
 }
@@ -914,6 +933,7 @@ function switchChartArrivalMode(newArrivalData, mode) {
       ],
     },
     options: {
+      animation: { duration: 800 },
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
@@ -960,7 +980,7 @@ function switchChartArrivalMode(newArrivalData, mode) {
         chart.update();
       },
     },
-    plugins: [forceMaxTickPlugin, verticalLinePlugin],
+    plugins: [forceMaxTickPlugin, verticalLinePlugin, autoSelectPlugin],
   });
 }
 

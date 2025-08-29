@@ -84,3 +84,78 @@ export const forceMaxTickPlugin = {
     }
   },
 };
+
+// 自動觸發最後一筆資料 tooltip、onClick 的 plugin
+export const autoSelectPlugin = {
+  id: "autoSelect",
+  beforeInit(chart) {
+    // 初始化 flag
+    chart._animationRunning = true;
+    chart._autoSelectDone = false;
+  },
+  beforeEvent(chart, args) {
+    // 動畫還在跑，阻擋 click 事件
+    if (chart._animationRunning && args.event.type === "click") {
+      // console.log("阻擋 click");
+      return false;
+    }
+  },
+  afterRender(chart, args, options) {
+    if (chart._autoSelectDone) return; // 避免循環
+    chart._autoSelectDone = true;
+
+    const datasetIndex = options.datasetIndex ?? 0;
+    const dataset = chart.data.datasets[datasetIndex];
+    if (!dataset || dataset.data.length === 0) return;
+
+    // 找到最後一筆有值的資料
+    const reversedIndex = [...dataset.data].reverse().findIndex((d) => {
+      // console.log("d", d);
+      if (d === null || d === 0) return false;
+      if (d.x) {
+        if (d.y) return true;
+      } else {
+        return true;
+      }
+      return false;
+    });
+    const lastIndex =
+      reversedIndex === -1 ? -1 : dataset.data.length - 1 - reversedIndex;
+    // console.log("lastIndex", lastIndex);
+
+    if (lastIndex === -1) return;
+
+    const element = chart.getDatasetMeta(datasetIndex).data[lastIndex];
+    if (!element) return;
+
+    // 拿到 element 的座標（相對於 canvas）
+    const pos = element.getProps(["x", "y"], true);
+
+    // 建立假的事件
+    const fakeEvent = {
+      type: "click",
+      chart,
+      native: null, // 可以保持 null
+      offsetX: pos.x, // 官方常用 offsetX/offsetY
+      offsetY: pos.y,
+      x: pos.x, // Chart.js 4.x 也會用 x/y
+      y: pos.y,
+    };
+
+    // 找對應元素
+    const elements = chart.getElementsAtEventForMode(
+      fakeEvent,
+      "nearest",
+      { intersect: true },
+      true
+    );
+
+    // 設定 tooltip active
+    chart.tooltip.setActiveElements(elements, { x: pos.x, y: pos.y });
+    // 重繪，不會觸發動畫
+    chart.draw();
+    chart.options.onClick(fakeEvent, elements, chart);
+    // 動畫完成，允許點擊
+    chart._animationRunning = false;
+  },
+};
