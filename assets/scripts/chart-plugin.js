@@ -159,3 +159,26 @@ export const autoSelectPlugin = {
     chart._animationRunning = false;
   },
 };
+
+export const clickOnDataOnlyPlugin = {
+  id: "clickOnDataOnly",
+  beforeEvent(chart, args) {
+    const e = args.event;
+    if (e.type === "click") {
+      // 找對應元素
+      const elements = chart.getElementsAtEventForMode(
+        e.native,
+        "nearest",
+        { intersect: true },
+        true
+      );
+
+      if (elements.length > 0) {
+        // 點到圖表元素，可以執行後續處理
+      } else {
+        // 點到空白區域，阻擋
+        return false;
+      }
+    }
+  },
+};

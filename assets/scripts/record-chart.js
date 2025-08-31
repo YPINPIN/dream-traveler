@@ -8,6 +8,7 @@ import {
   verticalLinePlugin,
   forceMaxTickPlugin,
   autoSelectPlugin,
+  clickOnDataOnlyPlugin,
 } from "/assets/scripts/chart-plugin.js";
 // tooltip config
 import {
@@ -390,7 +391,7 @@ function switchChartTravelMode(newTravelData, mode) {
         chart.update();
       },
     },
-    plugins: [averageLinePlugin, autoSelectPlugin],
+    plugins: [averageLinePlugin, autoSelectPlugin, clickOnDataOnlyPlugin],
   });
 }
 
@@ -688,7 +689,12 @@ function switchChartDepartureMode(newDepartureData, mode) {
         chart.update();
       },
     },
-    plugins: [forceMaxTickPlugin, verticalLinePlugin, autoSelectPlugin],
+    plugins: [
+      forceMaxTickPlugin,
+      verticalLinePlugin,
+      autoSelectPlugin,
+      clickOnDataOnlyPlugin,
+    ],
   });
 }
 
@@ -980,7 +986,12 @@ function switchChartArrivalMode(newArrivalData, mode) {
         chart.update();
       },
     },
-    plugins: [forceMaxTickPlugin, verticalLinePlugin, autoSelectPlugin],
+    plugins: [
+      forceMaxTickPlugin,
+      verticalLinePlugin,
+      autoSelectPlugin,
+      clickOnDataOnlyPlugin,
+    ],
   });
 }
 
