@@ -13,16 +13,15 @@
           <%- include('layout/top-nav', { title: '淺夢之村' , beforeLink: "collection.html" ,
               nextLink: null}) -%>
           <p class="text-center mb-4 bg-neutral-1100 " style="margin-top: 14px;">收集進度：12 / 75</p>
-          <ul class="nav nav-tabs w-100 radius-top" id="myTab" role="tablist">
+          <ul class="nav nav-tabs w-100 radius-top border-0" id="myTab" role="tablist">
               <li class="nav-item col" role="presentation" >
-                <!-- 透明度30% -->
-                  <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 active border-0 border-bottom border-2 border-neutral-600" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="border-top-left-radius: 8px;">星光小路</butto>
+                  <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 active border-neutral-600 bg-neutral-900" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true" style="border-top-left-radius: 8px;">星光小路</butto>
               </li>
               <li class="nav-item col" role="presentation">
-                  <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 border-0 border-bottom border-2 border-neutral-600" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">搖籃草屋</button>
+                  <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 border-neutral-600 bg-neutral-900" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">搖籃草屋</button>
               </li>
               <li class="nav-item col" role="presentation" >
-                  <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 border-0 border-bottom border-2 border-neutral-600" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" style="border-top-right-radius: 8px;">夢語燈塔</button>
+                  <button class="nav-link text-center w-100 fs-8 fw-bold lh-20 border-neutral-600 bg-neutral-900" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false" style="border-top-right-radius: 8px;">夢語燈塔</button>
               </li>
           </ul>
           <button type="button" class="filter position-absolute end-0 bg-primary-300 rounded-circle z-2 border-0 p-0" style="height: 36px;width: 36px;">
@@ -31,7 +30,7 @@
         </div>
         <main class="scene">
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active bg-neutral-900"  id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="tab-pane show active bg-neutral-900"  id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="container py-4 position-relative">
                         <div class="row gx-6 gy-6">
                             <!-- 第一列 -->
@@ -311,13 +310,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade bg-neutral-900" id="profile"  role="tabpanel" aria-labelledby="profile-tab">...</div>
-                <div class="tab-pane fade bg-neutral-900" id="contact"  role="tabpanel" aria-labelledby="contact-tab">...</div>
+                <div class="tab-pane  bg-neutral-900" id="profile"  role="tabpanel" aria-labelledby="profile-tab">...</div>
+                <div class="tab-pane  bg-neutral-900" id="contact"  role="tabpanel" aria-labelledby="contact-tab">...</div>
             </div>
         </main>
         <div class="position-sticky bottom-0 navbar-height navbar-gap bg-neutral-900">
           <!-- navbar -->
-          <%- include('layout/navbar') -%>
+          <%- include('layout/navbar', { activePage: 'bag' }) -%>
         </div>
       </div>
       <!-- home-indicator -->
