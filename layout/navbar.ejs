@@ -1,27 +1,27 @@
 <div class="nav-tab border border-2 border-neutral-700 bg-neutral-1000 rounded-xs">
   <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link pt-2 pb-4 d-flex justify-content-center align-items-center flex-column" href="home.html">
-        <img class="mb-1" src="/assets/images/05-icon/home-selected.svg" alt="首頁圖示">
-        <span class="nav-link-title fs-9 active">首頁</span>
+      <a class="nav-link pt-2 pb-4 d-flex justify-content-center align-items-center flex-column" href="index.html">
+        <img class="mb-1" src="<%= activePage === 'home' ? '/assets/images/05-icon/home-selected.svg' : '/assets/images/05-icon/home-unselected.svg' %>" alt="首頁圖示">
+        <span class="<%= activePage === 'home' ? 'nav-link-title fs-9 active' : 'nav-link-title fs-9' %>">首頁</span>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link pt-2 pb-4 d-flex justify-content-center align-items-center flex-column" href="collection.html">
-        <img class="mb-1" src="/assets/images/05-icon/icon-bag-unselected.svg" alt="圖鑑圖示">
-        <span class="nav-link-title fs-9">圖鑑</span>
+        <img class="mb-1" src="<%= activePage === 'bag' ? '/assets/images/05-icon/bag-selected.svg' : '/assets/images/05-icon/icon-bag-unselected.svg' %>" alt="圖鑑圖示">
+        <span class="<%= activePage === 'bag' ? 'nav-link-title fs-9 active' : 'nav-link-title fs-9' %>">圖鑑</span>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link pt-2 pb-4 d-flex justify-content-center align-items-center flex-column" href="record.html">
-        <img class="mb-1" src="/assets/images/05-icon/book-unselected.svg" alt="日誌圖示">
-        <span class="nav-link-title fs-9">日誌</span>
+        <img class="mb-1" src="<%= activePage === 'book' ? '/assets/images/05-icon/book-selected.svg' : '/assets/images/05-icon/book-unselected.svg' %>" alt="日誌圖示">
+        <span class="<%= activePage === 'book' ? 'nav-link-title fs-9 active' : 'nav-link-title fs-9' %>">日誌</span>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link pt-2 pb-4 d-flex justify-content-center align-items-center flex-column" href="settings.html">
-        <img class="mb-1" src="/assets/images/05-icon/setting-unselected.svg" alt="設定圖示">
-        <span class="nav-link-title fs-9">設定</span>
+        <img class="mb-1" src="<%= activePage === 'setting' ? '/assets/images/05-icon/setting-selected.svg' : '/assets/images/05-icon/setting-unselected.svg' %>" alt="設定圖示">
+        <span class="<%= activePage === 'setting' ? 'nav-link-title fs-9 active' : 'nav-link-title fs-9' %>">設定</span>
       </a>
     </li>
   </ul>
