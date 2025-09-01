@@ -187,7 +187,7 @@ export const clickOnDataOnlyPlugin = {
   },
 };
 
-// month 模式下點到當前 x 軸 tick 的前後一日日期，強制顯示該日期，並隱藏掉相鄰的 tick。
+// month 模式下紀錄點到日期，方便做 x 軸強制顯示
 export const monthFocusDatePlugin = {
   id: "monthFocusDate",
   beforeEvent(chart, args) {
