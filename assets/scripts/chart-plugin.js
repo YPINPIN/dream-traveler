@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 // 平均線 plugin
 export const averageLinePlugin = {
   id: "averageLine",
@@ -155,6 +157,8 @@ export const autoSelectPlugin = {
     // 重繪，不會觸發動畫
     chart.draw();
     chart.options.onClick(fakeEvent, elements, chart);
+    // 額外觸發 monthFocusDatePlugin 的 beforeEvent
+    monthFocusDatePlugin.beforeEvent?.(chart, { event: fakeEvent });
     // 動畫完成，允許點擊
     chart._animationRunning = false;
   },
@@ -175,6 +179,35 @@ export const clickOnDataOnlyPlugin = {
 
       if (elements.length > 0) {
         // 點到圖表元素，可以執行後續處理
+      } else {
+        // 點到空白區域，阻擋
+        return false;
+      }
+    }
+  },
+};
+
+// month 模式下紀錄點到日期，方便做 x 軸強制顯示
+export const monthFocusDatePlugin = {
+  id: "monthFocusDate",
+  beforeEvent(chart, args) {
+    const e = args.event;
+    // 不是 month 模式，直接跳過
+    if (chart.options.currentMode === "month" && e.type === "click") {
+      const elements = chart.getElementsAtEventForMode(
+        e,
+        "nearest",
+        { intersect: true },
+        true
+      );
+
+      if (elements.length > 0) {
+        const el = elements[0];
+        const dataset = chart.data.datasets[el.datasetIndex];
+        let clickedDate = dataset.data[el.index].x;
+        // 點到日期存在 chart 裡
+        chart.forcedDate = dayjs(clickedDate);
+        chart.update();
       } else {
         // 點到空白區域，阻擋
         return false;
