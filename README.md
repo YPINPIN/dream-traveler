@@ -21,8 +21,6 @@
 
 ## 🎨 設計稿 & 設計師 (AAPD)
 
-設計稿 - [夢の旅人 - Figma](https://www.figma.com/design/UGhK9IOrRHO22BVcasntVp/%F0%9F%93%97-%E7%95%A2%E6%A5%AD%E5%B0%88%E6%A1%88-%7C-%E7%AC%AC-23-%E7%B5%84%EF%BD%9C%E5%AE%99%E5%BD%97%E7%8F%AD-%E3%80%90UIBC-3%E3%80%91?node-id=15651-1102&t=OlemzzkreDJyz07M-1)
-
 - Heather
 - OuO
 - 兔
