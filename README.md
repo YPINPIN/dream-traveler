@@ -1,4 +1,4 @@
-# <img src="./assets/images/02-character/home-character.svg" height="40"  style="vertical-align: bottom;" /> 夢の旅人 (Dream Traveler)
+# <sub><img src="./assets/images/02-character/home-character.svg" height="40" /></sub> 夢の旅人 (Dream Traveler)
 
 [![Vite](https://img.shields.io/badge/Vite-6.3.x-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.6-7952B3?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
@@ -11,7 +11,7 @@
 [![Deploy](https://img.shields.io/badge/GitHub%20Pages-deployed-3FB950?logo=github&logoColor=white)](https://ypinpin.github.io/dream-traveler/)
 [![Last Commit](https://img.shields.io/github/last-commit/YPINPIN/dream-traveler)](https://github.com/YPINPIN/dream-traveler/commits/main)
 
-## <img src="./assets/images/02-character/log-guide-character.svg" height="30"  style="vertical-align: bottom;"/> 專案介紹
+## <sub><img src="./assets/images/02-character/log-guide-character.svg" height="30"/></sub> 專案介紹
 
 此專案為 **2025 AAPD x 六角學院 設計前端產品研發營** 之前端切版作品。
 
@@ -20,8 +20,6 @@
 <img src="./assets/images/01-logo/logo-green-svg.svg" />
 
 ## 🎨 設計稿 & 設計師 (AAPD)
-
-設計稿 - [夢の旅人 - Figma](https://www.figma.com/design/UGhK9IOrRHO22BVcasntVp/%F0%9F%93%97-%E7%95%A2%E6%A5%AD%E5%B0%88%E6%A1%88-%7C-%E7%AC%AC-23-%E7%B5%84%EF%BD%9C%E5%AE%99%E5%BD%97%E7%8F%AD-%E3%80%90UIBC-3%E3%80%91?node-id=15651-1102&t=OlemzzkreDJyz07M-1)
 
 - Heather
 - OuO
@@ -37,7 +35,7 @@
 
 ## 🚀 畫面介紹
 
-### <img src="./assets/images/05-icon/home-selected.svg" height="22" style="vertical-align: bottom;" /> 首頁 → 選擇路徑頁 → 睡眠旅行頁
+### <sub><img src="./assets/images/05-icon/home-selected.svg" height="22" /></sub> 首頁 → 選擇路徑頁 → 睡眠旅行頁
 
 > 每一次入睡，都是一場夢的旅程。
 
@@ -56,7 +54,7 @@
   <img src="./assets/images/demo/sleep-4.png" style="height: 300px"/>
 </div>
 
-### <img src="./assets/images/05-icon/bag-selected.svg" height="22" style="vertical-align: bottom;" /> 圖鑑 → 收藏頁
+### <sub><img src="./assets/images/05-icon/bag-selected.svg" height="22" /></sub> 圖鑑 → 收藏頁
 
 > 收集夢中寶物，豐富你的旅程。
 
@@ -66,7 +64,7 @@
   <img src="./assets/images/demo/collection-2.png" style="height: 300px"/>
 </div>
 
-### <img src="./assets/images/05-icon/book-selected.svg" height="22" style="vertical-align: bottom;" /> 日誌功能頁
+### <sub><img src="./assets/images/05-icon/book-selected.svg" height="22" /></sub> 日誌功能頁
 
 > 追蹤睡眠日誌，養成穩定作息。
 
@@ -77,7 +75,7 @@
   <img src="./assets/images/demo/record-4.png" style="height: 300px"/>
 </div>
 
-### <img src="./assets/images/05-icon/setting-selected.svg" height="22" style="vertical-align: bottom;" /> 設定頁
+### <sub><img src="./assets/images/05-icon/setting-selected.svg" height="22" /></sub> 設定頁
 
 > 帳號設定與開啟提醒。
 

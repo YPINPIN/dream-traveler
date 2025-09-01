@@ -9,6 +9,7 @@ import {
   forceMaxTickPlugin,
   autoSelectPlugin,
   clickOnDataOnlyPlugin,
+  monthFocusDatePlugin,
 } from "/assets/scripts/chart-plugin.js";
 // tooltip config
 import {
@@ -198,7 +199,22 @@ function setTravelData(index) {
       chart_travel.options.scales.x.min = allDates[0].toDate();
       chart_travel.options.scales.x.max = lastDay.toDate();
       chart_travel.options.scales.x.ticks.callback = function (value) {
+        // month 模式下點到當前 x 軸 tick 的前後一日日期，強制顯示該日期，並隱藏掉相鄰的 tick。
         const d = dayjs(value);
+        const forcedDate = chart_travel.forcedDate;
+
+        if (forcedDate && d.isSame(forcedDate, "day")) {
+          return d.format("D");
+        }
+
+        if (
+          forcedDate &&
+          (d.isSame(forcedDate.add(1, "day"), "day") ||
+            d.isSame(forcedDate.subtract(1, "day"), "day"))
+        ) {
+          return "";
+        }
+
         return tickDates.find((td) => td.isSame(d, "day")) ? d.format("D") : "";
       };
     }
@@ -288,7 +304,22 @@ function switchChartTravelMode(newTravelData, mode) {
           lineHeight: 1.33,
         }),
         callback: function (value) {
+          // month 模式下點到當前 x 軸 tick 的前後一日日期，強制顯示該日期，並隱藏掉相鄰的 tick。
           const d = dayjs(value);
+          const forcedDate = chart_travel.forcedDate;
+
+          if (forcedDate && d.isSame(forcedDate, "day")) {
+            return d.format("D");
+          }
+
+          if (
+            forcedDate &&
+            (d.isSame(forcedDate.add(1, "day"), "day") ||
+              d.isSame(forcedDate.subtract(1, "day"), "day"))
+          ) {
+            return "";
+          }
+
           return tickDates.find((td) => td.isSame(d, "day"))
             ? d.format("D")
             : "";
@@ -390,8 +421,14 @@ function switchChartTravelMode(newTravelData, mode) {
 
         chart.update();
       },
+      currentMode: currentTab, // 自訂的屬性
     },
-    plugins: [averageLinePlugin, autoSelectPlugin, clickOnDataOnlyPlugin],
+    plugins: [
+      averageLinePlugin,
+      autoSelectPlugin,
+      clickOnDataOnlyPlugin,
+      monthFocusDatePlugin,
+    ],
   });
 }
 
@@ -455,7 +492,22 @@ function setDepartureData(index) {
       chart_departure.options.scales.x.min = allDates[0].toDate();
       chart_departure.options.scales.x.max = lastDay.toDate();
       chart_departure.options.scales.x.ticks.callback = function (value) {
+        // month 模式下點到當前 x 軸 tick 的前後一日日期，強制顯示該日期，並隱藏掉相鄰的 tick。
         const d = dayjs(value);
+        const forcedDate = chart_departure.forcedDate;
+
+        if (forcedDate && d.isSame(forcedDate, "day")) {
+          return d.format("D");
+        }
+
+        if (
+          forcedDate &&
+          (d.isSame(forcedDate.add(1, "day"), "day") ||
+            d.isSame(forcedDate.subtract(1, "day"), "day"))
+        ) {
+          return "";
+        }
+
         return tickDates.find((td) => td.isSame(d, "day")) ? d.format("D") : "";
       };
     }
@@ -558,7 +610,22 @@ function switchChartDepartureMode(newDepartureData, mode) {
           lineHeight: 1.33,
         }),
         callback: function (value) {
+          // month 模式下點到當前 x 軸 tick 的前後一日日期，強制顯示該日期，並隱藏掉相鄰的 tick。
           const d = dayjs(value);
+          const forcedDate = chart_departure.forcedDate;
+
+          if (forcedDate && d.isSame(forcedDate, "day")) {
+            return d.format("D");
+          }
+
+          if (
+            forcedDate &&
+            (d.isSame(forcedDate.add(1, "day"), "day") ||
+              d.isSame(forcedDate.subtract(1, "day"), "day"))
+          ) {
+            return "";
+          }
+
           return tickDates.find((td) => td.isSame(d, "day"))
             ? d.format("D")
             : "";
@@ -688,12 +755,14 @@ function switchChartDepartureMode(newDepartureData, mode) {
 
         chart.update();
       },
+      currentMode: currentTab, // 自訂的屬性
     },
     plugins: [
       forceMaxTickPlugin,
       verticalLinePlugin,
       autoSelectPlugin,
       clickOnDataOnlyPlugin,
+      monthFocusDatePlugin,
     ],
   });
 }
@@ -758,7 +827,22 @@ function setArrivalData(index) {
       chart_arrival.options.scales.x.min = allDates[0].toDate();
       chart_arrival.options.scales.x.max = lastDay.toDate();
       chart_arrival.options.scales.x.ticks.callback = function (value) {
+        // month 模式下點到當前 x 軸 tick 的前後一日日期，強制顯示該日期，並隱藏掉相鄰的 tick。
         const d = dayjs(value);
+        const forcedDate = chart_arrival.forcedDate;
+
+        if (forcedDate && d.isSame(forcedDate, "day")) {
+          return d.format("D");
+        }
+
+        if (
+          forcedDate &&
+          (d.isSame(forcedDate.add(1, "day"), "day") ||
+            d.isSame(forcedDate.subtract(1, "day"), "day"))
+        ) {
+          return "";
+        }
+
         return tickDates.find((td) => td.isSame(d, "day")) ? d.format("D") : "";
       };
     }
@@ -859,7 +943,22 @@ function switchChartArrivalMode(newArrivalData, mode) {
           lineHeight: 1.33,
         }),
         callback: function (value) {
+          // month 模式下點到當前 x 軸 tick 的前後一日日期，強制顯示該日期，並隱藏掉相鄰的 tick。
           const d = dayjs(value);
+          const forcedDate = chart_arrival.forcedDate;
+
+          if (forcedDate && d.isSame(forcedDate, "day")) {
+            return d.format("D");
+          }
+
+          if (
+            forcedDate &&
+            (d.isSame(forcedDate.add(1, "day"), "day") ||
+              d.isSame(forcedDate.subtract(1, "day"), "day"))
+          ) {
+            return "";
+          }
+
           return tickDates.find((td) => td.isSame(d, "day"))
             ? d.format("D")
             : "";
@@ -985,12 +1084,14 @@ function switchChartArrivalMode(newArrivalData, mode) {
 
         chart.update();
       },
+      currentMode: currentTab, // 自訂的屬性
     },
     plugins: [
       forceMaxTickPlugin,
       verticalLinePlugin,
       autoSelectPlugin,
       clickOnDataOnlyPlugin,
+      monthFocusDatePlugin,
     ],
   });
 }
