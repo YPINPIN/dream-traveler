@@ -2,7 +2,7 @@
   "week": [
     {
       "averageTravelTime": 7.34,
-      "diffFromLastTravel": 0.59,
+      "diffFromLastTravel": 0.57,
       "totalTravelTime": 51.4,
       "goalDeparture": 2,
       "diffFromLastDeparture": 1,
@@ -54,9 +54,9 @@
       ]
     },
     {
-      "averageTravelTime": 6.75,
+      "averageTravelTime": 6.77,
       "diffFromLastTravel": -0.21,
-      "totalTravelTime": 47.25,
+      "totalTravelTime": 47.4,
       "goalDeparture": 1,
       "diffFromLastDeparture": -2,
       "goalArrival": 3,
@@ -70,9 +70,9 @@
         },
         {
           "date": "2025-07-15",
-          "departureAt": "21:20",
-          "arrivalAt": "07:10",
-          "travelTime": 7.8
+          "departureAt": "00:00",
+          "arrivalAt": "08:00",
+          "travelTime": 8.0
         },
         {
           "date": "2025-07-16",
@@ -94,7 +94,7 @@
         },
         {
           "date": "2025-07-19",
-          "departureAt": "01:15",
+          "departureAt": "02:00",
           "arrivalAt": "06:20",
           "travelTime": 7.3
         },
@@ -125,9 +125,9 @@
         },
         {
           "date": "2025-07-15",
-          "departureAt": "21:20",
-          "arrivalAt": "07:10",
-          "travelTime": 7.8
+          "departureAt": "00:00",
+          "arrivalAt": "08:00",
+          "travelTime": 8.0
         },
         {
           "date": "2025-07-16",
@@ -149,7 +149,7 @@
         },
         {
           "date": "2025-07-19",
-          "departureAt": "01:15",
+          "departureAt": "02:00",
           "arrivalAt": "06:20",
           "travelTime": 7.3
         },
@@ -222,7 +222,7 @@
           "date": "2025-06-15",
           "departureAt": "23:20",
           "arrivalAt": "07:10",
-          "travelTime": 7.8
+          "travelTime": 8.0
         },
         {
           "date": "2025-06-16",
@@ -330,9 +330,9 @@
         },
         {
           "month": 2,
-          "departureAt": "23:20",
-          "arrivalAt": "07:10",
-          "travelTime": 7.8
+          "departureAt": "00:00",
+          "arrivalAt": "08:00",
+          "travelTime": 9.0
         },
         {
           "month": 3,
