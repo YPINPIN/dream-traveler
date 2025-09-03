@@ -16,6 +16,7 @@ const tooltip_config_1 = {
   // 是否顯示顏色色塊
   displayColors: false,
   // 顯示的位置
+  caretPadding: 4, // 偏移的距離
   xAlign: "center",
   yAlign: "bottom",
   callbacks: {
@@ -54,6 +55,7 @@ const tooltip_config_2 = {
   // 是否顯示顏色色塊
   displayColors: false,
   // 顯示的位置
+  caretPadding: 4, // 偏移的距離
   xAlign: "center",
   yAlign: "bottom",
   callbacks: {
@@ -82,6 +84,7 @@ const tooltip_config_3 = {
   // 是否顯示顏色色塊
   displayColors: false,
   // 顯示的位置
+  caretPadding: 8, // 偏移的距離
   xAlign: "center",
   yAlign: "bottom",
   callbacks: {
@@ -120,6 +123,7 @@ const tooltip_config_4 = {
   // 是否顯示顏色色塊
   displayColors: false,
   // 顯示的位置
+  caretPadding: 8, // 偏移的距離
   xAlign: "center",
   yAlign: "bottom",
   callbacks: {
@@ -157,6 +161,7 @@ const tooltip_config_5 = {
   // 是否顯示顏色色塊
   displayColors: false,
   // 顯示的位置
+  caretPadding: 8, // 偏移的距離
   xAlign: "center",
   yAlign: "bottom",
   callbacks: {

@@ -385,7 +385,14 @@ function switchChartTravelMode(newTravelData, mode) {
         tooltip: mode === "year" ? tooltip_config_2 : tooltip_config_1,
         averageLine: { average: newTravelData.averageTravelTime },
       },
-      layout: { padding: { left: 0, right: 0, top: 24, bottom: 0 } },
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          top: mode === "year" ? 48 : 32,
+          bottom: 0,
+        },
+      },
       scales: {
         x: xConfig,
         y: {
@@ -703,8 +710,11 @@ function switchChartDepartureMode(newDepartureData, mode) {
             "#C5CCCB"
           ),
           // hover 時才顯示點 (不放大)
-          pointHitRadius: 6, // hover 判定區域，可比點大一點
+          pointHitRadius: 4, // hover 判定區域
           pointHoverBackgroundColor: "#7BC9C2",
+          // 讓 point 不被裁掉
+          clip: false,
+          tension: 0.01, // 輕微圓滑，消除尖尖
         },
       ],
     },
@@ -715,7 +725,14 @@ function switchChartDepartureMode(newDepartureData, mode) {
         legend: { display: false },
         tooltip: mode === "year" ? tooltip_config_4 : tooltip_config_3,
       },
-      layout: { padding: { left: 0, right: 0, top: 24, bottom: 0 } },
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          top: mode === "year" ? 52 : 36,
+          bottom: 0,
+        },
+      },
       scales: {
         x: xConfig,
         y: {
@@ -1032,8 +1049,11 @@ function switchChartArrivalMode(newArrivalData, mode) {
             "#C5CCCB"
           ),
           // hover 時才顯示點 (不放大)
-          pointHitRadius: 6, // hover 判定區域，可比點大一點
+          pointHitRadius: 4, // hover 判定區域
           pointHoverBackgroundColor: "#7BC9C2",
+          // 讓 point 不被裁掉
+          clip: false,
+          tension: 0.01, // 輕微圓滑，消除尖尖
         },
       ],
     },
@@ -1044,7 +1064,14 @@ function switchChartArrivalMode(newArrivalData, mode) {
         legend: { display: false },
         tooltip: mode === "year" ? tooltip_config_5 : tooltip_config_3,
       },
-      layout: { padding: { left: 0, right: 0, top: 24, bottom: 0 } },
+      layout: {
+        padding: {
+          left: 0,
+          right: 0,
+          top: mode === "year" ? 52 : 36,
+          bottom: 0,
+        },
+      },
       scales: {
         x: xConfig,
         y: {
