@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>scene-village</title>
-    <script type="module" crossorigin src="/dream-traveler/assets/main-BkCKeEsG.js"></script>
-    <link rel="stylesheet" crossorigin href="/dream-traveler/assets/main-BPblv9fF.css">
+    <script type="module" crossorigin src="/dream-traveler/assets/main-DP_QPlv1.js"></script>
+    <link rel="stylesheet" crossorigin href="/dream-traveler/assets/main-BMgCQnZO.css">
   </head>
   <body>
     <div class="app">
       <div class="app-border">
-        <div class="app-frame overflow-y-auto">
+        <div class="app-frame overflow-y-auto h-100">
           <div
             class="position-sticky top-0 z-2 bg-neutral-1100 sceneHeading position-relative"
           >
@@ -32,10 +32,7 @@
   <div class="p-6 top-nav-block"></div>
   
 </header>
-            <p
-              class="text-center mb-4 bg-neutral-1100"
-              style="margin-top: 14px"
-            >
+            <p class="text-center mb-4 bg-neutral-1100 mt-6">
               收集進度：12 / 75
             </p>
             <ul
@@ -96,13 +93,13 @@
               <img src="data:image/svg+xml,%3c!--改掉%20stroke='%23F6F7F7'%20--%3e%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M10%2018H21M3%2018H6M6%2018V20M6%2018V16M20%2012H21M3%2012H16M16%2012V14M16%2012V10M14%206H21M3%206H10M10%206V8M10%206V4'%20stroke='%2315312f'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" alt="filter" />
             </button>
           </div>
-          <main class="scene">
-            <div class="tab-content" id="myTabContent">
+          <main class="scene h-100">
+            <div class="tab-content h-100" id="myTabContent">
               <div
-                class="tab-pane show active bg-neutral-900"
+                class="tab-pane show active bg-neutral-900 h-100 overflow-modify overflow-y-auto"
                 id="star-road"
                 role="tabpanel"
-                aria-labelledby="home-tab"
+                aria-labelledby="star-road-tab"
               >
                 <div class="container py-4 position-relative">
                   <div class="row gx-6 gy-6">
@@ -160,21 +157,19 @@
                                 />
                               </div>
                               <div
-                                class="d-flex justify-content-center gap-3 mb-4"
+                                class="d-flex justify-content-center gap-3 mb-4 text-center"
                               >
                                 <span
                                   class="badge bg-neutral-900 text-primary-300 fw-bold border border-2 border-primary-300 rounded-pill py-2 px-4 fs-9"
-                                  style="width: 80px"
                                   >淺夢之村</span
                                 >
                                 <span
                                   class="badge bg-neutral-900 text-primary-300 fw-bold border border-2 border-primary-300 rounded-pill py-2 px-4 fs-9"
-                                  style="width: 80px"
                                   >星光小路</span
                                 >
                                 <span
                                   class="badge badge-bg text-neutral-1000 fw-bold border-transparent rounded-pill py-2 px-4 fs-9"
-                                  style="width: 80px"
+                                  style="width: 48px; box-sizing: content-box"
                                   >高級</span
                                 >
                               </div>
@@ -564,10 +559,10 @@
                 </div>
               </div>
               <div
-                class="tab-pane bg-neutral-900"
+                class="tab-pane bg-neutral-900 h-100 overflow-modify overflow-y-auto"
                 id="cradle-house"
                 role="tabpanel"
-                aria-labelledby="profile-tab"
+                aria-labelledby="cradle-house-tab"
               >
                 <div class="container py-4 position-relative">
                   <div class="row gx-6 gy-6">
@@ -797,10 +792,10 @@
                 </div>
               </div>
               <div
-                class="tab-pane bg-neutral-900"
+                class="tab-pane bg-neutral-900 h-100 overflow-modify overflow-y-auto"
                 id="dream-tower"
                 role="tabpanel"
-                aria-labelledby="contact-tab"
+                aria-labelledby="dream-tower-tab"
               >
                 <div class="container py-4 position-relative">
                   <div class="row gx-6 gy-6">
@@ -1070,5 +1065,45 @@
       </div>
     </div>
 
+    <script>
+      const tabs = document.getElementById("myTab");
+
+      // 找到真正有滾動條的目標：先 pane 本身，再找 pane 內第一層設了 overflow 的容器
+      function getScrollTargets(pane) {
+        const list = [pane];
+        pane
+          .querySelectorAll(
+            ":scope > .overflow-auto, :scope > .overflow-scroll"
+          )
+          .forEach((el) => list.push(el));
+        return list;
+      }
+
+      // 連續幀硬歸零（避免轉場/圖片載入把位置拉回去）
+      function forceTop(el) {
+        let tries = 0,
+          max = 8;
+        const tick = () => {
+          // 避免焦點導致自動捲動
+          if (el && el.focus) el.focus({ preventScroll: true });
+          el.scrollTop = 0;
+          tries++;
+          if (el.scrollTop !== 0 && tries < max) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      }
+
+      ["show.bs.tab", "shown.bs.tab"].forEach((ev) => {
+        tabs.addEventListener(ev, (e) => {
+          const sel =
+            e.target.getAttribute("data-bs-target") ||
+            "#" + e.target.getAttribute("aria-controls");
+          const pane = document.querySelector(sel);
+          if (!pane) return;
+          // 對 pane 與可能的子層滾動容器都做
+          getScrollTargets(pane).forEach(forceTop);
+        });
+      });
+    </script>
   </body>
 </html>
