@@ -1,5 +1,5 @@
 .filter {
-  transform: translate(-24px, 16px);
+  transform: translate(-24px, 42px);
   box-shadow: 0px 3px 6px 0px rgba(10, 11, 10, 0.16),
     0px 3px 6px 0px rgba(10, 11, 10, 0.23);
 }
@@ -37,4 +37,9 @@
 
 .border-transparent {
   border: 2px solid $neutral-900;
+}
+
+.overflow-modify {
+  overflow-y: auto;
+  overscroll-behavior: none;
 }

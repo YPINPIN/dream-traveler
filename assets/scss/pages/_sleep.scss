@@ -1,5 +1,7 @@
 .bg {
   &-sleep {
+    background-color: rgba(12, 28, 27, 0.4);
+    background-blend-mode: multiply;
     background-image: url("/assets/images/04-background/sub-scene/sleep-page/scene-01/sub-scene-sleep-page-01-星光小路@2x.png");
     background-size: cover;
     background-position: center;
