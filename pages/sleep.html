@@ -32,17 +32,19 @@
             </div>
             <div class="py-6 px-4 bg-neutral-900" style="border-radius: 8px;">
               <ul class="ps-0 mb-3">
-                <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px">
+                <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 fw-bold"
+                  style="height: 60px">
                   助眠音樂開關
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="wakeup-alert">
+                    <input class="form-check-input" type="checkbox" role="switch" id="sleep-alert">
                     <label class="form-check-label" for="wakeup-alert"></label>
                   </div>
                 </li>
-                <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4"
-                  style="height: 60px; opacity: 0.3;">
+                <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 fw-bold opacity-30"
+                  id="alert-sleep-setting" style="height: 60px;">
                   助眠音樂設定 <div>
-                    <span class="me-2"></span><img src="/assets/images/05-icon/next.svg" alt="next" class="align-top">
+                    <span class="me-2 fw-normal" id="sleep_time"></span><img src="/assets/images/05-icon/next.svg"
+                      alt="next" class="align-top">
                   </div>
                 </li>
               </ul>
@@ -144,6 +146,7 @@
   </div>
 
   <script type="module" src="../main.js"></script>
+  <script type="module" src="/assets/scripts/sleep.js"></script>
 </body>
 
 </html>
