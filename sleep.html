@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>夢の旅人</title>
-  <script type="module" crossorigin src="/dream-traveler/assets/main-gCf6SNKE.js"></script>
-  <link rel="stylesheet" crossorigin href="/dream-traveler/assets/main-Cs9oeZU1.css">
+  <script type="module" crossorigin src="/dream-traveler/assets/sleep-CNomnc4Z.js"></script>
+  <link rel="modulepreload" crossorigin href="/dream-traveler/assets/main-DP79Bsg8.js">
+  <link rel="stylesheet" crossorigin href="/dream-traveler/assets/main-qTmdAXG9.css">
 </head>
 
 <body>
@@ -34,17 +35,19 @@
             </div>
             <div class="py-6 px-4 bg-neutral-900" style="border-radius: 8px;">
               <ul class="ps-0 mb-3">
-                <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px">
+                <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 fw-bold"
+                  style="height: 60px">
                   助眠音樂開關
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="wakeup-alert">
+                    <input class="form-check-input" type="checkbox" role="switch" id="sleep-alert">
                     <label class="form-check-label" for="wakeup-alert"></label>
                   </div>
                 </li>
-                <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4"
-                  style="height: 60px; opacity: 0.3;">
+                <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 fw-bold opacity-30"
+                  id="alert-sleep-setting" style="height: 60px;">
                   助眠音樂設定 <div>
-                    <span class="me-2"></span><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M9%207L14%2012L9%2017'%20stroke='%23F6F7F7'%20stroke-width='2'%20stroke-linecap='round'/%3e%3c/svg%3e" alt="next" class="align-top">
+                    <span class="me-2 fw-normal" id="sleep_time"></span><img src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M9%207L14%2012L9%2017'%20stroke='%23F6F7F7'%20stroke-width='2'%20stroke-linecap='round'/%3e%3c/svg%3e"
+                      alt="next" class="align-top">
                   </div>
                 </li>
               </ul>
