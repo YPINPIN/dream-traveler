@@ -19,12 +19,12 @@
 
 <img src="./assets/images/01-logo/logo-green-svg.svg" />
 
-## 🎨 設計稿 & 設計師 (AAPD)
+## 🎨 設計師 (AAPD)
 
-- Heather
-- OuO
-- 兔
-- Henry
+- [Heather Chiu](https://www.linkedin.com/in/heather-chiu-9190a81a5/)
+- [Evelyn Lin](https://www.evelyn010.website/)
+- [Tzuting Tu](https://www.behance.net/7ec46fba)
+- [Henry](https://www.behance.net/henrywu15)
 
 ## 💻 前端人員 (六角學院)
 
