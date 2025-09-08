@@ -11,9 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const on = sw.checked; // 或 isOn()
 
     panel.classList.toggle("opacity-30", !on); // 父層透明度
-    sleep_time.textContent = on ? "5分鐘前" : "未設定";
+    panel.classList.toggle("pe-none", !on); //禁用連結
+    panel.setAttribute("aria-disabled", String(!on));
 
-    // 依狀態切換文字樣式（以 Bootstrap 為例）
+    sleep_time.textContent = on ? "5分鐘前" : "未設定";
     sleep_time.classList.toggle("text-neutral-400", on);
   };
 
