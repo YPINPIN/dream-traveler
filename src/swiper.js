@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
-const swiper = new Swiper('.bgSwiper', {
+export const swiper = new Swiper('.bgSwiper', {
   modules: [Navigation, Pagination],
   grabCursor: true,
   resistanceRatio: 0,

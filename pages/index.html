@@ -13,14 +13,14 @@
           <!-- Swiper -->
           <div class="swiper bgSwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide bg-village"></div>
-              <div class="swiper-slide bg-valley"></div>
-              <div class="swiper-slide bg-forest"></div>
-              <div class="swiper-slide bg-island"></div>
+              <div class="swiper-slide bg-village" data-background="village"></div>
+              <div class="swiper-slide bg-valley locked" data-background="valley"></div>
+              <div class="swiper-slide bg-forest locked" data-background="forest"></div>
+              <div class="swiper-slide bg-island locked" data-background="island"></div>
             </div>
             <div class="swiper-text">
-              <p class="fs-9 pb-2">現在探索的場景</p>
-              <h2 class="fs-3 fw-bold">淺夢之村</h2>
+              <p id="scene-intro" class="fs-9 pb-2">現在探索的場景</p>
+              <h2 id="scene-title" class="fs-3 fw-bold">淺夢之村</h2>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -54,9 +54,7 @@
                   <span class="fs-9">AM</span>
                 </p>
               </div>
-              <a href="path.html" class="btn-departure rounded-circle fw-bold"
-                >現在啟程</a
-              >
+              <a href="path.html" id="departure-button" class="btn-departure rounded-circle fw-bold" data-locked="true">現在啟程</a>
             </section>
           </main>
           <!-- navbar -->
@@ -68,5 +66,6 @@
     </div>
 
     <script type="module" src="../main.js"></script>
+    <script type="module" src="/assets/scripts/index.js"></script>
   </body>
 </html>
