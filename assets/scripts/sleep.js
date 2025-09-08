@@ -1,3 +1,5 @@
+import checkGreenUrl from "/assets/images/05-icon/check-green.svg";
+
 document.addEventListener("DOMContentLoaded", () => {
   const sw = document.getElementById("sleep-alert");
   const panel = document.getElementById("alert-sleep-setting");
@@ -50,8 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     box.classList.add("done");
     range.value = 100;
     setVisualByValue(100);
-    label.innerHTML =
-      '完成睡眠紀錄<span class="end-btn rounded-circle p-2 bg-neutral-100 position-absolute" id="knob"><img src="/dream-traveler/assets/images/05-icon/check-green.svg" alt="next"></span>';
+    label.innerHTML = `完成睡眠紀錄<span class="end-btn rounded-circle p-2 bg-neutral-100 position-absolute" id="knob"><img src="${checkGreenUrl}" alt="next"></span>`;
     range.disabled = true; // 鎖住互動
     label.classList.remove("btn-primary-300");
     label.classList.add("btn-primary-400");
