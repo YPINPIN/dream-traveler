@@ -12,13 +12,12 @@
 }
 
 .offcanvas {
-  position: fixed;
+  position: absolute;
   z-index: 51;
   &.offcanvas-end {
     width: 375px;
     height: 736px;
-    top: calc(50%  - 356px);
-    right: calc(50% - 187px);
+    top: 50px;
   }
   .offcanvas-body {
     padding-bottom: 24px;
