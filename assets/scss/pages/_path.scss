@@ -8,6 +8,10 @@
       cursor: pointer;
       border: 2px solid $primary-300;
     }
+    &.selected {
+      border: 2px solid $primary-300;
+      background-color: $primary-700;
+    }
   }
 }
 
@@ -35,6 +39,12 @@
   color: $primary-300;
   font-weight: bold;
   text-align: center;
+  opacity: 0.3;
+  pointer-events: none;
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
   &-wrapper {
     width: auto;
     padding: 24px 16px 58px;
