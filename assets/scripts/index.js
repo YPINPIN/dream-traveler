@@ -15,6 +15,11 @@ const departureBtn = document.getElementById("departure-button");
 const swiperSlides = document.querySelectorAll('.swiper-slide');
 const sceneIntro = document.getElementById('scene-intro');
 const sceneTitle = document.getElementById('scene-title');
+const offcanvasRight = document.getElementById('offcanvasRight');
+const pathCardList = document.querySelectorAll('.path-card');
+const pathButton = document.querySelector('.btn-path');
+const travelTimePage = document.querySelector('.travel-time-page');
+const backToPathPage = document.querySelector('.travel-time-page .top-nav a')
 
 // 設定輪播背景圖片
 swiperSlides.forEach(slide => {
@@ -31,6 +36,7 @@ swiperSlides.forEach(slide => {
 })
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 輪播切換
   swiper.on('slideChange', () => {
     // 捕捉當前背景索引
     const activeIndex = swiper.activeIndex;
@@ -60,5 +66,36 @@ document.addEventListener('DOMContentLoaded', () => {
       departureBtn.textContent = "現在啟程";
       sceneIntro.textContent = '現在探索的場景';
     }
+  })
+
+  offcanvasRight.addEventListener('click', (e) => {
+    const cardElement = e.target.closest('.card');
+    if (!cardElement) return;
+
+    // 路徑卡片清單的卡片被選到加上 selected 樣式，沒選到移除 selected 樣式
+    pathCardList.forEach((cardItem) => {
+      const cardId = cardElement.dataset.cardId;
+      if (cardItem.dataset.cardId === cardId) {
+        cardItem.classList.add('selected');
+      } else {
+        cardItem.classList.remove('selected');
+      }
+    })
+
+    // 檢查是否有路徑卡片被選到
+    const hasSelected = [...pathCardList].some(cardItem => cardItem.classList.contains('selected'));
+
+    if (hasSelected) {
+      pathButton.classList.add('active');
+    }
+  })
+
+  // 設定旅遊時間頁動態效果
+  pathButton.addEventListener('click', () => {
+    travelTimePage.classList.add('show');
+  })
+
+  backToPathPage.addEventListener('click', () => {
+    travelTimePage.classList.remove('show');
   })
 })
