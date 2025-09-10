@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>home</title>
-    <script type="module" crossorigin src="/dream-traveler/assets/main-wLSLBlrs.js"></script>
-    <link rel="stylesheet" crossorigin href="/dream-traveler/assets/main-BerGZavR.css">
+    <script type="module" crossorigin src="/dream-traveler/assets/index-C_hDMRmV.js"></script>
+    <link rel="modulepreload" crossorigin href="/dream-traveler/assets/main-DGsXAGrB.js">
+    <link rel="stylesheet" crossorigin href="/dream-traveler/assets/main-CJ7Mwz09.css">
   </head>
   <body>
     <div class="app">
@@ -15,14 +16,14 @@
           <!-- Swiper -->
           <div class="swiper bgSwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide bg-village"></div>
-              <div class="swiper-slide bg-valley"></div>
-              <div class="swiper-slide bg-forest"></div>
-              <div class="swiper-slide bg-island"></div>
+              <div class="swiper-slide bg-village" data-background="village"></div>
+              <div class="swiper-slide bg-valley locked" data-background="valley"></div>
+              <div class="swiper-slide bg-forest locked" data-background="forest"></div>
+              <div class="swiper-slide bg-island locked" data-background="island"></div>
             </div>
             <div class="swiper-text">
-              <p class="fs-9 pb-2">現在探索的場景</p>
-              <h2 class="fs-3 fw-bold">淺夢之村</h2>
+              <p id="scene-intro" class="fs-9 pb-2">現在探索的場景</p>
+              <h2 id="scene-title" class="fs-3 fw-bold">淺夢之村</h2>
             </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
@@ -56,9 +57,7 @@
                   <span class="fs-9">AM</span>
                 </p>
               </div>
-              <a href="path.html" class="btn-departure rounded-circle fw-bold"
-                >現在啟程</a
-              >
+              <a href="path.html" id="departure-button" class="btn-departure rounded-circle fw-bold" data-locked="true">現在啟程</a>
             </section>
           </main>
           <!-- navbar -->
