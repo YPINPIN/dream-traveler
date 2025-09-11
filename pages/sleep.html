@@ -1,270 +1,382 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/images/favicon.ico" />
+    <title>夢の旅人</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>夢の旅人</title>
+    <style>
+      .slide-range {
+        width: 311px;
+        height: 48px;
+        padding: 4px 5px;
+        position: relative;
+      }
 
-  <style>
-    .slide-range {
-      width: 311px;
-      height: 48px;
-      padding: 4px 5px;
-      position: relative;
-    }
+      .track {
+        position: absolute;
+        inset: 0;
+        border-radius: 9999px;
+        background: #264547;
+        overflow: hidden;
+      }
 
-    .track {
-      position: absolute;
-      inset: 0;
-      border-radius: 9999px;
-      background: #264547;
-      overflow: hidden;
-    }
+      .fill {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 44px;
+        background: #042f2b;
+      }
 
-    .fill {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 44px;
-      background: #042f2b;
-    }
+      .label {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 800;
+        color: #0e2b2c;
+        pointer-events: none;
+      }
 
-    .label {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      font-weight: 800;
-      color: #0e2b2c;
-      pointer-events: none;
-    }
+      .knob {
+        position: absolute;
+        top: 50%;
+        left: var(--pad);
+        transform: translate(0, -50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 9999px;
+        background: #fff;
+        color: #153536;
+        display: grid;
+        place-items: center;
+        font-size: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+        pointer-events: none;
+        /* 視覺按鈕不攔滑動；真實拖動是 input range */
+      }
 
-    .knob {
-      position: absolute;
-      top: 50%;
-      left: var(--pad);
-      transform: translate(0, -50%);
-      width: 44px;
-      height: 44px;
-      border-radius: 9999px;
-      background: #fff;
-      color: #153536;
-      display: grid;
-      place-items: center;
-      font-size: 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
-      pointer-events: none;
-      /* 視覺按鈕不攔滑動；真實拖動是 input range */
-    }
+      /* 透明的 range 覆蓋上層，負責拖動/鍵盤 */
+      #sleepRange {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        opacity: 0;
+        cursor: ew-resize;
+        cursor: default;
+      }
 
-    /* 透明的 range 覆蓋上層，負責拖動/鍵盤 */
-    #sleepRange {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 2;
-      -webkit-appearance: none;
-      appearance: none;
-      background: transparent;
-      opacity: 0;
-      cursor: ew-resize;
-      cursor: default;
-    }
+      #sleepRange::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+      }
 
-    #sleepRange::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 44px;
-      height: 44px;
-      background: transparent;
-    }
+      #sleepRange::-moz-range-thumb {
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        border: 0;
+      }
 
-    #sleepRange::-moz-range-thumb {
-      width: 44px;
-      height: 44px;
-      background: transparent;
-      border: 0;
-    }
+      /* 動畫：拖動時關閉過渡，放手時有過渡 */
+      .slide-range .knob,
+      .slide-range .fill {
+        transition: transform 0.08s linear, width 0.08s linear;
+      }
 
-    /* 動畫：拖動時關閉過渡，放手時有過渡 */
-    .slide-range .knob,
-    .slide-range .fill {
-      transition: transform .08s linear, width .08s linear;
-    }
+      .slide-range.dragging .knob,
+      .slide-range.dragging .fill {
+        transition: none;
+      }
 
-    .slide-range.dragging .knob,
-    .slide-range.dragging .fill {
-      transition: none;
-    }
+      /* 完成狀態 */
+      .slide-range.done .track {
+        background: #1f3b3d;
+      }
 
-    /* 完成狀態 */
-    .slide-range.done .track {
-      background: #1f3b3d;
-    }
+      .slide-range.done .fill {
+        background: #57b5ab;
+      }
 
-    .slide-range.done .fill {
-      background: #57b5ab;
-    }
+      .slide-range.done .label {
+        color: #0b2627;
+      }
 
-    .slide-range.done .label {
-      color: #0b2627;
-    }
+      .slide-range.done .knob {
+        background: #e9fff7;
+      }
+    </style>
+  </head>
 
-    .slide-range.done .knob {
-      background: #e9fff7;
-    }
-  </style>
-
-</head>
-
-<body>
-  <div class="app">
-    <div class="app-border">
-      <!-- 可以根據頁面設定，基礎的背景色，沒有設定則為透明 -->
-      <div class="app-frame bg-sleep">
-        <header class="top-nav"></header>
-        <main class="py-9 px-4" style="height: calc(812px - 50px - 34px);">
-          <div class="d-flex flex-column justify-content-between h-100">
-            <div>
-              <div class="text-center mb-6">
-                <h1 class="fs-1 letter-spacing-3">12：00</h1>
-                <p class="fs-7">AM</p>
+  <body>
+    <div class="app">
+      <div class="app-border">
+        <!-- 可以根據頁面設定，基礎的背景色，沒有設定則為透明 -->
+        <div class="app-frame bg-sleep">
+          <header class="top-nav"></header>
+          <main class="py-9 px-4" style="height: calc(812px - 50px - 34px)">
+            <div class="d-flex flex-column justify-content-between h-100">
+              <div>
+                <div class="text-center mb-6">
+                  <h1 class="fs-1 letter-spacing-3">12：00</h1>
+                  <p class="fs-7">AM</p>
+                </div>
+                <div class="text-center px-9">
+                  <p class="mb-4">
+                    今日已累積
+                    <span class="text-primary-300 fw-bold">250</span> 里程數
+                  </p>
+                  <div class="progress position-relative">
+                    <div
+                      class="progress-bar"
+                      role="progressbar"
+                      style="width: 25%"
+                      aria-valuenow="25"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    ></div>
+                    <img
+                      src="/assets/images/02-character/progress-bar-character.svg"
+                      alt="progress-bar-character"
+                      class="progress-bar-character"
+                    />
+                  </div>
+                </div>
               </div>
-              <div class="text-center px-9">
-                <p class="mb-4">今日已累積 <span class="text-primary-300 fw-bold">250</span> 里程數</p>
-                <div class="progress position-relative">
-                  <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                    aria-valuemax="100"></div>
-                  <img src="/assets/images/02-character/progress-bar-character.svg" alt="progress-bar-character"
-                    class="progress-bar-character">
+              <div class="py-6 px-4 bg-neutral-900" style="border-radius: 8px">
+                <ul class="ps-0 mb-3">
+                  <li
+                    class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 fw-bold"
+                    style="height: 60px"
+                  >
+                    助眠音樂開關
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        id="sleep-alert"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="wakeup-alert"
+                      ></label>
+                    </div>
+                  </li>
+                  <li
+                    class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 fw-bold opacity-30"
+                    id="alert-sleep-setting"
+                    style="height: 60px"
+                  >
+                    助眠音樂設定
+                    <div>
+                      <span class="me-2 fw-normal" id="sleep_time"></span
+                      ><img
+                        src="/assets/images/05-icon/next.svg"
+                        alt="next"
+                        class="align-top"
+                      />
+                    </div>
+                  </li>
+                </ul>
+                <div class="slide-range" id="endSleep">
+                  <div class="track">
+                    <button
+                      type="button"
+                      class="btn btn-primary-300 rounded-pill fw-bold py-3 w-100 position-relative text-neutral-1000"
+                      data-bs-toggle="modal"
+                      data-bs-target="#sleep"
+                      id="sleepLabel"
+                    >
+                      滑動以結束睡眠
+                      <span
+                        class="drag-btn rounded-circle p-2 bg-neutral-100 position-absolute"
+                        id="knob"
+                      >
+                        <img
+                          src="/assets/images/05-icon/next-green.svg"
+                          alt="next"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                  <!-- 控制層（透明） -->
+                  <input
+                    id="sleepRange"
+                    class="cursor-hand"
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    aria-label="滑動以結束睡眠"
+                  />
+                </div>
+                <div
+                  class="modal fade"
+                  id="sleep"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered custom-modal">
+                    <div class="modal-content border-2 border-primary-50 mx-4">
+                      <div class="modal-header bg-neutral-100 py-3">
+                        <h5
+                          class="modal-title w-100 text-neutral-1000 fw-bold fs-5 text-center"
+                          id="staticBackdropLabel"
+                        >
+                          恭喜你完成今天的旅程！
+                        </h5>
+                      </div>
+                      <div
+                        class="modal-body p-5 d-flex flex-column align-items-center"
+                      >
+                        <div class="d-flex justify-content-center mb-4">
+                          <img
+                            src="/assets/images/02-character/reward-modal-character.svg"
+                            alt="完成旅程"
+                          />
+                        </div>
+                        <ul class="ps-0" style="width: 160px">
+                          <li class="mb-3 d-flex justify-content-between">
+                            <p class="fw-bold">旅行 / 睡眠時數</p>
+                            <span class="text-primary-300 fw-bold">8</span>
+                          </li>
+                          <li class="mb-3 d-flex justify-content-between">
+                            <p class="fw-bold">本次里程</p>
+                            <span class="text-primary-300 fw-bold">800</span>
+                          </li>
+                          <li class="d-flex justify-content-between">
+                            <p class="fw-bold">累積里程</p>
+                            <span class="text-primary-300 fw-bold">5100</span>
+                          </li>
+                        </ul>
+                        <button
+                          type="button"
+                          class="btn btn-primary-300 rounded-pill fw-bold py-3 w-100 text-neutral-1000"
+                          data-bs-target="#sleep2"
+                          data-bs-toggle="modal"
+                          data-bs-dismiss="modal"
+                        >
+                          我知道了
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="modal fade"
+                  id="sleep2"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered custom-modal">
+                    <div class="modal-content border-2 border-primary-50 mx-4">
+                      <div class="modal-header bg-neutral-100 py-3">
+                        <h5
+                          class="modal-title w-100 text-neutral-1000 fw-bold fs-5 text-center"
+                          id="staticBackdropLabel"
+                        >
+                          恭喜你獲得新寶物！
+                        </h5>
+                      </div>
+                      <div
+                        class="modal-body p-5 d-flex flex-column align-items-center"
+                      >
+                        <div class="d-flex justify-content-center mb-3">
+                          <img
+                            src="/assets/images/03-treasure/modal/treasure-unlock-modal-01.png"
+                            alt="晚安指北針"
+                            class="new-item"
+                          />
+                        </div>
+                        <ul class="ps-0">
+                          <li class="d-flex justify-content-between">
+                            <p class="fw-bold">新寶物：晚安指北針</p>
+                          </li>
+                        </ul>
+                        <button
+                          type="button"
+                          class="btn btn-primary-300 rounded-pill fw-bold py-3 w-100 text-neutral-1000"
+                          data-bs-target="#sleep3"
+                          data-bs-toggle="modal"
+                          data-bs-dismiss="modal"
+                        >
+                          開心收下
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="modal fade"
+                  id="sleep3"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered custom-modal">
+                    <div class="modal-content border-2 border-primary-50 mx-4">
+                      <div class="modal-header bg-neutral-100 py-3">
+                        <h5
+                          class="modal-title w-100 text-neutral-1000 fw-bold fs-5 text-center"
+                          id="staticBackdropLabel"
+                        >
+                          恭喜你解鎖新場景！
+                        </h5>
+                      </div>
+                      <div
+                        class="modal-body p-5 d-flex flex-column align-items-center"
+                      >
+                        <div class="d-flex justify-content-center mb-3">
+                          <img
+                            src="/assets/images/04-background/main-scene/square/深眠幽谷.png"
+                            alt="深眠幽谷"
+                            class="new-item"
+                          />
+                        </div>
+                        <ul class="ps-0">
+                          <li class="d-flex justify-content-between">
+                            <p class="fw-bold">新場景：深眠幽谷</p>
+                          </li>
+                        </ul>
+                        <a
+                          href="index.html"
+                          class="btn btn-primary-300 rounded-pill fw-bold py-3 w-100 text-neutral-1000"
+                          ata-bs-dismiss="modal"
+                          >我知道了</a
+                        >
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="py-6 px-4 bg-neutral-900" style="border-radius: 8px;">
-              <ul class="ps-0 mb-3">
-                <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 fw-bold"
-                  style="height: 60px">
-                  助眠音樂開關
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="sleep-alert">
-                    <label class="form-check-label" for="wakeup-alert"></label>
-                  </div>
-                </li>
-                <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 fw-bold opacity-30"
-                  id="alert-sleep-setting" style="height: 60px;">
-                  助眠音樂設定 <div>
-                    <span class="me-2 fw-normal" id="sleep_time"></span><img src="/assets/images/05-icon/next.svg"
-                      alt="next" class="align-top">
-                  </div>
-                </li>
-              </ul>
-              <div class="slide-range" id="endSleep">
-                <div class="track">
-                  <button type="button"
-                    class="btn btn-primary-300 rounded-pill fw-bold py-3 w-100 position-relative text-neutral-1000"
-                    data-bs-toggle="modal" data-bs-target="#sleep" id="sleepLabel">
-                    滑動以結束睡眠
-                    <span class="drag-btn rounded-circle p-2 bg-neutral-100 position-absolute" id="knob">
-                      <img src="/assets/images/05-icon/next-green.svg" alt="next">
-                    </span>
-                  </button>
-                </div>
-                <!-- 控制層（透明） -->
-                <input id="sleepRange" class="cursor-hand" type="range" min="0" max="100" value="0"
-                  aria-label="滑動以結束睡眠">
-              </div>
-              <div class="modal fade" id="sleep" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered custom-modal">
-                  <div class="modal-content border-2 border-primary-50 mx-4 ">
-                    <div class="modal-header bg-neutral-100 py-3">
-                      <h5 class="modal-title w-100 text-neutral-1000 fw-bold fs-5 text-center" id="staticBackdropLabel">
-                        恭喜你完成今天的旅程！</h5>
-                    </div>
-                    <div class="modal-body p-5 d-flex flex-column align-items-center">
-                      <div class="d-flex justify-content-center mb-4 ">
-                        <img src="/assets/images/02-character/reward-modal-character.svg" alt="完成旅程">
-                      </div>
-                      <ul class="ps-0" style="width: 160px;">
-                        <li class="mb-3 d-flex justify-content-between">
-                          <p class="fw-bold">旅行 / 睡眠時數 </p> <span class="text-primary-300 fw-bold">8</span>
-                        </li>
-                        <li class="mb-3 d-flex justify-content-between">
-                          <p class="fw-bold">本次里程 </p><span class="text-primary-300 fw-bold">800</span>
-                        </li>
-                        <li class="d-flex justify-content-between">
-                          <p class="fw-bold">累積里程 </p> <span class="text-primary-300 fw-bold">5100</span>
-                        </li>
-                      </ul>
-                      <button type="button"
-                        class="btn btn-primary-300 rounded-pill fw-bold py-3 w-100 text-neutral-1000"
-                        data-bs-target="#sleep2" data-bs-toggle="modal" data-bs-dismiss="modal">我知道了</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal fade" id="sleep2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered custom-modal">
-                  <div class="modal-content  border-2 border-primary-50 mx-4 ">
-                    <div class="modal-header bg-neutral-100 py-3">
-                      <h5 class="modal-title w-100 text-neutral-1000 fw-bold fs-5 text-center" id="staticBackdropLabel">
-                        恭喜你獲得新寶物！</h5>
-                    </div>
-                    <div class="modal-body  p-5 d-flex flex-column align-items-center">
-                      <div class="d-flex justify-content-center mb-3">
-                        <img src="/assets/images/03-treasure/modal/treasure-unlock-modal-01.png" alt="晚安指北針"
-                          class="new-item">
-                      </div>
-                      <ul class="ps-0">
-                        <li class="d-flex justify-content-between">
-                          <p class="fw-bold">新寶物：晚安指北針</p>
-                        </li>
-                      </ul>
-                      <button type="button"
-                        class="btn btn-primary-300 rounded-pill fw-bold py-3 w-100 text-neutral-1000"
-                        data-bs-target="#sleep3" data-bs-toggle="modal" data-bs-dismiss="modal">開心收下</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="modal fade" id="sleep3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered custom-modal">
-                  <div class="modal-content border-2 border-primary-50 mx-4 ">
-                    <div class="modal-header bg-neutral-100 py-3">
-                      <h5 class="modal-title w-100 text-neutral-1000 fw-bold fs-5 text-center" id="staticBackdropLabel">
-                        恭喜你解鎖新場景！</h5>
-                    </div>
-                    <div class="modal-body p-5 d-flex flex-column align-items-center">
-                      <div class="d-flex justify-content-center mb-3">
-                        <img src="/assets/images/04-background/main-scene/square/深眠幽谷.png" alt="深眠幽谷" class="new-item">
-                      </div>
-                      <ul class="ps-0">
-                        <li class="d-flex justify-content-between">
-                          <p class="fw-bold">新場景：深眠幽谷</p>
-                        </li>
-                      </ul>
-                      <a href="index.html" class="btn btn-primary-300 rounded-pill fw-bold py-3 w-100 text-neutral-1000"
-                        ata-bs-dismiss="modal">我知道了</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </main>
+          </main>
+        </div>
+        <!-- home-indicator -->
+        <div class="app-home-indicator"></div>
       </div>
-      <!-- home-indicator -->
-      <div class="app-home-indicator"></div>
     </div>
-  </div>
 
-  <script type="module" src="../main.js"></script>
-  <script type="module" src="/assets/scripts/sleep.js"></script>
-</body>
-
+    <script type="module" src="../main.js"></script>
+    <script type="module" src="/assets/scripts/sleep.js"></script>
+  </body>
 </html>

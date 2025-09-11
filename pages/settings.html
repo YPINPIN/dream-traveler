@@ -1,75 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>index</title>
-</head>
-
-<body>
-  <div class="app">
-    <div class="app-border">
-      <div class="app-frame overflow-y-auto">
-        <header>
-          <%- include('layout/top-nav', { title: '設定' , beforeLink: null , nextLink: null}) -%>
-        </header>
-        <div class="main">
-          <section class="py-6 px-4">
-            <ul class="fw-bold ps-0">
-              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px">
-                我的帳號
-                <img src="/assets/images/05-icon/next.svg" alt="next" />
-              </li>
-              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px">
-                旅程時間設定<img src="/assets/images/05-icon/next.svg" alt="next" />
-              </li>
-              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px">
-                起床鬧鐘
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" id="wakeup-alert" />
-                  <label class="form-check-label" for="wakeup-alert"></label>
-                </div>
-              </li>
-              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 opacity-30"
-                style="height: 60px;">
-                起床鬧鐘設定
-                <div>
-                  <span class="me-2  fw-normal">未設定</span><img src="/assets/images/05-icon/next.svg" alt="next"
-                    class="align-top" />
-                </div>
-              </li>
-              <li class="d-flex align-items-center justify-content-between mb-2 py-3 px-4" style="height: 60px">
-                睡前提醒
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" id="sleep-alert" />
-                  <label class="form-check-label" for="sleep-alert"></label>
-                </div>
-              </li>
-              <li>
-                <a href="settings-1.html"
-                  class="d-flex align-items-center justify-content-between py-3 px-4 opacity-30 pe-none"
-                  id="alert-sleep-setting" style="height: 60px;" aria-disabled="true">
-                  睡前提醒時間設定
-                  <div>
-                    <span class="me-2 fw-normal" id="sleep_time">未設定</span><img src="/assets/images/05-icon/next.svg"
-                      alt="next" class="align-top" />
+<html lang="zh-Hant">
+  <%- include("layout/head.ejs") %>
+  <body>
+    <div class="app">
+      <div class="app-border">
+        <div class="app-frame overflow-y-auto">
+          <header>
+            <%- include('layout/top-nav', { title: '設定' , beforeLink: null ,
+            nextLink: null}) -%>
+          </header>
+          <div class="main">
+            <section class="py-6 px-4">
+              <ul class="fw-bold ps-0">
+                <li
+                  class="d-flex align-items-center justify-content-between mb-2 py-3 px-4"
+                  style="height: 60px"
+                >
+                  我的帳號
+                  <img src="/assets/images/05-icon/next.svg" alt="next" />
+                </li>
+                <li
+                  class="d-flex align-items-center justify-content-between mb-2 py-3 px-4"
+                  style="height: 60px"
+                >
+                  旅程時間設定<img
+                    src="/assets/images/05-icon/next.svg"
+                    alt="next"
+                  />
+                </li>
+                <li
+                  class="d-flex align-items-center justify-content-between mb-2 py-3 px-4"
+                  style="height: 60px"
+                >
+                  起床鬧鐘
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="wakeup-alert"
+                    />
+                    <label class="form-check-label" for="wakeup-alert"></label>
                   </div>
-                </a>
-              </li>
-            </ul>
-          </section>
+                </li>
+                <li
+                  class="d-flex align-items-center justify-content-between mb-2 py-3 px-4 opacity-30"
+                  style="height: 60px"
+                >
+                  起床鬧鐘設定
+                  <div>
+                    <span class="me-2 fw-normal">未設定</span
+                    ><img
+                      src="/assets/images/05-icon/next.svg"
+                      alt="next"
+                      class="align-top"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="d-flex align-items-center justify-content-between mb-2 py-3 px-4"
+                  style="height: 60px"
+                >
+                  睡前提醒
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="sleep-alert"
+                    />
+                    <label class="form-check-label" for="sleep-alert"></label>
+                  </div>
+                </li>
+                <li>
+                  <a
+                    href="settings-1.html"
+                    class="d-flex align-items-center justify-content-between py-3 px-4 opacity-30 pe-none"
+                    id="alert-sleep-setting"
+                    style="height: 60px"
+                    aria-disabled="true"
+                  >
+                    睡前提醒時間設定
+                    <div>
+                      <span class="me-2 fw-normal" id="sleep_time">未設定</span
+                      ><img
+                        src="/assets/images/05-icon/next.svg"
+                        alt="next"
+                        class="align-top"
+                      />
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <!-- navbar -->
+          <%- include('layout/navbar', { activePage: 'setting' }) -%>
         </div>
-        <!-- navbar -->
-        <%- include('layout/navbar', { activePage: 'setting' }) -%>
+        <!-- home-indicator -->
+        <div class="app-home-indicator"></div>
       </div>
-      <!-- home-indicator -->
-      <div class="app-home-indicator"></div>
     </div>
-  </div>
-  <script type="module" src="../main.js"></script>
-  <script type="module" src="/assets/scripts/settings.js"></script>
-</body>
-
+    <script type="module" src="../main.js"></script>
+    <script type="module" src="/assets/scripts/settings.js"></script>
+  </body>
 </html>
