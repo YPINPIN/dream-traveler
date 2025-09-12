@@ -7,6 +7,7 @@
   // === 格式化工具 ===
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
 
   // === Prettier 設定 ===
   "prettier.semi": true, // 結尾加分號
@@ -28,6 +29,7 @@
   },
 
   // === 檔案處理習慣 ===
+  "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "files.eol": "\n" // 強制 LF 換行
