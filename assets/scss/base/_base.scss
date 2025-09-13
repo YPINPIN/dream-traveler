@@ -19,3 +19,8 @@ a {
 .overflow-y-auto::-webkit-scrollbar {
   display: none;
 }
+
+// 給底部留空間（避免被固定 navbar 遮住）。
+.mb-navbar {
+  margin-bottom: 110px;
+}
