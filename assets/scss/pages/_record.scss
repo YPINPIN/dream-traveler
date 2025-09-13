@@ -91,13 +91,20 @@
 }
 
 // 自訂按鈕 hover
-.record-custom-hover.btn {
-  transition: none;
-  &:hover,
-  &:active,
-  &.active {
-    background-color: $primary-600;
-    border-color: $primary-600;
+.btn-group {
+  .record-custom-hover.btn {
+    transition: none;
+    border: none;
+    &:not(:first-child) {
+      margin-left: 0;
+    }
+    &:hover:not(.active),
+    &:active:not(.active) {
+      background-color: $neutral-900;
+    }
+    &.active {
+      background-color: $primary-600;
+    }
   }
 }
 
