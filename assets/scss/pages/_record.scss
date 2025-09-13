@@ -95,15 +95,13 @@
   .record-custom-hover.btn {
     transition: none;
     border: none;
-    &:not(:first-child) {
-      margin-left: 0;
-    }
-    &:hover:not(.active),
-    &:active:not(.active) {
-      background-color: $neutral-900;
-    }
+    background-color: $neutral-900;
+    position: relative;
+    z-index: 0;
+
     &.active {
       background-color: $primary-600;
+      z-index: 1;
     }
   }
 }
