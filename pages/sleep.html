@@ -1,123 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/assets/images/favicon.ico" />
-    <title>夢の旅人</title>
-
-    <style>
-      .slide-range {
-        width: 311px;
-        height: 48px;
-        padding: 4px 5px;
-        position: relative;
-      }
-
-      .track {
-        position: absolute;
-        inset: 0;
-        border-radius: 9999px;
-        background: #264547;
-        overflow: hidden;
-      }
-
-      .fill {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 44px;
-        background: #042f2b;
-      }
-
-      .label {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        font-weight: 800;
-        color: #0e2b2c;
-        pointer-events: none;
-      }
-
-      .knob {
-        position: absolute;
-        top: 50%;
-        left: var(--pad);
-        transform: translate(0, -50%);
-        width: 44px;
-        height: 44px;
-        border-radius: 9999px;
-        background: #fff;
-        color: #153536;
-        display: grid;
-        place-items: center;
-        font-size: 20px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-        pointer-events: none;
-        /* 視覺按鈕不攔滑動；真實拖動是 input range */
-      }
-
-      /* 透明的 range 覆蓋上層，負責拖動/鍵盤 */
-      #sleepRange {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-        -webkit-appearance: none;
-        appearance: none;
-        background: transparent;
-        opacity: 0;
-        cursor: ew-resize;
-        cursor: default;
-      }
-
-      #sleepRange::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        width: 44px;
-        height: 44px;
-        background: transparent;
-      }
-
-      #sleepRange::-moz-range-thumb {
-        width: 44px;
-        height: 44px;
-        background: transparent;
-        border: 0;
-      }
-
-      /* 動畫：拖動時關閉過渡，放手時有過渡 */
-      .slide-range .knob,
-      .slide-range .fill {
-        transition: transform 0.08s linear, width 0.08s linear;
-      }
-
-      .slide-range.dragging .knob,
-      .slide-range.dragging .fill {
-        transition: none;
-      }
-
-      /* 完成狀態 */
-      .slide-range.done .track {
-        background: #1f3b3d;
-      }
-
-      .slide-range.done .fill {
-        background: #57b5ab;
-      }
-
-      .slide-range.done .label {
-        color: #0b2627;
-      }
-
-      .slide-range.done .knob {
-        background: #e9fff7;
-      }
-    </style>
-  </head>
-
+  <%- include("layout/head.ejs") %>
   <body class="overflow-y-auto">
     <div class="app">
       <div class="app-border">
@@ -197,6 +80,7 @@
                       data-bs-toggle="modal"
                       data-bs-target="#sleep"
                       id="sleepLabel"
+                      style="height: 48px"
                     >
                       滑動以結束睡眠
                       <span
