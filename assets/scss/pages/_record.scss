@@ -91,13 +91,18 @@
 }
 
 // 自訂按鈕 hover
-.record-custom-hover.btn {
-  transition: none;
-  &:hover,
-  &:active,
-  &.active {
-    background-color: $primary-600;
-    border-color: $primary-600;
+.btn-group {
+  .record-custom-hover.btn {
+    transition: none;
+    border: none;
+    background-color: $neutral-900;
+    position: relative;
+    z-index: 0;
+
+    &.active {
+      background-color: $primary-600;
+      z-index: 1;
+    }
   }
 }
 
@@ -140,12 +145,4 @@
   &--small {
     height: 156px;
   }
-}
-
-.record-section-chart {
-  margin-bottom: 110px;
-}
-
-.record-navbar {
-  z-index: 50;
 }

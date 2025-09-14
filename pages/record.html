@@ -286,7 +286,7 @@
                     </div>
                     <!-- 圖表列表 -->
                     <section
-                      class="px-4 pt-2 pb-4 bg-neutral-900 rounded-xs record-section-chart"
+                      class="px-4 pt-2 pb-4 bg-neutral-900 rounded-xs mb-navbar"
                     >
                       <!-- 圖表資料時段切換 -->
                       <div
@@ -598,12 +598,9 @@
               </div>
             </div>
           </main>
-          <div class="position-sticky bottom-0 record-navbar">
-            <!-- navbar -->
-            <%- include('layout/navbar', { activePage: 'book' }) -%>
-          </div>
         </div>
-
+        <!-- navbar -->
+        <%- include('layout/navbar', { activePage: 'book' }) -%>
         <!-- home-indicator -->
         <div class="app-home-indicator"></div>
       </div>
