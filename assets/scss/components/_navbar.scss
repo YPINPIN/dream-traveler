@@ -1,9 +1,10 @@
 .nav-tab {
   position: absolute;
   width: 343px;
-  bottom: 34px;
-  left: 16px;
-  z-index: 2;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
 }
 
 .nav-item {
