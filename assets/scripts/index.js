@@ -14,11 +14,11 @@ const backToPathPage = document.querySelector('.travel-time-page .top-nav a')
 function updateSceneIntro(newText) {
   if (sceneIntro.textContent === newText) return;
 
-  sceneIntro.classList.remove('show');
+  sceneIntro.classList.remove('scene-intro-show');
 
   setTimeout(() => {
     sceneIntro.textContent = newText;
-    sceneIntro.classList.add('show');
+    sceneIntro.classList.add('scene-intro-show');
   }, 200);
 }
 

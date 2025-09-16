@@ -131,10 +131,10 @@
   transform: translateY(-4px);
 }
 
-.fade {
+.scene-intro-fade {
   opacity: 0;
   transition: opacity 0.3s ease-in;
-  &.show {
+  &.scene-intro-show {
     opacity: 1;
   }
 }
