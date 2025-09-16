@@ -26,18 +26,64 @@
                 data-background="island"
               ></div>
             </div>
-            <div class="swiper-text">
-              <p id="scene-intro" class="fs-9 pb-2">現在探索的場景</p>
-              <h2 id="scene-title" class="fs-3 fw-bold">淺夢之村</h2>
-            </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
+            <div class="swiper textSwiper">
+              <div class="swiper-text">
+                <p id="scene-intro" class="fs-9 pb-2 fade show">
+                  現在探索的場景
+                </p>
+              </div>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="swiper-text">
+                    <h2
+                      id="scene-title"
+                      class="fs-3 fw-bold slide-title position-relative"
+                    >
+                      <span class="slide-title-text">淺夢之村</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-text">
+                    <h2
+                      id="scene-title"
+                      class="fs-3 fw-bold slide-title position-relative"
+                    >
+                      <span class="slide-title-text">深眠幽谷</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-text">
+                    <h2
+                      id="scene-title"
+                      class="fs-3 fw-bold slide-title position-relative"
+                    >
+                      <span class="slide-title-text">記憶森林</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-text">
+                    <h2
+                      id="scene-title"
+                      class="fs-3 fw-bold slide-title position-relative"
+                    >
+                      <span class="slide-title-text">浮島邊境</span>
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
             <img
               class="home-traveler"
               src="/assets/images/04-background/home-character.png"
               alt="旅人圖示"
             />
           </div>
+
           <!-- main 這裡面放對應的頁面內容 -->
           <main>
             <section class="container home-content text-center">
@@ -74,7 +120,20 @@
                 data-bs-target="#offcanvasRight"
                 aria-controls="offcanvasRight"
               >
-                現在啟程
+                <div class="btn-departure-inner">
+                  <span
+                    id="departure-button-text"
+                    class="btn-departure-content show"
+                    >現在啟程</span
+                  >
+                  <img
+                    id="departure-button-icon"
+                    class="btn-departure-content locked-icon"
+                    style="width: 50px"
+                    src="/assets/images/05-icon/locked.svg"
+                    alt="鎖定圖示"
+                  />
+                </div>
               </button>
             </section>
           </main>
