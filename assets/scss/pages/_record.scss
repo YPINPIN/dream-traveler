@@ -11,7 +11,10 @@
     padding: 5px;
     background-color: $neutral-800;
     &:hover,
-    &:active,
+    &:active {
+      background-color: $neutral-800;
+      border-color: transparent;
+    }
     &.active {
       background-color: $primary-700;
       border-color: $primary-300;
