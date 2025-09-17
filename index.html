@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/dream-traveler/assets/favicon-BjPp89MW.ico" />
   <title>夢の旅人</title>
-  <script type="module" crossorigin src="/dream-traveler/assets/index-DPOmrMSg.js"></script>
-  <link rel="modulepreload" crossorigin href="/dream-traveler/assets/main-Cq778OvX.js">
-  <link rel="stylesheet" crossorigin href="/dream-traveler/assets/main-DXmR2dhO.css">
+  <script type="module" crossorigin src="/dream-traveler/assets/index-Chl4cn9m.js"></script>
+  <link rel="modulepreload" crossorigin href="/dream-traveler/assets/main-B6czu0O8.js">
+  <link rel="stylesheet" crossorigin href="/dream-traveler/assets/main-BRbwwFpU.css">
 </head>
 
   <body class="overflow-y-auto">
@@ -35,18 +35,67 @@
                 data-background="island"
               ></div>
             </div>
-            <div class="swiper-text">
-              <p id="scene-intro" class="fs-9 pb-2">現在探索的場景</p>
-              <h2 id="scene-title" class="fs-3 fw-bold">淺夢之村</h2>
-            </div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
+            <div class="swiper textSwiper">
+              <div class="swiper-text">
+                <p
+                  id="scene-intro"
+                  class="fs-9 pb-2 scene-intro-fade scene-intro-show"
+                >
+                  現在探索的場景
+                </p>
+              </div>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="swiper-text">
+                    <h2
+                      id="scene-title"
+                      class="fs-3 fw-bold slide-title position-relative"
+                    >
+                      <span class="slide-title-text">淺夢之村</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-text">
+                    <h2
+                      id="scene-title"
+                      class="fs-3 fw-bold slide-title position-relative"
+                    >
+                      <span class="slide-title-text">深眠幽谷</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-text">
+                    <h2
+                      id="scene-title"
+                      class="fs-3 fw-bold slide-title position-relative"
+                    >
+                      <span class="slide-title-text">記憶森林</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="swiper-text">
+                    <h2
+                      id="scene-title"
+                      class="fs-3 fw-bold slide-title position-relative"
+                    >
+                      <span class="slide-title-text">浮島邊境</span>
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
             <img
               class="home-traveler"
               src="/dream-traveler/assets/home-character-CARcAHQn.png"
               alt="旅人圖示"
             />
           </div>
+
           <!-- main 這裡面放對應的頁面內容 -->
           <main>
             <section class="container home-content text-center">
@@ -83,7 +132,20 @@
                 data-bs-target="#offcanvasRight"
                 aria-controls="offcanvasRight"
               >
-                現在啟程
+                <div class="btn-departure-inner">
+                  <span
+                    id="departure-button-text"
+                    class="btn-departure-content show"
+                    >現在啟程</span
+                  >
+                  <img
+                    id="departure-button-icon"
+                    class="btn-departure-content locked-icon"
+                    style="width: 50px"
+                    src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M18%208C19.1046%208%2020%208.83147%2020%209.85714V19.1429C20%2020.1685%2019.1046%2021%2018%2021H6C4.89543%2021%204%2020.1685%204%2019.1429V9.85714C4%208.83147%204.89543%208%206%208H18ZM12%2010.7857C10.8954%2010.7857%2010%2011.6172%2010%2012.6429C10%2013.3298%2010.4029%2013.9275%2011%2014.2488V18.2143C11%2018.7271%2011.4477%2019.1429%2012%2019.1429C12.5523%2019.1429%2013%2018.7271%2013%2018.2143V14.2488C13.5971%2013.9275%2014%2013.3298%2014%2012.6429C14%2011.6172%2013.1046%2010.7857%2012%2010.7857Z'%20fill='%23ABB5B4'/%3e%3cpath%20d='M15%207C15%205.34315%2013.6569%204%2012%204C10.3431%204%209%205.34315%209%207V8H15V7ZM17%2010H7V7C7%204.23858%209.23858%202%2012%202C14.7614%202%2017%204.23858%2017%207V10Z'%20fill='%23ABB5B4'/%3e%3c/svg%3e"
+                    alt="鎖定圖示"
+                  />
+                </div>
               </button>
             </section>
           </main>
