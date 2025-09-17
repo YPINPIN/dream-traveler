@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 透過 locked 狀態判斷是否顯示鎖定圖示
     if (currentSlide.classList.contains('locked')) {
       departureText.classList.remove('show');
+      departureIcon.removeAttribute('hidden');
       departureIcon.classList.add('show');
       departureBtn.style.cursor = 'default';
       departureBtn.style.pointerEvents = 'none';
