@@ -31,7 +31,7 @@
 - 首頁、選擇路徑頁 - [yuan6636](https://github.com/yuan6636)
 - 睡眠旅行頁、設定頁 - [papa2415](https://github.com/papa2415)
 - 圖鑑、收藏頁 - [CKS40660](https://github.com/CKS40660)
-- 日誌功能頁 - [YPINPIN](https://github.com/YPINPIN)
+- 日誌功能頁、專案協作及建置相關 - [YPINPIN](https://github.com/YPINPIN)
 
 ## 🚀 畫面介紹
 
@@ -40,6 +40,7 @@
 > 每一次入睡，都是一場夢的旅程。
 
 <div style="display: flex;">
+  <img src="./assets/images/demo/demo-1.gif" style="height: 300px"/>
   <img src="./assets/images/demo/home.png" style="height: 300px"/>
   <img src="./assets/images/demo/path.png" style="height: 300px"/>
   <img src="./assets/images/demo/path-2.png" style="height: 300px"/>
@@ -59,6 +60,7 @@
 > 收集夢中寶物，豐富你的旅程。
 
 <div style="display: flex;">
+  <img src="./assets/images/demo/demo-2.gif" style="height: 300px"/>
   <img src="./assets/images/demo/book.png" style="height: 300px"/>
   <img src="./assets/images/demo/collection.png" style="height: 300px"/>
   <img src="./assets/images/demo/collection-2.png" style="height: 300px"/>
@@ -69,6 +71,7 @@
 > 追蹤睡眠日誌，養成穩定作息。
 
 <div style="display: flex;">
+  <img src="./assets/images/demo/demo-3.gif" style="height: 300px"/>
   <img src="./assets/images/demo/record.png" style="height: 300px"/>
   <img src="./assets/images/demo/record-2.png" style="height: 300px"/>
   <img src="./assets/images/demo/record-3.png" style="height: 300px"/>
@@ -80,6 +83,7 @@
 > 帳號設定與開啟提醒。
 
 <div style="display: flex;">
+  <img src="./assets/images/demo/demo-4.gif" style="height: 300px"/>
   <img src="./assets/images/demo/setting.png" style="height: 300px"/>
   <img src="./assets/images/demo/setting-2.png" style="height: 300px"/>
 </div>
